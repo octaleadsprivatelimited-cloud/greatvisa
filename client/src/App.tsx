@@ -24,6 +24,10 @@ import VisaExtension from './pages/VisaExtension';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Sitemap from './pages/Sitemap';
+import Portfolio from './pages/Portfolio';
+import Blog from './pages/Blog';
+import Testimonials from './pages/Testimonials';
+import Careers from './pages/Careers';
 
 function App() {
   return (
@@ -35,11 +39,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            {/** portfolio/blog removed */}
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
-            {/** testimonials removed */}
             <Route path="/faq" element={<FAQ />} />
-            {/** careers removed */}
             
             <Route path="/study-visa" element={<StudyVisa />} />
             <Route path="/work-visa" element={<WorkVisa />} />
