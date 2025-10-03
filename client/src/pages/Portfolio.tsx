@@ -1,0 +1,47 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { CheckCircle, ArrowRight } from 'lucide-react';
+
+const Portfolio: React.FC = () => {
+  const projects = [
+    { title: 'Study Visa Approvals', description: 'Admissions and visas for top universities in Canada, UK, and Australia.', image: '/study-visa.jpg', stats: '1200+ approvals' },
+    { title: 'Work Visa Placements', description: 'Skilled professionals placed in reputed companies across multiple countries.', image: '/work.jpg', stats: '900+ placements' },
+    { title: 'Tourist Visa Success', description: 'Quick turnaround for family trips and solo travellers worldwide.', image: '/visitor-visa-application.jpg', stats: '2000+ trips' },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-4">Our Portfolio</h1>
+            <p className="text-lg text-gray-600">A snapshot of our recent successes across visas and immigration services.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {projects.map((p) => (
+              <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                <div className="h-44 bg-gray-100">
+                  <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{p.title}</h3>
+                  <p className="text-gray-600 mb-3">{p.description}</p>
+                  <div className="flex items-center text-sm text-green-600"><CheckCircle size={16} className="mr-2" />{p.stats}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <a href="/contact" className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700">Start Your Case <ArrowRight size={16} className="ml-1" /></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Portfolio;
+
+

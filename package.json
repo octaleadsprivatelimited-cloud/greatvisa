@@ -1,0 +1,48 @@
+{
+  "name": "great-visa-network",
+  "version": "1.0.0",
+  "description": "Professional website for GREAT Visa Network - Visa consultancy and recruitment agency",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20.0.0 <21.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "build:prod": "npm install && cd client && npm install && npm run build",
+    "deploy": "npm run build:prod && npm start",
+    "test": "cd client && npm test",
+    "lint": "cd client && npm run lint"
+  },
+  "keywords": [
+    "visa consultancy",
+    "immigration services",
+    "work visa",
+    "study visa",
+    "recruitment agency",
+    "visa processing",
+    "immigration consultant",
+    "visa application",
+    "overseas jobs",
+    "visa assistance"
+  ],
+  "author": "Octaleads Pvt Ltd",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "multer": "^2.0.2",
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  }
+}
