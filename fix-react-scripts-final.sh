@@ -244,6 +244,10 @@ npm install --legacy-peer-deps
 echo "🔧 Installing compatible dependency versions..."
 npm install react-router@6.3.0 react-router-dom@6.3.0 lucide-react@0.263.1 framer-motion@10.0.0 @remix-run/router@1.0.0 --legacy-peer-deps
 
+# Fix lucide-react file path issue
+echo "🔧 Fixing lucide-react file path issue..."
+ln -sf node_modules/lucide-react/dist/esm/lucide-react.mjs node_modules/lucide-react/dist/esm/lucide-react.js
+
 # Test the build
 echo "🧪 Testing build..."
 npm run build
