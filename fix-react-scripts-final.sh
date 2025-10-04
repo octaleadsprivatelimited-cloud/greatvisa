@@ -242,7 +242,7 @@ npm install --legacy-peer-deps
 
 # Fix dependency versions with compatible versions
 echo "🔧 Installing compatible dependency versions..."
-npm install react-router@6.3.0 react-router-dom@6.3.0 lucide-react@0.263.1 framer-motion@10.0.0 --legacy-peer-deps
+npm install react-router@6.3.0 react-router-dom@6.3.0 lucide-react@0.263.1 framer-motion@10.0.0 @remix-run/router@1.0.0 --legacy-peer-deps
 
 # Test the build
 echo "🧪 Testing build..."
