@@ -6,11 +6,8 @@ import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
-// Removed legacy routes
 import Contact from './pages/Contact';
-// Removed legacy routes
 import FAQ from './pages/FAQ';
-// Removed legacy routes
 import StudyVisa from './pages/StudyVisa';
 import WorkVisa from './pages/WorkVisa';
 import TouristVisa from './pages/TouristVisa';
