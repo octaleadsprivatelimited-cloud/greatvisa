@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
   Sparkles,
@@ -87,25 +87,24 @@ const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen overflow-hidden pt-24 pb-12 md:pb-16 lg:pb-20">
       {/* Background Image Slider */}
-      <div className="absolute inset-0">
-        <AnimatePresence mode="wait">
+      <div className="absolute inset-0 bg-black">
+        {sliderImages.map((image, index) => (
           <motion.div
-            key={currentSlide}
+            key={index}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
+            animate={{ opacity: currentSlide === index ? 1 : 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
             className="absolute inset-0"
           >
             <img
-              src={sliderImages[currentSlide]}
-              alt={`Hero slide ${currentSlide + 1}`}
+              src={image}
+              alt={`Hero slide ${index + 1}`}
               className="w-full h-full object-cover"
             />
             {/* Dark overlay for text readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/40"></div>
           </motion.div>
-        </AnimatePresence>
+        ))}
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
