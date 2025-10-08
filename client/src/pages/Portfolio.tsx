@@ -41,6 +41,64 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Gallery Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-sky-500 mb-4">
+              Our Gallery
+            </h2>
+            <p className="text-lg text-gray-600">
+              Moments of success and happy clients
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[
+              { image: '/services/study_visa.jpg', title: 'Study Visa Success' },
+              { image: '/services/word_visa.jpg', title: 'Work Visa Approval' },
+              { image: '/services/tourist_visa.jpeg', title: 'Tourist Visa' },
+              { image: '/services/family_visa.jpg', title: 'Family Reunion' },
+              { image: '/services/businessvisa.jpg', title: 'Business Visa' },
+              { image: '/services/immigration.jpg', title: 'Immigration Services' },
+              { image: '/home/slider-1.jpg', title: 'Client Success' },
+              { image: '/home/Silder-2.jpg', title: 'Visa Approval' },
+              { image: '/home/slider-3.jpg', title: 'Happy Clients' },
+              { image: '/services/benfits.jpeg', title: 'Our Benefits' },
+              { image: '/services/study_visa.jpg', title: 'Education Journey' },
+              { image: '/services/tourist_visa.jpeg', title: 'Travel Dreams' }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-white font-semibold text-sm">{item.title}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
