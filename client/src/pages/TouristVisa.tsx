@@ -67,7 +67,7 @@ const TouristVisa: React.FC = () => {
             src="/services/tourist_visa.jpeg"
             alt="Tourist Visa"
             className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 50%' }}
+            style={{ objectPosition: 'center 40%' }}
           />
         </div>
         <div className="absolute inset-0 bg-black/50"></div>
