@@ -70,9 +70,9 @@ const Footer: React.FC = () => {
       {/* Main Footer */}
       <div className="border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
-            {/* Company Info - 4 cols */}
-            <div className="lg:col-span-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-8">
+            {/* Company Info - 2 cols */}
+            <div className="lg:col-span-2">
               <Link to="/" className="inline-block mb-6">
                 <img
                   src="/logo.webp"
@@ -116,8 +116,8 @@ const Footer: React.FC = () => {
               </div>
           </div>
 
-            {/* Visa Services - 2 cols */}
-            <div className="lg:col-span-2">
+            {/* Visa Services - 1 col */}
+          <div className="lg:col-span-1">
               <h3 className="text-white text-lg font-bold mb-6">Visa Services</h3>
               <ul className="space-y-3">
                 {visaServices.map((link) => (
@@ -134,8 +134,8 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Consulting Services - 2 cols */}
-            <div className="lg:col-span-2">
+            {/* Consulting Services - 1 col */}
+            <div className="lg:col-span-1">
               <h3 className="text-white text-lg font-bold mb-6">Consulting Services</h3>
               <ul className="space-y-3">
                 {consultingServices.map((link) => (
@@ -152,8 +152,8 @@ const Footer: React.FC = () => {
               </ul>
                 </div>
                 
-            {/* Company - 2 cols */}
-            <div className="lg:col-span-2">
+            {/* Company - 1 col */}
+            <div className="lg:col-span-1">
               <h3 className="text-white text-lg font-bold mb-6">Company</h3>
               <ul className="space-y-3">
                 {company.map((link) => (
@@ -168,24 +168,25 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-
-              <div className="mt-6">
-                <h4 className="text-white text-sm font-bold mb-3">Support</h4>
-                <ul className="space-y-2">
-                  {support.map((link) => (
-                    <li key={link.path}>
-                      <Link
-                        to={link.path}
-                        className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-xs"
-                      >
-                        <ChevronRight size={12} className="mr-1 group-hover:translate-x-1 transition-transform" />
-                        <span>{link.name}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
+
+            {/* Support - 1 col */}
+            <div className="lg:col-span-1">
+              <h3 className="text-white text-lg font-bold mb-6">Support</h3>
+              <ul className="space-y-3">
+                {support.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-sm"
+                    >
+                      <ChevronRight size={14} className="mr-1 group-hover:translate-x-1 transition-transform" />
+                      <span>{link.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              </div>
           </div>
         </div>
         </div>
