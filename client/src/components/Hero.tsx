@@ -108,7 +108,7 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center">
+        <div className="grid lg:grid-cols-[1.5fr_1fr] gap-8 lg:gap-12 items-start lg:items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -228,7 +228,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             id="quick-form"
-            className="relative"
+            className="relative max-w-md mx-auto lg:mx-0"
           >
             {/* Floating Elements */}
             <motion.div
