@@ -228,7 +228,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             id="quick-form"
-            className="relative max-w-md mx-auto lg:mx-0"
+            className="relative max-w-md mx-auto lg:ml-auto lg:mr-0"
           >
             {/* Floating Elements */}
             <motion.div
