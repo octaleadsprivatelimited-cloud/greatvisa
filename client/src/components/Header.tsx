@@ -7,7 +7,8 @@ import {
   Menu, 
   X, 
   ChevronDown,
-  Sparkles
+  Sparkles,
+  ArrowRight
 } from 'lucide-react';
 
 const Header: React.FC = () => {
@@ -18,7 +19,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -40,16 +41,16 @@ const Header: React.FC = () => {
   };
 
   const services = [
-    { name: 'Study Visa', path: '/study-visa', emoji: '🎓' },
-    { name: 'Work Visa', path: '/work-visa', emoji: '💼' },
-    { name: 'Tourist Visa', path: '/tourist-visa', emoji: '✈️' },
-    { name: 'Family Visa', path: '/family-visa', emoji: '❤️' },
-    { name: 'Business Visa', path: '/business-visa', emoji: '🏢' },
-    { name: 'Immigration Consultation', path: '/immigration-consultation', emoji: '📋' },
-    { name: 'Job Placement', path: '/job-placement', emoji: '🎯' },
-    { name: 'Skill Assessment', path: '/skill-assessment', emoji: '⭐' },
-    { name: 'Document Attestation', path: '/document-attestation', emoji: '📄' },
-    { name: 'Visa Extension', path: '/visa-extension', emoji: '🔄' }
+    { name: 'Study Visa', path: '/study-visa', desc: 'Top universities worldwide' },
+    { name: 'Work Visa', path: '/work-visa', desc: 'Career opportunities abroad' },
+    { name: 'Tourist Visa', path: '/tourist-visa', desc: 'Explore the world' },
+    { name: 'Family Visa', path: '/family-visa', desc: 'Reunite with loved ones' },
+    { name: 'Business Visa', path: '/business-visa', desc: 'Expand globally' },
+    { name: 'Immigration Consultation', path: '/immigration-consultation', desc: 'Expert guidance' },
+    { name: 'Job Placement', path: '/job-placement', desc: 'Find opportunities' },
+    { name: 'Skill Assessment', path: '/skill-assessment', desc: 'Validate your skills' },
+    { name: 'Document Attestation', path: '/document-attestation', desc: 'Official verification' },
+    { name: 'Visa Extension', path: '/visa-extension', desc: 'Extend your stay' }
   ];
 
   const mainNavigation = [
@@ -57,7 +58,10 @@ const Header: React.FC = () => {
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services', hasDropdown: true },
     { name: 'Portfolio', path: '/portfolio' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Testimonials', path: '/testimonials' },
+    { name: 'FAQ', path: '/faq' },
+    { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' }
   ];
 
@@ -94,7 +98,7 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Header - Glassmorphism */}
+      {/* Main Header - Compact */}
       <motion.header 
         className={`sticky top-0 z-50 transition-all duration-300 ${
           isScrolled 
@@ -103,10 +107,10 @@ const Header: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-14">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="relative h-16 w-48">
+              <div className="relative h-10 w-36">
                 <img
                   src="/logo.png"
                   alt="GREAT Visa Network"
@@ -117,59 +121,28 @@ const Header: React.FC = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-2">
+            <nav className="hidden lg:flex items-center space-x-1">
               {mainNavigation.map((item) => (
                 <div key={item.name} className="relative">
                   {item.hasDropdown ? (
-                    <div className="relative group">
+                    <div className="relative">
                       <button
                         onMouseEnter={() => setActiveDropdown('services')}
-                        className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 flex items-center space-x-1.5 ${
+                        onClick={() => setActiveDropdown(activeDropdown === 'services' ? null : 'services')}
+                        className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 flex items-center space-x-1 ${
                           location.pathname.includes('/services') || location.pathname.includes('visa') || location.pathname.includes('immigration') || location.pathname.includes('job') || location.pathname.includes('skill') || location.pathname.includes('document')
                             ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
                             : 'text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600'
                         }`}
                       >
                         <span>{item.name}</span>
-                        <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300" />
+                        <ChevronDown size={14} className={`transition-transform duration-300 ${activeDropdown === 'services' ? 'rotate-180' : ''}`} />
                       </button>
-                      
-                      <AnimatePresence>
-                        {activeDropdown === 'services' && (
-                          <motion.div
-                            initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                            transition={{ duration: 0.2 }}
-                            onMouseLeave={() => setActiveDropdown(null)}
-                            className="absolute top-full left-0 mt-3 w-80 glass-card rounded-3xl shadow-2xl py-4 z-50 border border-purple-100"
-                          >
-                            <div className="px-4 pb-3 mb-3 border-b border-gray-200">
-                              <p className="text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 uppercase tracking-wider">
-                                ✨ Our Services
-                              </p>
-                            </div>
-                            <div className="max-h-96 overflow-y-auto px-2">
-                              {services.map((service) => (
-                                <Link
-                                  key={service.name}
-                                  to={service.path}
-                                  className="group flex items-center space-x-3 px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-2xl transition-all duration-300 font-semibold"
-                                  onClick={() => setActiveDropdown(null)}
-                                >
-                                  <span className="text-2xl group-hover:scale-125 transition-transform duration-300">{service.emoji}</span>
-                                  <span className="group-hover:text-indigo-600 transition-colors">{service.name}</span>
-                                </Link>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
                     </div>
                   ) : (
                     <Link
                       to={item.path}
-                      className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+                      className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
                         location.pathname === item.path
                           ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
                           : 'text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600'
@@ -185,108 +158,139 @@ const Header: React.FC = () => {
             {/* Mobile menu button */}
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden p-3 rounded-2xl text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 transition-all duration-300"
+              className="lg:hidden p-2 rounded-2xl text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 transition-all duration-300"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
             </button>
           </div>
         </div>
+      </motion.header>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
+      {/* Full-Page Services Dropdown */}
+      <AnimatePresence>
+        {activeDropdown === 'services' && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+            onClick={() => setActiveDropdown(null)}
+          >
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden border-t border-gray-200 bg-white"
+              className="bg-white shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              <div className="max-w-7xl mx-auto px-4 py-6 max-h-[calc(100vh-180px)] overflow-y-auto">
-                <nav className="space-y-2">
-                  {mainNavigation.map((item) => (
-                    <div key={item.name}>
-                      {item.hasDropdown ? (
-                        <div>
-                          <button
-                            onClick={() => toggleDropdown('services')}
-                            className="w-full flex items-center justify-between px-5 py-3.5 text-sm font-bold text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-2xl transition-all duration-300"
-                          >
-                            <span>{item.name}</span>
-                            <ChevronDown 
-                              size={18} 
-                              className={`transition-transform duration-300 ${
-                                activeDropdown === 'services' ? 'rotate-180' : ''
-                              }`}
-                            />
-                          </button>
-                          
-                          <AnimatePresence>
-                            {activeDropdown === 'services' && (
-                              <motion.div
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: 'auto' }}
-                                exit={{ opacity: 0, height: 0 }}
-                                transition={{ duration: 0.2 }}
-                                className="ml-4 mt-2 space-y-1"
-                              >
-                                {services.map((service) => (
-                                  <Link
-                                    key={service.name}
-                                    to={service.path}
-                                    className="flex items-center space-x-3 px-5 py-3 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-2xl transition-all duration-300 font-semibold"
-                                  >
-                                    <span className="text-xl">{service.emoji}</span>
-                                    <span>{service.name}</span>
-                                  </Link>
-                                ))}
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </div>
-                      ) : (
-                        <Link
-                          to={item.path}
-                          className={`block px-5 py-3.5 text-sm font-bold rounded-2xl transition-all duration-300 ${
-                            location.pathname === item.path
-                              ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
-                              : 'text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50'
-                          }`}
-                        >
-                          {item.name}
-                        </Link>
-                      )}
-                    </div>
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div className="mb-8">
+                  <h3 className="text-3xl font-black text-gray-900 mb-2">Our Services</h3>
+                  <p className="text-gray-600">Choose the visa service that fits your needs</p>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                  {services.map((service, index) => (
+                    <Link
+                      key={service.name}
+                      to={service.path}
+                      onClick={() => setActiveDropdown(null)}
+                      className="group p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                    >
+                      <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 to-purple-600 mb-3">
+                        {String(index + 1).padStart(2, '0')}
+                      </div>
+                      <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                        {service.name}
+                      </h4>
+                      <p className="text-sm text-gray-600 mb-4">{service.desc}</p>
+                      <div className="flex items-center text-indigo-600 text-sm font-semibold">
+                        <span>Learn More</span>
+                        <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </Link>
                   ))}
-                </nav>
-
-                {/* Mobile Contact Info */}
-                <div className="mt-6 pt-6 border-t border-gray-200 space-y-3">
-                  <a 
-                    href="tel:+919533974711" 
-                    className="flex items-center space-x-3 text-gray-700 hover:text-indigo-600 transition-colors font-semibold"
-                  >
-                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center">
-                      <Phone size={18} />
-                    </div>
-                    <span>+91 9533 974 711</span>
-                  </a>
-                  <a 
-                    href="mailto:info@greatvisanetwork.com"
-                    className="flex items-center space-x-3 text-gray-700 hover:text-indigo-600 transition-colors font-semibold"
-                  >
-                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center">
-                      <Mail size={18} />
-                    </div>
-                    <span>info@greatvisanetwork.com</span>
-                  </a>
                 </div>
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.header>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden border-t border-gray-200 bg-white"
+          >
+            <div className="max-w-7xl mx-auto px-4 py-4 max-h-[calc(100vh-180px)] overflow-y-auto">
+              <nav className="space-y-2">
+                {mainNavigation.map((item) => (
+                  <div key={item.name}>
+                    {item.hasDropdown ? (
+                      <div>
+                        <button
+                          onClick={() => toggleDropdown('services')}
+                          className="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-2xl transition-all duration-300"
+                        >
+                          <span>{item.name}</span>
+                          <ChevronDown 
+                            size={18} 
+                            className={`transition-transform duration-300 ${
+                              activeDropdown === 'services' ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </button>
+                        
+                        <AnimatePresence>
+                          {activeDropdown === 'services' && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="ml-4 mt-2 space-y-1"
+                            >
+                              {services.map((service) => (
+                                <Link
+                                  key={service.name}
+                                  to={service.path}
+                                  className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-2xl transition-all duration-300 font-semibold"
+                                >
+                                  {service.name}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <Link
+                        to={item.path}
+                        className={`block px-4 py-3 text-sm font-bold rounded-2xl transition-all duration-300 ${
+                          location.pathname === item.path
+                            ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
+                            : 'text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </nav>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
