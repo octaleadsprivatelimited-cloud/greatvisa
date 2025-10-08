@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Phone, 
-  Mail, 
+  Mail,
   Clock,
   Facebook,
   Twitter,
@@ -10,6 +10,7 @@ import {
   Linkedin,
   Youtube,
   ChevronRight,
+  ChevronDown,
   Globe,
   Award,
   Shield
@@ -17,6 +18,14 @@ import {
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
+
+  const toggleSection = (section: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
 
   const visaServices = [
     { name: 'Study Visa', path: '/study-visa' },
@@ -117,9 +126,22 @@ const Footer: React.FC = () => {
           </div>
 
             {/* Visa Services - 1 col */}
-          <div className="lg:col-span-1">
-              <h3 className="text-white text-lg font-bold mb-6">Visa Services</h3>
-              <ul className="space-y-3">
+            <div className="lg:col-span-1">
+              {/* Mobile Accordion */}
+              <button
+                onClick={() => toggleSection('visa')}
+                className="lg:hidden w-full flex items-center justify-between text-white text-lg font-bold mb-4"
+              >
+                <span>Visa Services</span>
+                <ChevronDown 
+                  size={20} 
+                  className={`transition-transform duration-300 ${openSections.visa ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {/* Desktop Title */}
+              <h3 className="hidden lg:block text-white text-lg font-bold mb-6">Visa Services</h3>
+              
+              <ul className={`space-y-3 ${openSections.visa || window.innerWidth >= 1024 ? 'block' : 'hidden'} lg:block`}>
                 {visaServices.map((link) => (
                   <li key={link.path}>
                     <Link
@@ -136,8 +158,21 @@ const Footer: React.FC = () => {
 
             {/* Consulting Services - 1 col */}
             <div className="lg:col-span-1">
-              <h3 className="text-white text-lg font-bold mb-6">Consulting Services</h3>
-              <ul className="space-y-3">
+              {/* Mobile Accordion */}
+              <button
+                onClick={() => toggleSection('consulting')}
+                className="lg:hidden w-full flex items-center justify-between text-white text-lg font-bold mb-4 border-t border-slate-800 pt-4"
+              >
+                <span>Consulting Services</span>
+                <ChevronDown 
+                  size={20} 
+                  className={`transition-transform duration-300 ${openSections.consulting ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {/* Desktop Title */}
+              <h3 className="hidden lg:block text-white text-lg font-bold mb-6">Consulting Services</h3>
+              
+              <ul className={`space-y-3 mb-4 lg:mb-0 ${openSections.consulting || window.innerWidth >= 1024 ? 'block' : 'hidden'} lg:block`}>
                 {consultingServices.map((link) => (
                   <li key={link.path}>
                     <Link
@@ -154,8 +189,21 @@ const Footer: React.FC = () => {
                 
             {/* Company - 1 col */}
             <div className="lg:col-span-1">
-              <h3 className="text-white text-lg font-bold mb-6">Company</h3>
-              <ul className="space-y-3">
+              {/* Mobile Accordion */}
+              <button
+                onClick={() => toggleSection('company')}
+                className="lg:hidden w-full flex items-center justify-between text-white text-lg font-bold mb-4 border-t border-slate-800 pt-4"
+              >
+                <span>Company</span>
+                <ChevronDown 
+                  size={20} 
+                  className={`transition-transform duration-300 ${openSections.company ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {/* Desktop Title */}
+              <h3 className="hidden lg:block text-white text-lg font-bold mb-6">Company</h3>
+              
+              <ul className={`space-y-3 mb-4 lg:mb-0 ${openSections.company || window.innerWidth >= 1024 ? 'block' : 'hidden'} lg:block`}>
                 {company.map((link) => (
                   <li key={link.path}>
                     <Link
@@ -172,8 +220,21 @@ const Footer: React.FC = () => {
 
             {/* Support - 1 col */}
             <div className="lg:col-span-1">
-              <h3 className="text-white text-lg font-bold mb-6">Support</h3>
-              <ul className="space-y-3">
+              {/* Mobile Accordion */}
+              <button
+                onClick={() => toggleSection('support')}
+                className="lg:hidden w-full flex items-center justify-between text-white text-lg font-bold mb-4 border-t border-slate-800 pt-4"
+              >
+                <span>Support</span>
+                <ChevronDown 
+                  size={20} 
+                  className={`transition-transform duration-300 ${openSections.support ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {/* Desktop Title */}
+              <h3 className="hidden lg:block text-white text-lg font-bold mb-6">Support</h3>
+              
+              <ul className={`space-y-3 ${openSections.support || window.innerWidth >= 1024 ? 'block' : 'hidden'} lg:block`}>
                 {support.map((link) => (
                   <li key={link.path}>
                     <Link
@@ -186,7 +247,7 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              </div>
+            </div>
           </div>
         </div>
         </div>
@@ -236,9 +297,22 @@ const Footer: React.FC = () => {
       <div className="bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm">
-            <p className="text-slate-500">
-              © {currentYear} <span className="text-white font-semibold">GREAT Visa Network</span>. All rights reserved.
-            </p>
+            <div className="flex flex-col items-center md:items-start space-y-2">
+              <p className="text-slate-500">
+                © {currentYear} <span className="text-white font-semibold">GREAT Visa Network</span>. All rights reserved.
+              </p>
+              <p className="text-slate-600 text-xs">
+                Developed by{' '}
+                <a 
+                  href="https://www.octaleads.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-white transition-colors font-semibold"
+                >
+                  Octaleads Pvt Ltd.
+                </a>
+              </p>
+            </div>
             <div className="flex items-center space-x-6">
               <Link to="/privacy-policy" className="text-slate-500 hover:text-white transition-colors">
                 Privacy
