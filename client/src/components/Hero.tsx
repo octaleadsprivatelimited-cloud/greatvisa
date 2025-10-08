@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
   Sparkles,
-  Zap,
   Globe,
   Users,
   Award
@@ -139,15 +138,14 @@ const Hero: React.FC = () => {
             >
               <a
                 href="#quick-form"
-                className="group inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-xl"
+                className="group inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-xl font-semibold text-sm md:text-base hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-xl"
               >
-                <Zap size={24} className="mr-2 group-hover:rotate-12 transition-transform" />
-                <span>Get Started Free</span>
-                <ArrowRight size={24} className="ml-2 group-hover:translate-x-2 transition-transform" />
+                <span>Get Started</span>
+                <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform" />
               </a>
               <a
                 href="/services"
-                className="inline-flex items-center justify-center px-10 py-5 bg-white text-gray-900 rounded-2xl font-bold text-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-200 hover:border-indigo-200"
+                className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-gray-900 rounded-xl font-semibold text-sm md:text-base hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-indigo-200"
               >
                 <span>Explore Services</span>
               </a>
@@ -158,7 +156,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="grid grid-cols-3 gap-4"
+              className="grid grid-cols-3 gap-3 md:gap-4 lg:gap-6"
             >
               {stats.map((stat, index) => (
                 <div key={index} className="glass-card p-4 rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
