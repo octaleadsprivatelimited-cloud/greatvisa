@@ -223,42 +223,42 @@ const Home: React.FC = () => {
                 country: 'USA',
                 title: 'Study In USA',
                 visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
-                image: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=800&q=80',
+                image: 'https://images.unsplash.com/photo-1634159707699-ac48184c2311?w=800&q=80',
                 gradient: 'from-blue-600 to-blue-800'
               },
               {
                 country: 'Canada',
                 title: 'Study In Canada',
                 visas: ['Student Visa', 'Permanent Resident Visa', 'Visitor/Tourist Visa', 'Business Visa'],
-                image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=800&q=80',
+                image: 'https://images.unsplash.com/photo-1617469767053-d3b523a0b982?w=800&q=80',
                 gradient: 'from-red-600 to-red-800'
               },
               {
                 country: 'Australia',
                 title: 'Study In Australia',
                 visas: ['Student Visa', 'Permanent Resident Visa', 'Visitor/Tourist Visa', 'Business Visa'],
-                image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&q=80',
+                image: 'https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?w=800&q=80',
                 gradient: 'from-green-600 to-green-800'
               },
               {
                 country: 'UK',
                 title: 'Study In UK',
                 visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
-                image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80',
+                image: 'https://images.unsplash.com/photo-1639591294767-b3e7e7c53cee?w=800&q=80',
                 gradient: 'from-indigo-600 to-indigo-800'
               },
               {
                 country: 'Germany',
                 title: 'Study In Germany',
                 visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
-                image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=80',
+                image: 'https://images.unsplash.com/photo-1560930950-5cc20e80e392?w=800&q=80',
                 gradient: 'from-gray-700 to-gray-900'
               },
               {
                 country: 'Europe',
                 title: 'Study In Europe',
                 visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
-                image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80',
+                image: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80',
                 gradient: 'from-purple-600 to-purple-800'
               }
             ].map((country, index) => (
