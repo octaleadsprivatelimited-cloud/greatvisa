@@ -68,10 +68,10 @@ const Header: React.FC = () => {
         }`}
       >
         <div className="max-w-[980px] mx-auto px-6">
-          <div className="flex justify-between items-center h-11">
+          <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center group -ml-2">
-              <div className="relative h-8 w-32">
+              <div className="relative h-12 w-40">
                 <img
                   src="/logo.png"
                   alt="GREAT Visa Network"
@@ -210,7 +210,7 @@ const Header: React.FC = () => {
       </header>
 
       {/* Spacer to prevent content from hiding under fixed header */}
-      <div className="h-11"></div>
+      <div className="h-16"></div>
     </>
   );
 };
