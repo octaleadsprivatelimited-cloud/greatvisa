@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
   const slides: Slide[] = [
     {
       id: 1,
-      image: '/flyworld.jpg',
+      image: '/visa.png',
       title: 'Your Gateway to Global Opportunities',
       subtitle: 'Visa Consultancy',
       description: 'Expert guidance for all your visa needs. We make your international journey smooth and hassle-free.',

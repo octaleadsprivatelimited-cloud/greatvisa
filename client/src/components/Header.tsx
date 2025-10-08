@@ -141,7 +141,7 @@ const Header: React.FC = () => {
             <Link to="/" className="flex items-center">
               <div className="h-14 overflow-hidden flex items-center">
                 <img
-                  src="/great visa network.webp"
+                  src="/logo.png"
                   alt="GREAT Visa Network"
                   className="h-16 w-auto object-cover -translate-y-0.5"
                   loading="eager"

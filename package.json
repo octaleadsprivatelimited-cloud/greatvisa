@@ -13,10 +13,7 @@
     "server": "nodemon server.js",
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
-    "build:prod": "npm install && cd client && npm install && npm run build",
-    "deploy": "npm run build:prod && npm start",
-    "test": "cd client && npm test",
-    "lint": "cd client && npm run lint"
+    "test": "cd client && npm test"
   },
   "keywords": [
     "visa consultancy",
