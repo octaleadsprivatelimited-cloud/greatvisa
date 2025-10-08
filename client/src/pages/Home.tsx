@@ -162,10 +162,8 @@ const Home: React.FC = () => {
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    {/* Gradient Overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-85 group-hover:opacity-75 transition-opacity duration-500`}></div>
                     {/* Dark Overlay for Text Readability */}
-                    <div className="absolute inset-0 bg-black/20"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20 group-hover:from-black/60 transition-all duration-500"></div>
                   </div>
                   
                   <div className="relative z-10 h-full flex flex-col justify-between p-8">
