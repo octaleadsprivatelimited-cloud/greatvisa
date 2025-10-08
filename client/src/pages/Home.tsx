@@ -21,7 +21,7 @@ const Home: React.FC = () => {
     { title: 'Tourist Visa', desc: 'Explore the world', link: '/tourist-visa', gradient: 'from-orange-500 to-red-500', size: 'small' },
     { title: 'Family Visa', desc: 'Reunite with loved ones', link: '/family-visa', gradient: 'from-pink-500 to-rose-500', size: 'medium' },
     { title: 'Business Visa', desc: 'Expand globally', link: '/business-visa', gradient: 'from-purple-500 to-indigo-500', size: 'medium' },
-    { title: 'Immigration', desc: 'Expert consultation', link: '/immigration-consultation', gradient: 'from-amber-500 to-yellow-500', size: 'large' }
+    { title: 'Immigration', desc: 'Expert consultation', link: '/immigration-consultation', gradient: 'from-amber-500 to-yellow-500', size: 'small' }
   ];
 
   const features = [
@@ -95,7 +95,8 @@ const Home: React.FC = () => {
               <span>Our Services</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              Visa Solutions{' '}
+              Visa Solutions
+              <br />
               <span className="text-gradient-neon">That Work</span>
             </h2>
           </motion.div>
