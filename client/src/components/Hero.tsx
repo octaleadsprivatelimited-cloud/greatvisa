@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
-  CheckCircle, 
-  Users, 
-  Award, 
-  Globe,
   Sparkles,
-  Phone,
-  Mail
+  Zap,
+  Globe,
+  Users,
+  Award,
+  TrendingUp
 } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -17,12 +16,11 @@ const Hero: React.FC = () => {
     email: '',
     phone: '',
     service: '',
-    message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -41,18 +39,12 @@ const Hero: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, message: `Inquiry for ${formData.service}` }),
       });
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          message: ''
-        });
+        setFormData({ name: '', email: '', phone: '', service: '' });
         setTimeout(() => setSubmitStatus('idle'), 5000);
       } else {
         setSubmitStatus('error');
@@ -65,41 +57,47 @@ const Hero: React.FC = () => {
   };
 
   const services = [
-    'Study Visa',
-    'Work Visa',
-    'Tourist Visa',
-    'Family Visa',
-    'Business Visa',
-    'Immigration Consultation',
-    'Job Placement',
-    'Skill Assessment'
+    'Study Visa 🎓',
+    'Work Visa 💼',
+    'Tourist Visa ✈️',
+    'Family Visa ❤️',
+    'Business Visa 🏢',
+    'Immigration Consultation 📋'
   ];
 
-  const trustIndicators = [
-    { icon: Users, value: '5,000+', label: 'Happy Clients' },
-    { icon: Award, value: '98%', label: 'Success Rate' },
-    { icon: Globe, value: '50+', label: 'Countries' }
+  const stats = [
+    { icon: Users, value: '5K+', label: 'Clients', color: 'from-blue-500 to-cyan-500' },
+    { icon: Award, value: '98%', label: 'Success', color: 'from-purple-500 to-pink-500' },
+    { icon: Globe, value: '50+', label: 'Countries', color: 'from-orange-500 to-red-500' }
   ];
 
   return (
-    <section className="relative min-h-[calc(100vh-140px)] bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
-      {/* Background Elements */}
+    <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-purple-50/30 to-pink-50/30 overflow-hidden pt-8 pb-20">
+      {/* Animated Background Blobs */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient Orbs */}
-        <div className="absolute top-20 right-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 left-0 w-80 h-80 bg-indigo-200/30 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
-        
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 90, 0],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-indigo-400/20 to-purple-400/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1.2, 1, 1.2],
+            rotate: [0, -90, 0],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-pink-400/20 to-orange-400/20 rounded-full blur-3xl"
+        />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
@@ -109,22 +107,27 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold mb-6 border border-blue-100"
+              className="inline-flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-sm font-bold mb-8 border-2 border-indigo-200/50"
             >
-              <Sparkles size={16} className="text-blue-600" />
-              <span>Your Trusted Immigration Partner</span>
+              <Sparkles size={18} className="animate-pulse" />
+              <span>🌟 #1 Visa Consultancy</span>
             </motion.div>
 
-            {/* Main Heading */}
+            {/* Main Heading - BOLD */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight"
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-[1.1]"
             >
-              Your Gateway to{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                Global Opportunities
+              <span className="text-gray-900">Your</span>{' '}
+              <span className="text-gradient-neon inline-block animate-pulse-slow">
+                Dream
+              </span>
+              <br />
+              <span className="text-gray-900">Destination</span>{' '}
+              <span className="inline-block">
+                <span className="text-5xl sm:text-6xl lg:text-7xl">🌍</span>
               </span>
             </motion.h1>
 
@@ -133,9 +136,13 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="text-xl sm:text-2xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium"
             >
-              Expert visa consultancy and immigration services helping you achieve your international dreams. From study abroad to work permits, we guide you every step of the way.
+              Transform your international dreams into reality with{' '}
+              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                expert visa guidance
+              </span>{' '}
+              & immigration services ✨
             </motion.p>
 
             {/* CTA Buttons */}
@@ -146,56 +153,72 @@ const Hero: React.FC = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12"
             >
               <a
-                href="/contact"
-                className="group inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                href="#quick-form"
+                className="group inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-xl"
               >
-                <span>Get Free Consultation</span>
-                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                <Zap size={24} className="mr-2 group-hover:rotate-12 transition-transform" />
+                <span>Get Started Free</span>
+                <ArrowRight size={24} className="ml-2 group-hover:translate-x-2 transition-transform" />
               </a>
               <a
                 href="/services"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-700 rounded-xl font-semibold hover:bg-slate-50 transition-all duration-300 shadow-md hover:shadow-lg border border-slate-200"
+                className="inline-flex items-center justify-center px-10 py-5 bg-white text-gray-900 rounded-2xl font-bold text-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-200 hover:border-indigo-200"
               >
                 <span>Explore Services</span>
               </a>
             </motion.div>
 
-            {/* Trust Indicators */}
+            {/* Stats - Horizontal Cards */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="grid grid-cols-3 gap-6"
+              className="grid grid-cols-3 gap-4"
             >
-              {trustIndicators.map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="flex justify-center mb-2">
-                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
-                      <item.icon size={24} className="text-blue-600" />
-                    </div>
+              {stats.map((stat, index) => (
+                <div key={index} className="glass-card p-4 rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className={`w-10 h-10 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center mb-3 mx-auto lg:mx-0`}>
+                    <stat.icon size={20} className="text-white" />
                   </div>
-                  <div className="text-2xl font-bold text-slate-900 mb-1">{item.value}</div>
-                  <div className="text-sm text-slate-600 font-medium">{item.label}</div>
+                  <div className="text-2xl sm:text-3xl font-black text-gray-900 mb-1">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-gray-600 font-bold">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Contact Form */}
+          {/* Right Content - Quick Form Card */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            id="quick-form"
             className="relative"
           >
-            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-slate-200">
+            {/* Floating Elements */}
+            <motion.div
+              animate={{ y: [-10, 10, -10] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-3xl blur-2xl opacity-60"
+            />
+            <motion.div
+              animate={{ y: [10, -10, 10] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-3xl blur-2xl opacity-60"
+            />
+
+            <div className="relative glass-card rounded-3xl shadow-2xl p-8 lg:p-10 border-2 border-white/50">
               {/* Form Header */}
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                  Start Your Journey Today
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-sm font-bold mb-4">
+                  <TrendingUp size={16} />
+                  <span>Quick Start</span>
+                </div>
+                <h3 className="text-3xl font-black text-gray-900 mb-2">
+                  Start Your Journey
                 </h3>
-                <p className="text-slate-600">
-                  Fill in your details and our experts will contact you within 24 hours
+                <p className="text-gray-600 font-medium">
+                  Get expert consultation within 24 hours ⚡
                 </p>
               </div>
 
@@ -203,79 +226,59 @@ const Hero: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-8"
+                  className="text-center py-12"
                 >
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-green-600" />
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-4xl">✓</span>
                   </div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-2">Thank You!</h4>
-                  <p className="text-slate-600">
-                    We've received your inquiry and will get back to you soon.
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2">Success! 🎉</h4>
+                  <p className="text-gray-600 font-medium">
+                    We'll contact you within 24 hours
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
-                      Full Name *
-                    </label>
                     <input
                       type="text"
-                      id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-slate-50 hover:bg-white"
-                      placeholder="Enter your full name"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 font-semibold text-lg"
+                      placeholder="Your Full Name"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-slate-50 hover:bg-white"
-                        placeholder="your@email.com"
-                      />
-                    </div>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 font-semibold"
+                      placeholder="Email"
+                    />
 
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">
-                        Phone
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-slate-50 hover:bg-white"
-                        placeholder="+91 XXXXX XXXXX"
-                      />
-                    </div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 font-semibold"
+                      placeholder="Phone"
+                    />
                   </div>
 
                   <div>
-                    <label htmlFor="service" className="block text-sm font-semibold text-slate-700 mb-2">
-                      Service Interested In
-                    </label>
                     <select
-                      id="service"
                       name="service"
                       value={formData.service}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-slate-50 hover:bg-white"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 font-semibold text-lg"
                     >
-                      <option value="">Select a service</option>
+                      <option value="">Select Service</option>
                       {services.map((service) => (
                         <option key={service} value={service}>
                           {service}
@@ -284,66 +287,33 @@ const Hero: React.FC = () => {
                     </select>
                   </div>
 
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      rows={4}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-slate-50 hover:bg-white resize-none"
-                      placeholder="Tell us about your requirements..."
-                    ></textarea>
-                  </div>
-
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                    className="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white font-bold py-5 px-8 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-3 text-lg group"
                   >
                     {isSubmitting ? (
                       <span>Submitting...</span>
                     ) : (
                       <>
-                        <span>Submit Inquiry</span>
-                        <ArrowRight size={20} />
+                        <Sparkles size={22} className="group-hover:rotate-12 transition-transform" />
+                        <span>Get Free Consultation</span>
+                        <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform" />
                       </>
                     )}
                   </button>
 
                   {submitStatus === 'error' && (
-                    <p className="text-red-600 text-sm text-center">
+                    <p className="text-red-600 text-center font-semibold">
                       Something went wrong. Please try again.
                     </p>
                   )}
+
+                  <p className="text-center text-xs text-gray-500 pt-4">
+                    🔒 Your information is secure & confidential
+                  </p>
                 </form>
               )}
-
-              {/* Contact Info */}
-              <div className="mt-6 pt-6 border-t border-slate-200">
-                <p className="text-xs text-slate-500 text-center mb-4">
-                  Or reach us directly
-                </p>
-                <div className="flex justify-center space-x-6">
-                  <a 
-                    href="tel:+919533974711" 
-                    className="flex items-center space-x-2 text-slate-600 hover:text-blue-600 transition-colors"
-                  >
-                    <Phone size={16} />
-                    <span className="text-sm font-medium">Call Us</span>
-                  </a>
-                  <a 
-                    href="mailto:info@greatvisanetwork.com"
-                    className="flex items-center space-x-2 text-slate-600 hover:text-blue-600 transition-colors"
-                  >
-                    <Mail size={16} />
-                    <span className="text-sm font-medium">Email Us</span>
-                  </a>
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
