@@ -82,13 +82,7 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-8">
             {/* Company Info - 2 cols */}
             <div className="lg:col-span-2">
-              <Link to="/" className="inline-block mb-6">
-                <img
-                  src="/logo.webp"
-                  alt="GREAT Visa Network"
-                  className="h-12 w-auto brightness-0 invert opacity-90"
-                />
-              </Link>
+              <h3 className="text-white text-2xl font-bold mb-6">GREAT Visa Network</h3>
               <p className="text-slate-400 mb-6 leading-relaxed text-sm">
                 Your trusted partner for visa consultancy and immigration services. 
                 We help individuals and businesses achieve their international goals 
