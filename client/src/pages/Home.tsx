@@ -83,6 +83,17 @@ const Home: React.FC = () => {
       {/* Services - Bento Box Layout */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Our Services
+            </h2>
+          </motion.div>
+
           {/* Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((service, index) => (
