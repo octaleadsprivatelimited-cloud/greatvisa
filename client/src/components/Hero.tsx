@@ -6,8 +6,7 @@ import {
   Zap,
   Globe,
   Users,
-  Award,
-  TrendingUp
+  Award
 } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -102,18 +101,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-sm font-bold mb-8 border-2 border-indigo-200/50"
-            >
-              <Sparkles size={18} className="animate-pulse" />
-              <span>🌟 #1 Visa Consultancy</span>
-            </motion.div>
-
-            {/* Main Heading - BOLD */}
+            {/* Main Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -207,10 +195,6 @@ const Hero: React.FC = () => {
             <div className="relative glass-card rounded-2xl shadow-xl p-5 lg:p-6 border-2 border-white/50">
               {/* Form Header */}
               <div className="text-center mb-5">
-                <div className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-xs font-bold mb-3">
-                  <TrendingUp size={14} />
-                  <span>Quick Start</span>
-                </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-1">
                   Start Your Journey
                 </h3>
