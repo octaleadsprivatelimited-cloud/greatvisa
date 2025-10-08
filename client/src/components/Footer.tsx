@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { 
   Phone, 
   Mail, 
-  MapPin,
+  MapPin, 
   Facebook,
   Twitter,
   Instagram,
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-6">
               <img
-                src="/logo.png"
+                src="/logo.webp"
                 alt="GREAT Visa Network"
                 className="h-16 w-auto brightness-0 invert"
               />

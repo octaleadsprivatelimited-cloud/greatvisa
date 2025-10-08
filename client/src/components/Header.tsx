@@ -116,7 +116,7 @@ const Header: React.FC = () => {
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative h-16 w-48 flex items-center">
                 <img
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt="GREAT Visa Network"
                   className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                   loading="eager"
