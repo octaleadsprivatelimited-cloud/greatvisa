@@ -191,50 +191,35 @@ const Header: React.FC = () => {
               onClick={(e) => e.stopPropagation()}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
+              <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-8">
                 {/* Header */}
-                <div className="mb-12 text-center">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
-                    className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-xs font-bold mb-4"
-                  >
-                    <Sparkles size={14} />
-                    <span>Choose Your Path</span>
-                  </motion.div>
-                  <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-3">
-                    Our <span className="text-gradient-neon">Services</span>
+                <div className="mb-6 text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    Our Services
                   </h3>
-                  <p className="text-lg text-gray-600 font-medium">Professional visa and immigration solutions tailored to your needs</p>
+                  <p className="text-sm text-gray-600">Choose the service that fits your needs</p>
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                   {/* Visa Services */}
                   <div>
-                    <div className="flex items-center mb-6">
-                      <div className="w-2 h-8 bg-gradient-to-b from-indigo-600 to-purple-600 rounded-full mr-3"></div>
-                      <h4 className="text-xl font-black text-gray-900">Visa Services</h4>
+                    <div className="flex items-center mb-3">
+                      <div className="w-1.5 h-6 bg-gradient-to-b from-indigo-600 to-purple-600 rounded-full mr-2"></div>
+                      <h4 className="text-sm font-bold text-gray-900">Visa Services</h4>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {servicesCategories.visaServices.map((service) => (
                         <Link
                           key={service.name}
                           to={service.path}
                           onClick={() => setActiveDropdown(null)}
-                          className="group relative overflow-hidden p-6 rounded-2xl bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                          className="group relative overflow-hidden p-4 rounded-xl bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg"
                         >
-                          <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-indigo-100/50 to-purple-100/50 rounded-full blur-2xl -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500"></div>
                           <div className="relative">
-                            <div className="text-3xl mb-3">{service.icon}</div>
-                            <h5 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                            <h5 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-indigo-600 transition-colors">
                               {service.name}
                             </h5>
-                            <p className="text-sm text-gray-600 leading-relaxed mb-3">{service.desc}</p>
-                            <div className="flex items-center text-indigo-600 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                              <span>Explore</span>
-                              <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                            </div>
+                            <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
                           </div>
                         </Link>
                       ))}
@@ -243,29 +228,23 @@ const Header: React.FC = () => {
 
                   {/* Consultation Services */}
                   <div>
-                    <div className="flex items-center mb-6">
-                      <div className="w-2 h-8 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full mr-3"></div>
-                      <h4 className="text-xl font-black text-gray-900">Consultation Services</h4>
+                    <div className="flex items-center mb-3">
+                      <div className="w-1.5 h-6 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full mr-2"></div>
+                      <h4 className="text-sm font-bold text-gray-900">Consultation Services</h4>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {servicesCategories.consultationServices.map((service) => (
                         <Link
                           key={service.name}
                           to={service.path}
                           onClick={() => setActiveDropdown(null)}
-                          className="group relative overflow-hidden p-6 rounded-2xl bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                          className="group relative overflow-hidden p-4 rounded-xl bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:shadow-lg"
                         >
-                          <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-100/50 to-pink-100/50 rounded-full blur-2xl -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500"></div>
                           <div className="relative">
-                            <div className="text-3xl mb-3">{service.icon}</div>
-                            <h5 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                            <h5 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
                               {service.name}
                             </h5>
-                            <p className="text-sm text-gray-600 leading-relaxed mb-3">{service.desc}</p>
-                            <div className="flex items-center text-purple-600 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                              <span>Explore</span>
-                              <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                            </div>
+                            <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
                           </div>
                         </Link>
                       ))}
@@ -274,16 +253,16 @@ const Header: React.FC = () => {
                 </div>
 
                 {/* CTA Banner */}
-                <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-8 text-center text-white">
-                  <h4 className="text-2xl font-black mb-3">Not Sure Which Service You Need?</h4>
-                  <p className="text-white/90 mb-6 font-medium">Get a free consultation with our experts and find the perfect solution for you</p>
+                <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-xl p-5 text-center text-white">
+                  <h4 className="text-lg font-bold mb-2">Not Sure Which Service You Need?</h4>
+                  <p className="text-white/90 mb-4 text-sm">Get a free consultation with our experts</p>
                   <Link
                     to="/contact"
                     onClick={() => setActiveDropdown(null)}
-                    className="inline-flex items-center px-8 py-3 bg-white text-indigo-600 hover:bg-yellow-300 hover:text-purple-900 rounded-xl font-bold transition-all duration-300 hover:scale-105 shadow-lg"
+                    className="inline-flex items-center px-6 py-2.5 bg-white text-indigo-600 hover:bg-yellow-300 hover:text-purple-900 rounded-lg font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-lg"
                   >
                     <span>Get Free Consultation</span>
-                    <ArrowRight size={18} className="ml-2" />
+                    <ArrowRight size={16} className="ml-2" />
                   </Link>
                 </div>
               </div>
