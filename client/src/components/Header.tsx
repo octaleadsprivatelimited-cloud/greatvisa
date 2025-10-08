@@ -72,7 +72,7 @@ const Header: React.FC = () => {
   return (
     <>
       {/* Top Bar with Gradient - Compact */}
-      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white">
+      <div className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-1.5 text-xs">
             {/* Mobile: Phone + WhatsApp | Desktop: Phone + Email */}
