@@ -200,6 +200,117 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Countries We Serve Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Countries We Serve
+            </h2>
+            <p className="text-xl text-gray-600">
+              We Provide Study Visa To All Countries
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                country: 'USA',
+                title: 'Study In USA',
+                visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
+                image: '/countries/usa.jpg',
+                gradient: 'from-blue-600 to-blue-800'
+              },
+              {
+                country: 'Canada',
+                title: 'Study In Canada',
+                visas: ['Student Visa', 'Permanent Resident Visa', 'Visitor/Tourist Visa', 'Business Visa'],
+                image: '/countries/canada.jpg',
+                gradient: 'from-red-600 to-red-800'
+              },
+              {
+                country: 'Australia',
+                title: 'Study In Australia',
+                visas: ['Student Visa', 'Permanent Resident Visa', 'Visitor/Tourist Visa', 'Business Visa'],
+                image: '/countries/australia.jpg',
+                gradient: 'from-green-600 to-green-800'
+              },
+              {
+                country: 'UK',
+                title: 'Study In UK',
+                visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
+                image: '/countries/uk.jpg',
+                gradient: 'from-indigo-600 to-indigo-800'
+              },
+              {
+                country: 'Germany',
+                title: 'Study In Germany',
+                visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
+                image: '/countries/germany.jpg',
+                gradient: 'from-gray-700 to-gray-900'
+              },
+              {
+                country: 'Europe',
+                title: 'Study In Europe',
+                visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
+                image: '/countries/europe.jpg',
+                gradient: 'from-purple-600 to-purple-800'
+              }
+            ].map((country, index) => (
+              <motion.div
+                key={country.country}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500"
+              >
+                <div className="flex flex-col h-[400px]">
+                  {/* Image - 70% */}
+                  <div className="relative h-[70%] overflow-hidden">
+                    <img
+                      src={country.image}
+                      alt={country.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80';
+                      }}
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${country.gradient} opacity-40 group-hover:opacity-30 transition-opacity duration-500`}></div>
+                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
+                      <h3 className="text-lg font-bold text-gray-900">{country.title}</h3>
+                    </div>
+                  </div>
+
+                  {/* Content - 30% */}
+                  <div className="h-[30%] bg-gradient-to-br from-slate-50 to-white p-5 flex flex-col justify-between">
+                    <div>
+                      <ul className="space-y-1.5">
+                        {country.visas.map((visa, idx) => (
+                          <li key={idx} className="flex items-center text-sm text-gray-700">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mr-2"></div>
+                            <span className="font-medium">{visa}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <button className={`mt-3 w-full bg-gradient-to-r ${country.gradient} text-white py-2.5 px-4 rounded-lg font-semibold text-sm hover:shadow-lg transition-all duration-300 group-hover:scale-105 flex items-center justify-center`}>
+                      <span>Learn More</span>
+                      <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section - Bold & Modern */}
       <section className="py-12 md:py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0A66C2 0%, #004182 100%)' }}>
         <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent"></div>
