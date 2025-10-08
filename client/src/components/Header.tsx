@@ -105,7 +105,7 @@ const Header: React.FC = () => {
               </a>
               <a 
                 href="/contact"
-                className="hidden md:inline-flex group items-center space-x-1.5 bg-white text-indigo-600 hover:bg-white/90 px-4 py-1.5 rounded-full text-xs font-bold transition-all duration-300 hover:scale-105 shadow-lg"
+                className="hidden md:inline-flex group items-center space-x-1.5 bg-yellow-400 text-gray-900 hover:bg-yellow-500 px-4 py-1.5 rounded-full text-xs font-bold transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 <Sparkles size={12} className="group-hover:rotate-12 transition-transform" />
                 <span>Free Consultation</span>
