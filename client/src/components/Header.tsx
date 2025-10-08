@@ -104,7 +104,7 @@ const Header: React.FC = () => {
 
       {/* Main Header - Compact */}
       <motion.header 
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`sticky top-0 z-50 transition-all duration-300 relative ${
           isScrolled 
             ? 'glass-card shadow-xl' 
             : 'bg-white/95 backdrop-blur-sm shadow-md'
