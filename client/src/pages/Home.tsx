@@ -5,202 +5,176 @@ import {
   Briefcase, 
   Plane, 
   Heart, 
-  Globe, 
+  Building2, 
   Users, 
   Award, 
   CheckCircle,
   ArrowRight,
   Star,
   Quote,
-  Building2,
-  UserCheck,
-  Sparkles,
   Shield,
-  Zap
+  Zap,
+  Clock,
+  HeadphonesIcon,
+  FileCheck,
+  Globe,
+  TrendingUp,
+  Phone
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const services = [
     {
       icon: GraduationCap,
       title: 'Study Visa',
-      description: 'Secure your place at top universities worldwide with our expert study visa assistance.',
-      features: ['University Selection', 'Visa Application', 'Documentation Support', 'Interview Preparation'],
-      image: '/study-visa.jpg',
+      description: 'Pursue your academic dreams at world-class universities with our expert study visa assistance.',
       link: '/study-visa',
-      gradient: 'from-blue-500 to-cyan-500',
-      iconBg: 'bg-gradient-to-br from-blue-500 to-cyan-500'
+      gradient: 'from-blue-600 to-cyan-600',
+      features: ['University Selection', 'Visa Application', 'Documentation']
     },
     {
       icon: Briefcase,
       title: 'Work Visa',
-      description: 'Advance your career with international work opportunities and professional visa services.',
-      features: ['Job Placement', 'Visa Processing', 'Skill Assessment', 'Relocation Support'],
-      image: '/work.jpg',
+      description: 'Advance your career internationally with our comprehensive work visa solutions.',
       link: '/work-visa',
-      gradient: 'from-emerald-500 to-teal-500',
-      iconBg: 'bg-gradient-to-br from-emerald-500 to-teal-500'
+      gradient: 'from-emerald-600 to-teal-600',
+      features: ['Job Matching', 'Visa Processing', 'Relocation Support']
     },
     {
       icon: Plane,
       title: 'Tourist Visa',
-      description: 'Explore the world with our hassle-free tourist visa processing services.',
-      features: ['Quick Processing', 'Multiple Destinations', 'Travel Insurance', '24/7 Support'],
-      image: '/visitor-visa-application.jpg',
+      description: 'Explore the world hassle-free with our streamlined tourist visa services.',
       link: '/tourist-visa',
-      gradient: 'from-orange-500 to-red-500',
-      iconBg: 'bg-gradient-to-br from-orange-500 to-red-500'
+      gradient: 'from-orange-600 to-red-600',
+      features: ['Quick Processing', 'Multiple Destinations', '24/7 Support']
     },
     {
       icon: Heart,
       title: 'Family Visa',
-      description: 'Reunite with your loved ones through our comprehensive family visa services.',
-      features: ['Family Reunification', 'Spouse Visa', 'Parent Visa', 'Child Visa'],
-      image: '/family-visa.jpg',
+      description: 'Reunite with your loved ones through our compassionate family visa services.',
       link: '/family-visa',
-      gradient: 'from-pink-500 to-rose-500',
-      iconBg: 'bg-gradient-to-br from-pink-500 to-rose-500'
+      gradient: 'from-pink-600 to-rose-600',
+      features: ['Family Reunification', 'Spouse Visa', 'Parent Visa']
     },
     {
       icon: Building2,
       title: 'Business Visa',
-      description: 'Expand your business globally with our professional business visa solutions.',
-      features: ['Business Setup', 'Investment Visa', 'Entrepreneur Visa', 'Trade Visa'],
-      image: '/business-visa.jpg',
+      description: 'Expand your business globally with our professional business visa support.',
       link: '/business-visa',
-      gradient: 'from-purple-500 to-indigo-500',
-      iconBg: 'bg-gradient-to-br from-purple-500 to-indigo-500'
+      gradient: 'from-purple-600 to-indigo-600',
+      features: ['Business Setup', 'Investment Visa', 'Trade Visa']
     },
     {
-      icon: UserCheck,
+      icon: Users,
       title: 'Immigration Consultation',
-      description: 'Get expert advice on all immigration matters from our certified consultants.',
-      features: ['Free Consultation', 'Case Assessment', 'Strategy Planning', 'Ongoing Support'],
-      image: '/immigration.jpg',
+      description: 'Get expert guidance on all immigration matters from certified consultants.',
       link: '/immigration-consultation',
-      gradient: 'from-amber-500 to-yellow-500',
-      iconBg: 'bg-gradient-to-br from-amber-500 to-yellow-500'
+      gradient: 'from-amber-600 to-yellow-600',
+      features: ['Free Consultation', 'Case Assessment', 'Strategy Planning']
+    }
+  ];
+
+  const stats = [
+    { icon: Users, value: '5,000+', label: 'Happy Clients', color: 'text-blue-600', bg: 'bg-blue-50' },
+    { icon: Award, value: '98%', label: 'Success Rate', color: 'text-emerald-600', bg: 'bg-emerald-50' },
+    { icon: Globe, value: '50+', label: 'Countries', color: 'text-purple-600', bg: 'bg-purple-50' },
+    { icon: Clock, value: '24/7', label: 'Support', color: 'text-orange-600', bg: 'bg-orange-50' }
+  ];
+
+  const whyChooseUs = [
+    {
+      icon: Shield,
+      title: 'Trusted & Secure',
+      description: 'Your documents and personal information are protected with bank-level security measures.',
+      color: 'text-green-600',
+      bg: 'bg-green-50'
+    },
+    {
+      icon: Zap,
+      title: 'Fast Processing',
+      description: 'Streamlined application process ensures quick visa approvals without compromising accuracy.',
+      color: 'text-yellow-600',
+      bg: 'bg-yellow-50'
+    },
+    {
+      icon: HeadphonesIcon,
+      title: 'Expert Support',
+      description: 'Certified consultants provide personalized guidance throughout your immigration journey.',
+      color: 'text-blue-600',
+      bg: 'bg-blue-50'
+    },
+    {
+      icon: FileCheck,
+      title: 'High Success Rate',
+      description: '98% visa approval rate backed by years of experience and industry expertise.',
+      color: 'text-purple-600',
+      bg: 'bg-purple-50'
     }
   ];
 
   const testimonials = [
     {
       name: 'Priya Sharma',
+      role: 'Student',
       location: 'Canada',
-      text: 'GREAT Visa Network helped me secure my study visa to Canada. Their team was professional, knowledgeable, and supportive throughout the entire process.',
+      text: 'GREAT Visa Network made my dream of studying in Canada a reality. Their team was professional, knowledgeable, and supportive throughout the entire process. Highly recommend!',
       rating: 5,
-      country: '🇨🇦'
+      flag: '🇨🇦',
+      image: 'https://ui-avatars.com/api/?name=Priya+Sharma&background=3b82f6&color=fff'
     },
     {
       name: 'Rahul Kumar',
+      role: 'Software Engineer',
       location: 'Australia',
-      text: 'I got my work visa to Australia within 3 months thanks to their excellent service. Highly recommended for anyone looking to work abroad.',
+      text: 'I got my work visa to Australia within 3 months thanks to their excellent service. The entire process was smooth and stress-free. Thank you for helping me advance my career!',
       rating: 5,
-      country: '🇦🇺'
+      flag: '🇦🇺',
+      image: 'https://ui-avatars.com/api/?name=Rahul+Kumar&background=10b981&color=fff'
     },
     {
       name: 'Sunita Patel',
-      location: 'UK',
-      text: 'The family visa process seemed complex, but GREAT Visa Network made it simple and stress-free. Now my family is reunited in the UK.',
+      role: 'Business Owner',
+      location: 'United Kingdom',
+      text: 'The family visa process seemed complex, but GREAT Visa Network made it simple and stress-free. Now my family is happily reunited in the UK. Forever grateful!',
       rating: 5,
-      country: '🇬🇧'
+      flag: '🇬🇧',
+      image: 'https://ui-avatars.com/api/?name=Sunita+Patel&background=8b5cf6&color=fff'
     }
   ];
 
-  const stats = [
-    { number: '5000+', label: 'Successful Applications', icon: CheckCircle, color: 'text-emerald-500' },
-    { number: '98%', label: 'Success Rate', icon: Award, color: 'text-amber-500' },
-    { number: '50+', label: 'Countries Covered', icon: Globe, color: 'text-blue-500' },
-    { number: '24/7', label: 'Customer Support', icon: Users, color: 'text-purple-500' }
-  ];
-
-  const features = [
+  const processSteps = [
     {
-      icon: Shield,
-      title: 'Secure & Reliable',
-      description: 'Your documents and personal information are protected with bank-level security.',
-      color: 'text-green-500'
+      step: '01',
+      title: 'Free Consultation',
+      description: 'Book a free consultation with our experts to discuss your immigration goals and eligibility.'
     },
     {
-      icon: Zap,
-      title: 'Fast Processing',
-      description: 'Get your visa processed faster with our streamlined application process.',
-      color: 'text-yellow-500'
+      step: '02',
+      title: 'Document Preparation',
+      description: 'We help you gather and prepare all necessary documents for your visa application.'
     },
     {
-      icon: Sparkles,
-      title: 'Expert Guidance',
-      description: 'Our certified consultants provide personalized guidance every step of the way.',
-      color: 'text-purple-500'
+      step: '03',
+      title: 'Application Submission',
+      description: 'Our team submits your application and tracks its progress at every stage.'
+    },
+    {
+      step: '04',
+      title: 'Visa Approval',
+      description: 'Celebrate your visa approval and get ready for your international journey!'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <Hero />
 
-      {/* Features Section */}
-      <section className="py-16 bg-white/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-              <Sparkles className="w-4 h-4 mr-2" />
-              Why Choose Us
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-6">
-              Your Trusted Immigration Partner
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We combine expertise, technology, and personalized service to make your immigration journey smooth and successful.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group text-center p-8 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/50 hover:bg-white/80 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className={`w-8 h-8 ${feature.color}`} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section - Creative Design */}
-      <section className="py-20 relative overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-        </div>
-        
-        {/* Floating Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-32 h-32 bg-purple-400/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-pink-400/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-40 right-1/3 w-16 h-16 bg-cyan-400/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          {/* Section Header */}
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -208,19 +182,61 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/30">
-              <Sparkles className="w-5 h-5 mr-2" />
-              Our Premium Services
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold mb-6">
+              <Star className="w-4 h-4 mr-2" />
+              Why Choose Us
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Visa Solutions That <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Work</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Your Trusted Immigration Partner
             </h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              From study abroad dreams to career opportunities, we provide comprehensive visa services tailored to your unique needs.
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              We combine expertise, technology, and personalized service to make your immigration journey smooth and successful.
             </p>
           </motion.div>
 
-          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyChooseUs.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-slate-200"
+              >
+                <div className={`w-16 h-16 ${feature.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <feature.icon className={`w-8 h-8 ${feature.color}`} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold mb-6">
+              <Briefcase className="w-4 h-4 mr-2" />
+              Our Services
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Comprehensive Visa Solutions
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              From study abroad dreams to career opportunities, we provide tailored visa services for all your international needs.
+            </p>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
@@ -231,111 +247,72 @@ const Home: React.FC = () => {
                 viewport={{ once: true }}
                 className="group"
               >
-                <div className="relative h-full bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 border border-white/20 overflow-hidden">
-                  {/* Gradient Border Effect */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-3xl`}></div>
+                <div className="relative h-full bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-slate-200 overflow-hidden">
+                  {/* Gradient Header */}
+                  <div className={`h-2 bg-gradient-to-r ${service.gradient}`}></div>
                   
-                  {/* Image Container */}
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      style={{ objectPosition: 'center 30%' }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    
+                  <div className="p-8">
                     {/* Icon */}
-                    <div className="absolute top-4 left-4">
-                      <div className={`w-12 h-12 ${service.iconBg} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                        <service.icon size={24} className="text-white" />
-                      </div>
+                    <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                      <service.icon size={32} className="text-white" />
                     </div>
-
-                    {/* Badge */}
-                    <div className="absolute top-4 right-4">
-                      <div className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full border border-white/30">
-                        Popular
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                    
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 mb-5 leading-relaxed">
+                    <p className="text-slate-600 mb-6 leading-relaxed">
                       {service.description}
                     </p>
                     
                     {/* Features List */}
-                    <div className="space-y-3 mb-6">
-                      {service.features.slice(0, 3).map((feature, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-gray-600">
-                          <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                            <CheckCircle size={12} className="text-green-600" />
-                          </div>
+                    <div className="space-y-2 mb-6">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center text-sm text-slate-600">
+                          <CheckCircle size={16} className="text-green-600 mr-2 flex-shrink-0" />
                           <span>{feature}</span>
                         </div>
                       ))}
                     </div>
                     
                     {/* CTA Button */}
-                    <a
-                      href={service.link}
-                      className={`inline-flex items-center justify-center w-full py-3 px-4 bg-gradient-to-r ${service.gradient} text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 group-hover:shadow-xl`}
+                    <Link
+                      to={service.link}
+                      className={`inline-flex items-center justify-center w-full py-3 px-4 bg-gradient-to-r ${service.gradient} text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105`}
                     >
-                      <span>Explore Service</span>
-                      <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    </a>
+                      <span>Learn More</span>
+                      <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
-          
-          {/* Bottom CTA */}
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-center mt-16"
+            className="text-center mt-12"
           >
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/services"
-                className="inline-flex items-center justify-center bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 border border-white/30"
-              >
-                <span>View All Services</span>
-                <ArrowRight size={18} className="ml-2" />
-              </a>
-              
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-              >
-                <span>Get Free Consultation</span>
-                <Sparkles size={18} className="ml-2" />
-              </a>
-            </div>
+            <Link
+              to="/services"
+              className="inline-flex items-center px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              <span>View All Services</span>
+              <ArrowRight size={20} className="ml-2" />
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Stats Section - Modern Design */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900">
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-              backgroundRepeat: 'repeat'
-            }}></div>
-          </div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
+      {/* Stats Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -344,10 +321,10 @@ const Home: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Numbers That <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Speak</span>
+              Trusted by Thousands
             </h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Our track record of success speaks for itself. Join thousands of satisfied clients who achieved their dreams.
+              Our track record speaks for itself. Join thousands of satisfied clients who achieved their dreams.
             </p>
           </motion.div>
 
@@ -355,20 +332,17 @@ const Home: React.FC = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="text-center group"
               >
-                <div className="relative">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-white/20">
-                    <stat.icon className={`w-10 h-10 ${stat.color}`} />
-                  </div>
-                  <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className={`w-20 h-20 ${stat.bg} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <stat.icon className={`w-10 h-10 ${stat.color}`} />
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {stat.number}
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                  {stat.value}
                 </div>
                 <div className="text-lg text-blue-200 font-medium">{stat.label}</div>
               </motion.div>
@@ -377,9 +351,9 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials Section - Enhanced Design */}
-      <section className="py-20 bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50">
-        <div className="container mx-auto px-4">
+      {/* Process Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -387,15 +361,63 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-700 rounded-full text-sm font-semibold mb-4">
-              <Star className="w-4 h-4 mr-2 fill-current" />
-              Client Testimonials
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold mb-6">
+              <TrendingUp className="w-4 h-4 mr-2" />
+              Our Process
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-6">
-              Success <span className="text-amber-600">Stories</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              How It Works
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real stories from real people who achieved their dreams with our help. Your success story could be next.
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Simple, transparent, and effective. Our proven 4-step process ensures your visa success.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
+              <motion.div
+                key={step.step}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 h-full border border-slate-200">
+                  <div className="text-6xl font-bold text-blue-100 mb-4">{step.step}</div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{step.description}</p>
+                </div>
+                {index < processSteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                    <ArrowRight className="text-blue-300" size={32} />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center px-4 py-2 bg-amber-50 text-amber-700 rounded-full text-sm font-semibold mb-6">
+              <Star className="w-4 h-4 mr-2 fill-current" />
+              Client Success Stories
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              What Our Clients Say
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Real stories from real people who achieved their dreams with our help.
             </p>
           </motion.div>
 
@@ -405,39 +427,39 @@ const Home: React.FC = () => {
                 key={testimonial.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="group"
               >
-                <div className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
-                  {/* Quote Icon */}
-                  <div className="absolute -top-4 left-8 w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
-                    <Quote size={16} className="text-white" />
-                  </div>
-                  
+                <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-slate-200 h-full flex flex-col">
                   {/* Rating */}
                   <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} size={20} className="text-amber-400 fill-current" />
+                      <Star key={i} size={18} className="text-amber-400 fill-current" />
                     ))}
                   </div>
                   
-                  {/* Testimonial Text */}
-                  <p className="text-gray-600 mb-6 italic leading-relaxed">"{testimonial.text}"</p>
-                  
-                  {/* Client Info */}
-                  <div className="flex items-center">
-                    <div className="flex items-center">
-                      <div className="text-2xl mr-3">{testimonial.country}</div>
-                      <div>
-                        <div className="font-bold text-gray-900">{testimonial.name}</div>
-                        <div className="text-sm text-gray-600">{testimonial.location}</div>
-                      </div>
-                    </div>
+                  {/* Quote */}
+                  <div className="flex-grow mb-6">
+                    <Quote size={32} className="text-blue-200 mb-4" />
+                    <p className="text-slate-600 italic leading-relaxed">
+                      "{testimonial.text}"
+                    </p>
                   </div>
                   
-                  {/* Hover Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Client Info */}
+                  <div className="flex items-center pt-6 border-t border-slate-200">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div className="flex-grow">
+                      <div className="font-bold text-slate-900">{testimonial.name}</div>
+                      <div className="text-sm text-slate-600">{testimonial.role}</div>
+                    </div>
+                    <div className="text-3xl">{testimonial.flag}</div>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -445,61 +467,42 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section - Enhanced */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundRepeat: 'repeat'
-          }}></div>
-        </div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3C/g%3E%3C/svg%3E")`,
+        }}></div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/30">
-              <Sparkles className="w-4 h-4 mr-2" />
-              Ready to Get Started?
-            </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Your Dream Destination <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Awaits</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Start Your Journey?
             </h2>
-            <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
-              Don't let bureaucracy stand in your way. Our expert team is ready to guide you through every step of your immigration journey.
+            <p className="text-xl text-blue-100 mb-10">
+              Don't let bureaucracy stand in your way. Our expert team is ready to guide you through every step.
             </p>
             
-            <div className="flex flex-row gap-6 justify-center items-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                <Sparkles className="w-4 h-4 mr-2" />
-                Get Free Consultation
-                <ArrowRight size={16} className="ml-2" />
-              </a>
+                <span>Get Free Consultation</span>
+                <ArrowRight size={20} className="ml-2" />
+              </Link>
               
               <a
-                href="/services"
-                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105"
+                href="tel:+919533974711"
+                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
               >
-                <span>Explore Services</span>
+                <Phone size={20} className="mr-2" />
+                <span>Call Us Now</span>
               </a>
-            </div>
-            
-            {/* Trust Indicators */}
-            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 text-white/80">
-              <div className="flex items-center">
-                <Award className="w-5 h-5 mr-2" />
-                <span className="text-sm font-medium">98% Success Rate</span>
-              </div>
-              <div className="flex items-center">
-                <Users className="w-5 h-5 mr-2" />
-                <span className="text-sm font-medium">5000+ Happy Clients</span>
-              </div>
             </div>
           </motion.div>
         </div>
