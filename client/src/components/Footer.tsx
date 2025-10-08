@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 import { 
   Phone, 
   Mail, 
-  MapPin, 
+  MapPin,
   Facebook,
   Twitter,
   Instagram,
   Linkedin,
   Youtube,
-  ArrowRight,
-  Heart
+  ArrowRight
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
@@ -181,11 +180,6 @@ const Footer: React.FC = () => {
               <Link to="/terms-of-service" className="hover:text-white transition-colors">
                 Terms of Service
               </Link>
-              <div className="flex items-center space-x-2">
-                <span>Made with</span>
-                <Heart size={16} className="text-red-500 fill-current animate-pulse" />
-                <span>in India</span>
-              </div>
             </div>
           </div>
         </div>

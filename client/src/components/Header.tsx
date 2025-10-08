@@ -63,30 +63,30 @@ const Header: React.FC = () => {
 
   return (
     <>
-      {/* Top Bar with Gradient */}
+      {/* Top Bar with Gradient - Compact */}
       <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-3 text-sm">
-            <div className="hidden md:flex items-center space-x-6">
-              <a href="tel:+919533974711" className="flex items-center space-x-2 hover:text-white/80 transition-colors group">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                  <Phone size={14} strokeWidth={2.5} />
+          <div className="flex justify-between items-center py-1 text-xs">
+            <div className="hidden md:flex items-center space-x-3">
+              <a href="tel:+919533974711" className="flex items-center space-x-1 hover:text-white/80 transition-colors group">
+                <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                  <Phone size={10} strokeWidth={2.5} />
                 </div>
-                <span className="font-semibold">+91 9533 974 711</span>
+                <span className="font-medium text-xs">+91 9533 974 711</span>
               </a>
-              <a href="mailto:info@greatvisanetwork.com" className="flex items-center space-x-2 hover:text-white/80 transition-colors group">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                  <Mail size={14} strokeWidth={2.5} />
+              <a href="mailto:info@greatvisanetwork.com" className="flex items-center space-x-1 hover:text-white/80 transition-colors group">
+                <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                  <Mail size={10} strokeWidth={2.5} />
                 </div>
-                <span className="font-semibold">info@greatvisanetwork.com</span>
+                <span className="font-medium text-xs">info@greatvisanetwork.com</span>
               </a>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center">
               <a 
                 href="/contact"
-                className="group inline-flex items-center space-x-2 bg-white text-indigo-600 hover:bg-white/90 px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105 shadow-lg"
+                className="group inline-flex items-center space-x-1 bg-white text-indigo-600 hover:bg-white/90 px-3 py-1 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-105 shadow-md"
               >
-                <Sparkles size={14} className="group-hover:rotate-12 transition-transform" />
+                <Sparkles size={10} className="group-hover:rotate-12 transition-transform" />
                 <span>Free Consultation</span>
               </a>
             </div>
