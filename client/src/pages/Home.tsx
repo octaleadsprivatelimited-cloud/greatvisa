@@ -312,8 +312,17 @@ const Home: React.FC = () => {
       </section>
 
       {/* Stats Section - Bold & Modern */}
-      <section className="py-12 md:py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0A66C2 0%, #004182 100%)' }}>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent"></div>
+      <section className="py-12 md:py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://t4.ftcdn.net/jpg/04/89/68/23/360_F_489682374_ckc0OVyT6Av0NGcuYbwBSCxy62blF4CQ.jpg"
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+          {/* LinkedIn Blue Overlay with Fade */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-800/90 to-blue-900/95"></div>
+        </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
