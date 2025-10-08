@@ -321,7 +321,7 @@ const Home: React.FC = () => {
             className="w-full h-full object-cover"
           />
           {/* LinkedIn Blue Overlay with Fade */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-800/90 to-blue-900/95"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/60 to-blue-900/70"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
