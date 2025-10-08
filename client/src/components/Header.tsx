@@ -175,20 +175,24 @@ const Header: React.FC = () => {
       {/* Full-Page Services Dropdown - Professional Mega Menu */}
       <AnimatePresence>
         {activeDropdown === 'services' && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-md"
-            onClick={() => setActiveDropdown(null)}
-          >
+          <>
+            {/* Overlay below header only */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed top-[96px] left-0 right-0 bottom-0 z-40 bg-black/60 backdrop-blur-md"
+              onClick={() => setActiveDropdown(null)}
+            />
+            
+            {/* Dropdown content */}
             <motion.div
               initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="absolute top-[96px] left-0 right-0 bg-gradient-to-br from-white via-slate-50 to-indigo-50/30 shadow-2xl border-b border-slate-200"
+              className="fixed top-[96px] left-0 right-0 z-50 bg-gradient-to-br from-white via-slate-50 to-indigo-50/30 shadow-2xl border-b border-slate-200"
               onClick={(e) => e.stopPropagation()}
               onMouseLeave={() => setActiveDropdown(null)}
             >
@@ -268,7 +272,7 @@ const Header: React.FC = () => {
                 </div>
               </div>
             </motion.div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
 
