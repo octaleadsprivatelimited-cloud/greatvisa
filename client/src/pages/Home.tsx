@@ -201,8 +201,8 @@ const Home: React.FC = () => {
       </section>
 
       {/* Stats Section - Bold & Modern */}
-      <section className="py-12 md:py-20 bg-aurora relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/30"></div>
+      <section className="py-12 md:py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-500/20 to-transparent"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
