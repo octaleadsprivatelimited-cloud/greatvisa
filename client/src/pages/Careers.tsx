@@ -4,7 +4,6 @@ import {
   Briefcase, 
   MapPin, 
   Clock, 
-  Users, 
   CheckCircle, 
   ArrowRight, 
   Star,

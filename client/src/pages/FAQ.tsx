@@ -198,7 +198,7 @@ const FAQ: React.FC = () => {
                 
                 <div className="p-6">
                   <div className="space-y-4">
-                    {category.items.map((item, itemIndex) => (
+                    {category.items.map((item) => (
                       <div key={item.id} className="border-b border-gray-200 last:border-b-0 pb-4 last:pb-0">
                         <button
                           onClick={() => toggleItem(item.id)}

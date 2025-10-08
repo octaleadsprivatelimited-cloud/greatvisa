@@ -236,7 +236,7 @@ const Footer: React.FC = () => {
 
               {/* Quick Stats */}
               <div className="grid grid-cols-2 gap-3 mb-6">
-                {stats.map((stat, index) => (
+                {stats.map((stat) => (
                   <div key={stat.label} className="text-center p-2 bg-white/5 rounded-lg border border-white/10">
                     <div className="text-lg font-bold text-blue-400">{stat.number}</div>
                     <div className="text-xs text-gray-400">{stat.label}</div>
@@ -385,7 +385,7 @@ const Footer: React.FC = () => {
 
         {/* Desktop Mega Menu Sections */}
         <div className="hidden lg:grid grid-cols-4 gap-6">
-          {footerSections.map((section, index) => (
+          {footerSections.map((section) => (
             <FooterSection key={section.title} section={section} />
           ))}
         </div>
