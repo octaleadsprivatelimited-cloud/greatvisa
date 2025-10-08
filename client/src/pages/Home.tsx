@@ -342,14 +342,14 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA Section - Bold & Impactful */}
-      <section className="py-12 md:py-24 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 relative overflow-hidden">
+      <section className="py-12 md:py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 180, 360],
           }}
           transition={{ duration: 20, repeat: Infinity }}
-          className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+          className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -357,7 +357,7 @@ const Home: React.FC = () => {
             rotate: [0, -180, -360],
           }}
           transition={{ duration: 25, repeat: Infinity }}
-          className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+          className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"
         />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -369,27 +369,27 @@ const Home: React.FC = () => {
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
               Ready to Start Your
               <br />
-              <span className="text-yellow-300">Dream Journey?</span>
+              <span className="text-blue-400">Dream Journey?</span>
             </h2>
             <p className="text-base md:text-2xl text-white/90 mb-8 md:mb-12 font-semibold">
               Don't wait! Your future starts today
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <Link
                 to="/contact"
-                className="group inline-flex items-center justify-center bg-white text-purple-600 hover:bg-yellow-300 hover:text-purple-900 px-6 py-4 md:px-12 md:py-6 rounded-xl md:rounded-2xl font-black text-base md:text-xl transition-all duration-300 hover:scale-110 shadow-2xl"
+                className="group inline-flex items-center justify-center bg-white text-blue-600 hover:bg-blue-400 hover:text-white px-5 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all duration-300 hover:scale-105 shadow-xl"
               >
-                <Sparkles size={20} className="md:w-6 md:h-6 mr-2 md:mr-3 group-hover:rotate-12 transition-transform" />
+                <Sparkles size={18} className="md:w-5 md:h-5 mr-2 group-hover:rotate-12 transition-transform" />
                 <span>Get Free Consultation</span>
-                <ArrowRight size={20} className="md:w-6 md:h-6 ml-2 md:ml-3 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight size={18} className="md:w-5 md:h-5 ml-2 group-hover:translate-x-2 transition-transform" />
               </Link>
               
               <a
                 href="tel:+919533974711"
-                className="inline-flex items-center justify-center bg-transparent border-2 md:border-4 border-white text-white hover:bg-white hover:text-purple-600 px-6 py-4 md:px-12 md:py-6 rounded-xl md:rounded-2xl font-black text-base md:text-xl transition-all duration-300 hover:scale-110"
+                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-5 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all duration-300 hover:scale-105"
               >
-                <Phone size={20} className="md:w-6 md:h-6 mr-2 md:mr-3" />
+                <Phone size={18} className="md:w-5 md:h-5 mr-2" />
                 <span>Call Us Now</span>
               </a>
             </div>
