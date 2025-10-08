@@ -378,7 +378,7 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <Link
                 to="/contact"
-                className="group inline-flex items-center justify-center bg-white text-blue-600 hover:bg-blue-400 hover:text-white px-5 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all duration-300 hover:scale-105 shadow-xl"
+                className="group inline-flex items-center justify-center bg-yellow-400 text-gray-900 hover:bg-yellow-500 hover:text-black px-5 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all duration-300 hover:scale-105 shadow-xl"
               >
                 <Sparkles size={18} className="md:w-5 md:h-5 mr-2 group-hover:rotate-12 transition-transform" />
                 <span>Get Free Consultation</span>
