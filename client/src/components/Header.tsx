@@ -284,7 +284,7 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40 max-h-[calc(100vh-116px)] overflow-y-auto"
+            className="lg:hidden fixed top-[116px] left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40 max-h-[calc(100vh-116px)] overflow-y-auto"
           >
             <div className="px-3 py-2">
               <nav className="space-y-0.5">
