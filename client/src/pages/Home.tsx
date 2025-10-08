@@ -21,7 +21,7 @@ const Home: React.FC = () => {
       link: '/study-visa', 
       gradient: 'from-blue-500 to-cyan-500', 
       size: 'large',
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80'
+      image: '/services/study_visa.jpg'
     },
     { 
       title: 'Work Visa', 
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
       link: '/work-visa', 
       gradient: 'from-emerald-500 to-teal-500', 
       size: 'small',
-      image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80'
+      image: '/services/word_visa.jpg'
     },
     { 
       title: 'Tourist Visa', 
@@ -37,7 +37,7 @@ const Home: React.FC = () => {
       link: '/tourist-visa', 
       gradient: 'from-orange-500 to-red-500', 
       size: 'small',
-      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80'
+      image: '/services/tourist_visa.jpeg'
     },
     { 
       title: 'Family Visa', 
@@ -45,7 +45,7 @@ const Home: React.FC = () => {
       link: '/family-visa', 
       gradient: 'from-pink-500 to-rose-500', 
       size: 'medium',
-      image: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80'
+      image: '/services/family_visa.jpg'
     },
     { 
       title: 'Business Visa', 
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
       link: '/business-visa', 
       gradient: 'from-purple-500 to-indigo-500', 
       size: 'medium',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80'
+      image: '/services/businessvisa.jpg'
     },
     { 
       title: 'Immigration', 
@@ -61,7 +61,7 @@ const Home: React.FC = () => {
       link: '/immigration-consultation', 
       gradient: 'from-amber-500 to-yellow-500', 
       size: 'small',
-      image: '/visa.png'
+      image: '/services/immigration.jpg'
     }
   ];
 
