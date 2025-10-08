@@ -4,7 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, 
   X, 
-  ChevronDown
+  ChevronDown,
+  Phone,
+  Mail
 } from 'lucide-react';
 
 const Header: React.FC = () => {
@@ -59,7 +61,33 @@ const Header: React.FC = () => {
 
   return (
     <>
-      {/* Apple-inspired Header */}
+      {/* Top Header Bar */}
+      <div className="bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-between items-center py-2 text-xs">
+            <div className="hidden md:flex items-center space-x-6">
+              <a href="tel:+919533974711" className="flex items-center space-x-2 hover:text-slate-300 transition-colors">
+                <Phone size={12} />
+                <span>+91 9533 974 711</span>
+              </a>
+              <a href="mailto:info@greatvisanetwork.com" className="flex items-center space-x-2 hover:text-slate-300 transition-colors">
+                <Mail size={12} />
+                <span>info@greatvisanetwork.com</span>
+              </a>
+            </div>
+            <div className="flex items-center">
+              <a 
+                href="/contact"
+                className="bg-blue-600 hover:bg-blue-700 px-4 py-1.5 rounded text-xs font-semibold transition-colors"
+              >
+                Get Consultation
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation Header */}
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
@@ -89,7 +117,7 @@ const Header: React.FC = () => {
                     <div className="relative group">
                       <button
                         onMouseEnter={() => setActiveDropdown('services')}
-                        className="text-xs font-normal text-gray-800 hover:text-gray-900 transition-colors duration-200 py-1"
+                        className="text-sm font-medium text-gray-800 hover:text-gray-900 transition-colors duration-200 py-1"
                       >
                         {item.name}
                       </button>
@@ -108,7 +136,7 @@ const Header: React.FC = () => {
                               <Link
                                 key={service.name}
                                 to={service.path}
-                                className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50/80 hover:text-gray-900 transition-colors duration-150"
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50/80 hover:text-gray-900 transition-colors duration-150"
                                 onClick={() => setActiveDropdown(null)}
                               >
                                 {service.name}
@@ -121,7 +149,7 @@ const Header: React.FC = () => {
                   ) : (
                     <Link
                       to={item.path}
-                      className="text-xs font-normal text-gray-800 hover:text-gray-900 transition-colors duration-200"
+                      className="text-sm font-medium text-gray-800 hover:text-gray-900 transition-colors duration-200"
                     >
                       {item.name}
                     </Link>
@@ -210,7 +238,7 @@ const Header: React.FC = () => {
       </header>
 
       {/* Spacer to prevent content from hiding under fixed header */}
-      <div className="h-16"></div>
+      <div className="h-[100px]"></div>
     </>
   );
 };
