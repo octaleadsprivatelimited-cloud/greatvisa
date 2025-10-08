@@ -16,7 +16,6 @@
     "ajv": "^8.17.1",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.7",
-    "eslint": "^8.57.1",
     "framer-motion": "^11.11.11",
     "lucide-react": "^0.453.0",
     "postcss": "^8.4.47",
@@ -38,8 +37,6 @@
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
-    "lint": "eslint src --ext .ts,.tsx",
-    "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "type-check": "tsc --noEmit"
   },
   "eslintConfig": {
