@@ -16,12 +16,12 @@ import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const services = [
-    { icon: '🎓', title: 'Study Visa', desc: 'Top universities worldwide', link: '/study-visa', gradient: 'from-blue-500 to-cyan-500', size: 'large' },
-    { icon: '💼', title: 'Work Visa', desc: 'Career opportunities', link: '/work-visa', gradient: 'from-emerald-500 to-teal-500', size: 'small' },
-    { icon: '✈️', title: 'Tourist Visa', desc: 'Explore the world', link: '/tourist-visa', gradient: 'from-orange-500 to-red-500', size: 'small' },
-    { icon: '❤️', title: 'Family Visa', desc: 'Reunite with loved ones', link: '/family-visa', gradient: 'from-pink-500 to-rose-500', size: 'medium' },
-    { icon: '🏢', title: 'Business Visa', desc: 'Expand globally', link: '/business-visa', gradient: 'from-purple-500 to-indigo-500', size: 'medium' },
-    { icon: '📋', title: 'Immigration', desc: 'Expert consultation', link: '/immigration-consultation', gradient: 'from-amber-500 to-yellow-500', size: 'large' }
+    { title: 'Study Visa', desc: 'Top universities worldwide', link: '/study-visa', gradient: 'from-blue-500 to-cyan-500', size: 'large' },
+    { title: 'Work Visa', desc: 'Career opportunities', link: '/work-visa', gradient: 'from-emerald-500 to-teal-500', size: 'small' },
+    { title: 'Tourist Visa', desc: 'Explore the world', link: '/tourist-visa', gradient: 'from-orange-500 to-red-500', size: 'small' },
+    { title: 'Family Visa', desc: 'Reunite with loved ones', link: '/family-visa', gradient: 'from-pink-500 to-rose-500', size: 'medium' },
+    { title: 'Business Visa', desc: 'Expand globally', link: '/business-visa', gradient: 'from-purple-500 to-indigo-500', size: 'medium' },
+    { title: 'Immigration', desc: 'Expert consultation', link: '/immigration-consultation', gradient: 'from-amber-500 to-yellow-500', size: 'large' }
   ];
 
   const features = [
@@ -32,9 +32,9 @@ const Home: React.FC = () => {
   ];
 
   const testimonials = [
-    { name: 'Priya S.', role: 'Student', country: '🇨🇦', text: 'Amazing service! Got my study visa in 2 months.', rating: 5 },
-    { name: 'Rahul K.', role: 'Engineer', country: '🇦🇺', text: 'Professional team, smooth process throughout.', rating: 5 },
-    { name: 'Sunita P.', role: 'Business Owner', country: '🇬🇧', text: 'Family reunited thanks to GREAT Visa Network!', rating: 5 }
+    { name: 'Priya S.', role: 'Student', country: 'Canada', text: 'Amazing service! Got my study visa in 2 months.', rating: 5 },
+    { name: 'Rahul K.', role: 'Engineer', country: 'Australia', text: 'Professional team, smooth process throughout.', rating: 5 },
+    { name: 'Sunita P.', role: 'Business Owner', country: 'United Kingdom', text: 'Family reunited thanks to GREAT Visa Network!', rating: 5 }
   ];
 
   return (
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
             </div>
             <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
               Visa Solutions{' '}
-              <span className="text-gradient-neon">That Work</span> 🚀
+              <span className="text-gradient-neon">That Work</span>
             </h2>
           </motion.div>
 
@@ -124,9 +124,6 @@ const Home: React.FC = () => {
                   
                   <div className="relative z-10 h-full flex flex-col justify-between">
                     <div>
-                      <span className="text-6xl md:text-7xl mb-4 inline-block group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                        {service.icon}
-                      </span>
                       <h3 className="text-3xl md:text-4xl font-black text-white mb-2">{service.title}</h3>
                       <p className="text-white/90 font-semibold text-lg">{service.desc}</p>
                     </div>
@@ -169,7 +166,7 @@ const Home: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
-              Trusted by Thousands 🌟
+              Trusted by Thousands
             </h2>
             <p className="text-2xl text-white/90 font-semibold">
               Join the success stories
@@ -178,10 +175,10 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: '👥', value: '5,000+', label: 'Happy Clients' },
-              { icon: '🏆', value: '98%', label: 'Success Rate' },
-              { icon: '🌍', value: '50+', label: 'Countries' },
-              { icon: '⚡', value: '24/7', label: 'Support' }
+              { icon: Users, value: '5,000+', label: 'Happy Clients' },
+              { icon: Award, value: '98%', label: 'Success Rate' },
+              { icon: Shield, value: '50+', label: 'Countries' },
+              { icon: Zap, value: '24/7', label: 'Support' }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -191,7 +188,9 @@ const Home: React.FC = () => {
                 viewport={{ once: true }}
                 className="text-center glass-effect p-8 rounded-3xl hover:scale-110 transition-all duration-300"
               >
-                <div className="text-5xl mb-4">{stat.icon}</div>
+                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <stat.icon size={32} className="text-white" />
+                </div>
                 <div className="text-5xl md:text-6xl font-black text-white mb-2">{stat.value}</div>
                 <div className="text-lg text-white/90 font-bold">{stat.label}</div>
               </motion.div>
@@ -221,10 +220,10 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
-              { step: '01', title: 'Free Consult', emoji: '💬', desc: 'Book your free consultation' },
-              { step: '02', title: 'Documents', emoji: '📄', desc: 'We prepare everything' },
-              { step: '03', title: 'Submit', emoji: '📤', desc: 'Application submitted' },
-              { step: '04', title: 'Success!', emoji: '🎉', desc: 'Visa approved!' }
+              { step: '01', title: 'Free Consult', desc: 'Book your free consultation' },
+              { step: '02', title: 'Documents', desc: 'We prepare everything' },
+              { step: '03', title: 'Submit', desc: 'Application submitted' },
+              { step: '04', title: 'Success!', desc: 'Visa approved!' }
             ].map((process, index) => (
               <motion.div
                 key={process.step}
@@ -235,10 +234,9 @@ const Home: React.FC = () => {
                 className="relative"
               >
                 <div className="glass-card p-8 rounded-3xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full">
-                  <div className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-gray-200 to-gray-300 mb-4">
+                  <div className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-indigo-200 to-purple-300 mb-6">
                     {process.step}
                   </div>
-                  <div className="text-5xl mb-4">{process.emoji}</div>
                   <h3 className="text-2xl font-black text-gray-900 mb-2">{process.title}</h3>
                   <p className="text-gray-600 font-semibold">{process.desc}</p>
                 </div>
@@ -262,7 +260,7 @@ const Home: React.FC = () => {
               <span>Success Stories</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              What Clients Say 💬
+              What Clients Say
             </h2>
           </motion.div>
 
@@ -284,13 +282,13 @@ const Home: React.FC = () => {
                 <p className="text-gray-700 font-semibold text-lg mb-6 italic">
                   "{testimonial.text}"
                 </p>
-                <div className="flex items-center justify-between pt-6 border-t border-gray-200">
-                  <div>
-                    <div className="font-black text-gray-900 text-lg">{testimonial.name}</div>
-                    <div className="text-gray-600 font-semibold">{testimonial.role}</div>
+                  <div className="flex items-center justify-between pt-6 border-t border-gray-200">
+                    <div>
+                      <div className="font-black text-gray-900 text-lg">{testimonial.name}</div>
+                      <div className="text-gray-600 font-semibold">{testimonial.role}</div>
+                    </div>
+                    <div className="text-sm font-bold text-gray-500">{testimonial.country}</div>
                   </div>
-                  <div className="text-4xl">{testimonial.country}</div>
-                </div>
               </motion.div>
             ))}
           </div>
@@ -322,14 +320,13 @@ const Home: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="text-7xl mb-6">🚀</div>
             <h2 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
               Ready to Start Your
               <br />
               <span className="text-yellow-300">Dream Journey?</span>
             </h2>
             <p className="text-2xl text-white/90 mb-12 font-semibold">
-              Don't wait! Your future starts today ✨
+              Don't wait! Your future starts today
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">

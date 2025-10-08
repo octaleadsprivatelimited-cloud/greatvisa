@@ -40,16 +40,16 @@ const Header: React.FC = () => {
   };
 
   const services = [
-    { name: 'Study Visa', path: '/study-visa', emoji: '🎓' },
-    { name: 'Work Visa', path: '/work-visa', emoji: '💼' },
-    { name: 'Tourist Visa', path: '/tourist-visa', emoji: '✈️' },
-    { name: 'Family Visa', path: '/family-visa', emoji: '❤️' },
-    { name: 'Business Visa', path: '/business-visa', emoji: '🏢' },
-    { name: 'Immigration Consultation', path: '/immigration-consultation', emoji: '📋' },
-    { name: 'Job Placement', path: '/job-placement', emoji: '🎯' },
-    { name: 'Skill Assessment', path: '/skill-assessment', emoji: '⭐' },
-    { name: 'Document Attestation', path: '/document-attestation', emoji: '📄' },
-    { name: 'Visa Extension', path: '/visa-extension', emoji: '🔄' }
+    { name: 'Study Visa', path: '/study-visa' },
+    { name: 'Work Visa', path: '/work-visa' },
+    { name: 'Tourist Visa', path: '/tourist-visa' },
+    { name: 'Family Visa', path: '/family-visa' },
+    { name: 'Business Visa', path: '/business-visa' },
+    { name: 'Immigration Consultation', path: '/immigration-consultation' },
+    { name: 'Job Placement', path: '/job-placement' },
+    { name: 'Skill Assessment', path: '/skill-assessment' },
+    { name: 'Document Attestation', path: '/document-attestation' },
+    { name: 'Visa Extension', path: '/visa-extension' }
   ];
 
   const mainNavigation = [
@@ -145,9 +145,9 @@ const Header: React.FC = () => {
                             className="absolute top-full left-0 mt-3 w-80 glass-card rounded-3xl shadow-2xl py-4 z-50 border border-purple-100"
                           >
                             <div className="px-4 pb-3 mb-3 border-b border-gray-200">
-                              <p className="text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 uppercase tracking-wider">
-                                ✨ Our Services
-                              </p>
+              <p className="text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 uppercase tracking-wider">
+                Our Services
+              </p>
                             </div>
                             <div className="max-h-96 overflow-y-auto px-2">
                               {services.map((service) => (
@@ -157,7 +157,6 @@ const Header: React.FC = () => {
                                   className="group flex items-center space-x-3 px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-2xl transition-all duration-300 font-semibold"
                                   onClick={() => setActiveDropdown(null)}
                                 >
-                                  <span className="text-2xl group-hover:scale-125 transition-transform duration-300">{service.emoji}</span>
                                   <span className="group-hover:text-indigo-600 transition-colors">{service.name}</span>
                                 </Link>
                               ))}
@@ -237,8 +236,7 @@ const Header: React.FC = () => {
                                     to={service.path}
                                     className="flex items-center space-x-3 px-5 py-3 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-2xl transition-all duration-300 font-semibold"
                                   >
-                                    <span className="text-xl">{service.emoji}</span>
-                                    <span>{service.name}</span>
+                                      <span>{service.name}</span>
                                   </Link>
                                 ))}
                               </motion.div>

@@ -17,12 +17,12 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    { name: 'Study Visa 🎓', path: '/study-visa' },
-    { name: 'Work Visa 💼', path: '/work-visa' },
-    { name: 'Tourist Visa ✈️', path: '/tourist-visa' },
-    { name: 'Family Visa ❤️', path: '/family-visa' },
-    { name: 'Business Visa 🏢', path: '/business-visa' },
-    { name: 'Immigration 📋', path: '/immigration-consultation' }
+    { name: 'Study Visa', path: '/study-visa' },
+    { name: 'Work Visa', path: '/work-visa' },
+    { name: 'Tourist Visa', path: '/tourist-visa' },
+    { name: 'Family Visa', path: '/family-visa' },
+    { name: 'Business Visa', path: '/business-visa' },
+    { name: 'Immigration', path: '/immigration-consultation' }
   ];
 
   const company = [
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
             </Link>
             <p className="text-white/80 mb-6 text-lg font-medium leading-relaxed">
               Your trusted partner for visa consultancy & immigration services. 
-              Making international dreams come true! ✨
+              Making international dreams come true!
             </p>
             
             {/* Contact Info - Modern Cards */}
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
                   <MapPin size={20} />
                 </div>
-                <span className="font-bold text-lg">Hyderabad, Telangana, India 🇮🇳</span>
+                <span className="font-bold text-lg">Hyderabad, Telangana, India</span>
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@ const Footer: React.FC = () => {
 
             {/* Newsletter - Creative */}
             <div className="text-center md:text-right">
-              <p className="text-white/60 font-semibold mb-3">Stay Updated 📬</p>
+              <p className="text-white/60 font-semibold mb-3">Stay Updated</p>
               <a
                 href="/contact"
                 className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-xl font-bold transition-all duration-300 hover:scale-105 shadow-lg"
