@@ -15,12 +15,54 @@ import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const services = [
-    { title: 'Study Visa', desc: 'Top universities worldwide', link: '/study-visa', gradient: 'from-blue-500 to-cyan-500', size: 'large' },
-    { title: 'Work Visa', desc: 'Career opportunities', link: '/work-visa', gradient: 'from-emerald-500 to-teal-500', size: 'small' },
-    { title: 'Tourist Visa', desc: 'Explore the world', link: '/tourist-visa', gradient: 'from-orange-500 to-red-500', size: 'small' },
-    { title: 'Family Visa', desc: 'Reunite with loved ones', link: '/family-visa', gradient: 'from-pink-500 to-rose-500', size: 'medium' },
-    { title: 'Business Visa', desc: 'Expand globally', link: '/business-visa', gradient: 'from-purple-500 to-indigo-500', size: 'medium' },
-    { title: 'Immigration', desc: 'Expert consultation', link: '/immigration-consultation', gradient: 'from-amber-500 to-yellow-500', size: 'small' }
+    { 
+      title: 'Study Visa', 
+      desc: 'Top universities worldwide', 
+      link: '/study-visa', 
+      gradient: 'from-blue-500 to-cyan-500', 
+      size: 'large',
+      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80'
+    },
+    { 
+      title: 'Work Visa', 
+      desc: 'Career opportunities', 
+      link: '/work-visa', 
+      gradient: 'from-emerald-500 to-teal-500', 
+      size: 'small',
+      image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80'
+    },
+    { 
+      title: 'Tourist Visa', 
+      desc: 'Explore the world', 
+      link: '/tourist-visa', 
+      gradient: 'from-orange-500 to-red-500', 
+      size: 'small',
+      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80'
+    },
+    { 
+      title: 'Family Visa', 
+      desc: 'Reunite with loved ones', 
+      link: '/family-visa', 
+      gradient: 'from-pink-500 to-rose-500', 
+      size: 'medium',
+      image: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80'
+    },
+    { 
+      title: 'Business Visa', 
+      desc: 'Expand globally', 
+      link: '/business-visa', 
+      gradient: 'from-purple-500 to-indigo-500', 
+      size: 'medium',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80'
+    },
+    { 
+      title: 'Immigration', 
+      desc: 'Expert consultation', 
+      link: '/immigration-consultation', 
+      gradient: 'from-amber-500 to-yellow-500', 
+      size: 'small',
+      image: '/visa.png'
+    }
   ];
 
   const features = [
@@ -111,15 +153,25 @@ const Home: React.FC = () => {
               >
                 <Link
                   to={service.link}
-                  className={`block h-full min-h-[250px] bg-gradient-to-br ${service.gradient} p-8 hover:scale-[1.02] transition-all duration-500 relative overflow-hidden`}
+                  className={`block h-full min-h-[250px] relative overflow-hidden hover:scale-[1.02] transition-all duration-500`}
                 >
-                  {/* Animated background blob */}
-                  <div className="absolute inset-0 bg-white/10 blob group-hover:bg-white/20 transition-all duration-500"></div>
+                  {/* Background Image */}
+                  <div className="absolute inset-0">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    {/* Gradient Overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-85 group-hover:opacity-75 transition-opacity duration-500`}></div>
+                    {/* Dark Overlay for Text Readability */}
+                    <div className="absolute inset-0 bg-black/20"></div>
+                  </div>
                   
-                  <div className="relative z-10 h-full flex flex-col justify-between">
+                  <div className="relative z-10 h-full flex flex-col justify-between p-8">
                     <div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{service.title}</h3>
-                      <p className="text-white/90 font-semibold text-lg">{service.desc}</p>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 drop-shadow-lg">{service.title}</h3>
+                      <p className="text-white/95 font-semibold text-lg drop-shadow-md">{service.desc}</p>
                     </div>
                     <div className="flex items-center text-white font-bold group-hover:translate-x-2 transition-transform duration-300">
                       <span>Learn More</span>
