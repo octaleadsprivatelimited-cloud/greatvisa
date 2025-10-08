@@ -176,23 +176,23 @@ const Header: React.FC = () => {
       <AnimatePresence>
         {activeDropdown === 'services' && (
           <>
-            {/* Overlay below header only */}
+            {/* Overlay below header only - Desktop Only */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed top-[96px] left-0 right-0 bottom-0 z-40 bg-black/60 backdrop-blur-md"
+              className="hidden lg:block fixed top-[96px] left-0 right-0 bottom-0 z-40 bg-black/60 backdrop-blur-md"
               onClick={() => setActiveDropdown(null)}
             />
             
-            {/* Dropdown content */}
+            {/* Dropdown content - Desktop Only */}
             <motion.div
               initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="fixed top-[96px] left-0 right-0 z-50 bg-gradient-to-br from-white via-slate-50 to-indigo-50/30 shadow-2xl border-b border-slate-200"
+              className="hidden lg:block fixed top-[96px] left-0 right-0 z-50 bg-gradient-to-br from-white via-slate-50 to-indigo-50/30 shadow-2xl border-b border-slate-200"
               onClick={(e) => e.stopPropagation()}
               onMouseLeave={() => setActiveDropdown(null)}
             >
@@ -284,7 +284,7 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed top-[116px] left-0 right-0 bg-white border-t border-gray-200 shadow-xl z-40 max-h-[calc(100vh-116px)] overflow-y-auto"
+            className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40 max-h-[calc(100vh-116px)] overflow-y-auto"
           >
             <div className="px-3 py-2">
               <nav className="space-y-0.5">
