@@ -95,9 +95,9 @@ const Home: React.FC = () => {
               <Sparkles size={20} />
               <span>Why Choose Us</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-sky-500 mb-6">
               Your Success is{' '}
-              <span className="text-gradient-neon">Our Mission</span>
+              <span className="text-sky-600">Our Mission</span>
             </h2>
           </motion.div>
 
