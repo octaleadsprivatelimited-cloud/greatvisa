@@ -163,13 +163,15 @@ const Home: React.FC = () => {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     {/* Dark Overlay for Text Readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20 group-hover:from-black/60 transition-all duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-black/40 group-hover:from-black/70 transition-all duration-500"></div>
                   </div>
                   
-                  <div className="relative z-10 h-full flex flex-col justify-between p-8">
+                  <div className="relative z-10 h-full flex flex-col justify-between p-6 md:p-8">
                     <div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 drop-shadow-lg">{service.title}</h3>
-                      <p className="text-white/95 font-semibold text-lg drop-shadow-md">{service.desc}</p>
+                      <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-xl mb-3 border border-white/20">
+                        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">{service.title}</h3>
+                      </div>
+                      <p className="text-white font-semibold text-base md:text-lg drop-shadow-xl">{service.desc}</p>
                     </div>
                     <div className="flex items-center text-white font-bold group-hover:translate-x-2 transition-transform duration-300">
                       <span>Learn More</span>
