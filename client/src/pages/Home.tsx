@@ -54,7 +54,7 @@ const Home: React.FC = () => {
               <Sparkles size={20} />
               <span>Why Choose Us</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Your Success is{' '}
               <span className="text-gradient-neon">Our Mission</span>
             </h2>
@@ -94,7 +94,7 @@ const Home: React.FC = () => {
               <TrendingUp size={20} />
               <span>Our Services</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Visa Solutions
               <br />
               <span className="text-gradient-neon">That Work</span>
@@ -125,7 +125,7 @@ const Home: React.FC = () => {
                   
                   <div className="relative z-10 h-full flex flex-col justify-between">
                     <div>
-                      <h3 className="text-3xl md:text-4xl font-black text-white mb-2">{service.title}</h3>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{service.title}</h3>
                       <p className="text-white/90 font-semibold text-lg">{service.desc}</p>
                     </div>
                     <div className="flex items-center text-white font-bold group-hover:translate-x-2 transition-transform duration-300">
@@ -166,7 +166,7 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Trusted by Thousands
             </h2>
             <p className="text-2xl text-white/90 font-semibold">
@@ -213,7 +213,7 @@ const Home: React.FC = () => {
               <Zap size={20} />
               <span>Our Process</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Simple, Fast,{' '}
               <span className="text-gradient-neon">Effective</span>
             </h2>
@@ -238,7 +238,7 @@ const Home: React.FC = () => {
                   <div className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-indigo-200 to-purple-300 mb-6">
                     {process.step}
                   </div>
-                  <h3 className="text-2xl font-black text-gray-900 mb-2">{process.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{process.title}</h3>
                   <p className="text-gray-600 font-semibold">{process.desc}</p>
                 </div>
               </motion.div>
@@ -260,7 +260,7 @@ const Home: React.FC = () => {
               <Star size={20} className="fill-current" />
               <span>Success Stories</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               What Clients Say
             </h2>
           </motion.div>
@@ -321,7 +321,7 @@ const Home: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Ready to Start Your
               <br />
               <span className="text-yellow-300">Dream Journey?</span>

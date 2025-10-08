@@ -118,10 +118,10 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-[1.1]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
             >
               <span className="text-gray-900">Your</span>{' '}
-              <span className="text-gradient-neon inline-block animate-pulse-slow">
+              <span className="text-gradient-neon inline-block">
                 Dream
               </span>
               <br />
