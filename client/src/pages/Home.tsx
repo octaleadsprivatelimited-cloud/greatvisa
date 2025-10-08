@@ -270,7 +270,7 @@ const Home: React.FC = () => {
                 viewport={{ once: true }}
                 className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500"
               >
-                <div className="flex flex-col h-[400px]">
+                <div className="flex flex-col h-[500px]">
                   {/* Image - 70% */}
                   <div className="relative h-[70%] overflow-hidden">
                     <img
