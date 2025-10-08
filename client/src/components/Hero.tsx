@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-purple-50/30 to-pink-50/30 overflow-hidden pt-8 pb-20">
+    <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-purple-50/30 to-pink-50/30 overflow-hidden pt-32 pb-20">
       {/* Animated Background Blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div

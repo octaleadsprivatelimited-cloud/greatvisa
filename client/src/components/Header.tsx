@@ -373,9 +373,6 @@ const Header: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Spacer for fixed header */}
-      <div className="h-[116px]"></div>
     </>
   );
 };
