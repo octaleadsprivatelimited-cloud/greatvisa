@@ -413,8 +413,19 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials - Modern Cards */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://img.freepik.com/premium-photo/businessman-businesswoman-formal-wear-working-together-looking-new-employees-hire-international-business-consulting-hr-social-media-icons-modern-panoramic-office-background_269648-17517.jpg?semt=ais_hybrid&w=740&q=80"
+            alt="Professional background"
+            className="w-full h-full object-cover"
+          />
+          {/* White Fade Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/85 to-white/90"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
