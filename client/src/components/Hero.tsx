@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, 
   Sparkles,
@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +18,20 @@ const Hero: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const sliderImages = [
+    '/home/slider-1.jpg',
+    '/home/Silder-2.jpg',
+    '/home/slider-3.jpg'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [sliderImages.length]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -70,25 +85,27 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-purple-50/30 to-pink-50/30 overflow-hidden pt-24 pb-12 md:pb-16 lg:pb-20">
-      {/* Animated Background Blobs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 90, 0],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-indigo-400/20 to-purple-400/20 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [0, -90, 0],
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-pink-400/20 to-orange-400/20 rounded-full blur-3xl"
-        />
+    <section className="relative min-h-screen overflow-hidden pt-24 pb-12 md:pb-16 lg:pb-20">
+      {/* Background Image Slider */}
+      <div className="absolute inset-0">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0"
+          >
+            <img
+              src={sliderImages[currentSlide]}
+              alt={`Hero slide ${currentSlide + 1}`}
+              className="w-full h-full object-cover"
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/40"></div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -107,12 +124,12 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight"
             >
-              <span className="text-gray-900">Your</span>{' '}
-              <span className="text-gradient-neon inline-block">
+              <span className="text-white drop-shadow-2xl">Your</span>{' '}
+              <span className="text-yellow-400 inline-block drop-shadow-2xl">
                 Dream
               </span>
               <br />
-              <span className="text-gray-900">Destination</span>
+              <span className="text-white drop-shadow-2xl">Destination</span>
             </motion.h1>
 
             {/* Description */}
@@ -120,10 +137,10 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 md:mb-8 lg:mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium"
+              className="text-base sm:text-lg md:text-xl text-white/95 mb-6 md:mb-8 lg:mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium drop-shadow-lg"
             >
               Transform your international dreams into reality with{' '}
-              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+              <span className="font-bold text-yellow-300">
                 expert visa guidance
               </span>{' '}
               & immigration services
@@ -159,12 +176,12 @@ const Hero: React.FC = () => {
               className="grid grid-cols-3 gap-3 md:gap-4 lg:gap-6"
             >
               {stats.map((stat, index) => (
-                <div key={index} className="glass-card p-4 rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  <div className={`w-10 h-10 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center mb-3 mx-auto lg:mx-0`}>
-                    <stat.icon size={20} className="text-white" />
+                <div key={index} className="glass-effect backdrop-blur-md p-4 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-white/20">
+                  <div className={`w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center mb-3 mx-auto lg:mx-0`}>
+                    <stat.icon size={20} className="text-white md:w-6 md:h-6" />
                   </div>
-                  <div className="text-2xl sm:text-3xl font-black text-gray-900 mb-1">{stat.value}</div>
-                  <div className="text-xs sm:text-sm text-gray-600 font-bold">{stat.label}</div>
+                  <div className="text-xl md:text-2xl font-bold text-white mb-1 drop-shadow-lg">{stat.value}</div>
+                  <div className="text-xs md:text-sm text-white/90 font-medium drop-shadow-md">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
