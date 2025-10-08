@@ -103,10 +103,10 @@ const Header: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-[68px]">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="relative h-16 w-48">
+              <div className="relative h-14 w-44">
                 <img
                   src="/logo.png"
                   alt="GREAT Visa Network"
