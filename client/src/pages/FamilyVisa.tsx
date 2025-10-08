@@ -29,7 +29,7 @@ const FamilyVisa: React.FC = () => {
             src="/services/family_visa.jpg"
             alt="Family Visa"
             className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 15%' }}
+            style={{ objectPosition: 'center 10%' }}
           />
         </div>
         <div className="absolute inset-0 bg-black/50"></div>
