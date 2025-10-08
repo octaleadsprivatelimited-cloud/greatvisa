@@ -40,18 +40,22 @@ const Header: React.FC = () => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
-  const services = [
-    { name: 'Study Visa', path: '/study-visa', desc: 'Top universities worldwide' },
-    { name: 'Work Visa', path: '/work-visa', desc: 'Career opportunities abroad' },
-    { name: 'Tourist Visa', path: '/tourist-visa', desc: 'Explore the world' },
-    { name: 'Family Visa', path: '/family-visa', desc: 'Reunite with loved ones' },
-    { name: 'Business Visa', path: '/business-visa', desc: 'Expand globally' },
-    { name: 'Immigration Consultation', path: '/immigration-consultation', desc: 'Expert guidance' },
-    { name: 'Job Placement', path: '/job-placement', desc: 'Find opportunities' },
-    { name: 'Skill Assessment', path: '/skill-assessment', desc: 'Validate your skills' },
-    { name: 'Document Attestation', path: '/document-attestation', desc: 'Official verification' },
-    { name: 'Visa Extension', path: '/visa-extension', desc: 'Extend your stay' }
-  ];
+  const servicesCategories = {
+    visaServices: [
+      { name: 'Study Visa', path: '/study-visa', desc: 'Pursue education at top universities worldwide', icon: '🎓' },
+      { name: 'Work Visa', path: '/work-visa', desc: 'Advance your career with international opportunities', icon: '💼' },
+      { name: 'Tourist Visa', path: '/tourist-visa', desc: 'Explore new destinations hassle-free', icon: '✈️' },
+      { name: 'Family Visa', path: '/family-visa', desc: 'Reunite with your loved ones abroad', icon: '❤️' },
+      { name: 'Business Visa', path: '/business-visa', desc: 'Expand your business globally', icon: '🏢' },
+      { name: 'Visa Extension', path: '/visa-extension', desc: 'Extend your current visa status', icon: '🔄' }
+    ],
+    consultationServices: [
+      { name: 'Immigration Consultation', path: '/immigration-consultation', desc: 'Expert guidance from certified consultants', icon: '📋' },
+      { name: 'Job Placement', path: '/job-placement', desc: 'Connect with international employers', icon: '🎯' },
+      { name: 'Skill Assessment', path: '/skill-assessment', desc: 'Validate your professional qualifications', icon: '⭐' },
+      { name: 'Document Attestation', path: '/document-attestation', desc: 'Official document verification services', icon: '📄' }
+    ]
+  };
 
   const mainNavigation = [
     { name: 'Home', path: '/' },
@@ -167,7 +171,7 @@ const Header: React.FC = () => {
         </div>
       </motion.header>
 
-      {/* Full-Page Services Dropdown */}
+      {/* Full-Page Services Dropdown - Professional Mega Menu */}
       <AnimatePresence>
         {activeDropdown === 'services' && (
           <motion.div
@@ -175,45 +179,112 @@ const Header: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-md"
             onClick={() => setActiveDropdown(null)}
           >
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="bg-white shadow-2xl"
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="bg-gradient-to-br from-white via-slate-50 to-indigo-50/30 shadow-2xl border-b border-slate-200"
               onClick={(e) => e.stopPropagation()}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="mb-8">
-                  <h3 className="text-3xl font-black text-gray-900 mb-2">Our Services</h3>
-                  <p className="text-gray-600">Choose the visa service that fits your needs</p>
+              <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
+                {/* Header */}
+                <div className="mb-12 text-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-xs font-bold mb-4"
+                  >
+                    <Sparkles size={14} />
+                    <span>Choose Your Path</span>
+                  </motion.div>
+                  <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-3">
+                    Our <span className="text-gradient-neon">Services</span>
+                  </h3>
+                  <p className="text-lg text-gray-600 font-medium">Professional visa and immigration solutions tailored to your needs</p>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                  {services.map((service, index) => (
-                    <Link
-                      key={service.name}
-                      to={service.path}
-                      onClick={() => setActiveDropdown(null)}
-                      className="group p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                    >
-                      <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 to-purple-600 mb-3">
-                        {String(index + 1).padStart(2, '0')}
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
-                        {service.name}
-                      </h4>
-                      <p className="text-sm text-gray-600 mb-4">{service.desc}</p>
-                      <div className="flex items-center text-indigo-600 text-sm font-semibold">
-                        <span>Learn More</span>
-                        <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </Link>
-                  ))}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                  {/* Visa Services */}
+                  <div>
+                    <div className="flex items-center mb-6">
+                      <div className="w-2 h-8 bg-gradient-to-b from-indigo-600 to-purple-600 rounded-full mr-3"></div>
+                      <h4 className="text-xl font-black text-gray-900">Visa Services</h4>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {servicesCategories.visaServices.map((service) => (
+                        <Link
+                          key={service.name}
+                          to={service.path}
+                          onClick={() => setActiveDropdown(null)}
+                          className="group relative overflow-hidden p-6 rounded-2xl bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                        >
+                          <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-indigo-100/50 to-purple-100/50 rounded-full blur-2xl -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500"></div>
+                          <div className="relative">
+                            <div className="text-3xl mb-3">{service.icon}</div>
+                            <h5 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                              {service.name}
+                            </h5>
+                            <p className="text-sm text-gray-600 leading-relaxed mb-3">{service.desc}</p>
+                            <div className="flex items-center text-indigo-600 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                              <span>Explore</span>
+                              <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Consultation Services */}
+                  <div>
+                    <div className="flex items-center mb-6">
+                      <div className="w-2 h-8 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full mr-3"></div>
+                      <h4 className="text-xl font-black text-gray-900">Consultation Services</h4>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {servicesCategories.consultationServices.map((service) => (
+                        <Link
+                          key={service.name}
+                          to={service.path}
+                          onClick={() => setActiveDropdown(null)}
+                          className="group relative overflow-hidden p-6 rounded-2xl bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                        >
+                          <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-100/50 to-pink-100/50 rounded-full blur-2xl -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500"></div>
+                          <div className="relative">
+                            <div className="text-3xl mb-3">{service.icon}</div>
+                            <h5 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                              {service.name}
+                            </h5>
+                            <p className="text-sm text-gray-600 leading-relaxed mb-3">{service.desc}</p>
+                            <div className="flex items-center text-purple-600 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                              <span>Explore</span>
+                              <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA Banner */}
+                <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-8 text-center text-white">
+                  <h4 className="text-2xl font-black mb-3">Not Sure Which Service You Need?</h4>
+                  <p className="text-white/90 mb-6 font-medium">Get a free consultation with our experts and find the perfect solution for you</p>
+                  <Link
+                    to="/contact"
+                    onClick={() => setActiveDropdown(null)}
+                    className="inline-flex items-center px-8 py-3 bg-white text-indigo-600 hover:bg-yellow-300 hover:text-purple-900 rounded-xl font-bold transition-all duration-300 hover:scale-105 shadow-lg"
+                  >
+                    <span>Get Free Consultation</span>
+                    <ArrowRight size={18} className="ml-2" />
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -259,13 +330,24 @@ const Header: React.FC = () => {
                               transition={{ duration: 0.2 }}
                               className="ml-4 mt-2 space-y-1"
                             >
-                              {services.map((service) => (
+                              <div className="text-xs font-bold text-indigo-600 px-4 py-2">Visa Services</div>
+                              {servicesCategories.visaServices.map((service) => (
                                 <Link
                                   key={service.name}
                                   to={service.path}
                                   className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-2xl transition-all duration-300 font-semibold"
                                 >
-                                  {service.name}
+                                  {service.icon} {service.name}
+                                </Link>
+                              ))}
+                              <div className="text-xs font-bold text-purple-600 px-4 py-2 mt-2">Consultation Services</div>
+                              {servicesCategories.consultationServices.map((service) => (
+                                <Link
+                                  key={service.name}
+                                  to={service.path}
+                                  className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600 rounded-2xl transition-all duration-300 font-semibold"
+                                >
+                                  {service.icon} {service.name}
                                 </Link>
                               ))}
                             </motion.div>
