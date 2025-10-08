@@ -67,7 +67,7 @@ const WorkVisa: React.FC = () => {
             src="/services/word_visa.jpg"
             alt="Work Visa"
             className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 20%' }}
+            style={{ objectPosition: 'center 5%' }}
           />
         </div>
         <div className="absolute inset-0 bg-black/50"></div>

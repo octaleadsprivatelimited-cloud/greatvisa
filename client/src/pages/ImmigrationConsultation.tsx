@@ -22,12 +22,14 @@ const ImmigrationConsultation: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <section className="relative py-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://s15489.pcdn.co/wp-content/uploads/2016/12/What-is-an-Immigrant-Visa.jpg')`
-          }}
-        ></div>
+        <div className="absolute inset-0">
+          <img
+            src="/services/immigration.jpg"
+            alt="Immigration Consultation"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center 50%' }}
+          />
+        </div>
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative container mx-auto px-4">
           <motion.div
