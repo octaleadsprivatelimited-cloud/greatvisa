@@ -223,42 +223,42 @@ const Home: React.FC = () => {
                 country: 'USA',
                 title: 'Study In USA',
                 visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
-                image: 'https://images.unsplash.com/photo-1634159707699-ac48184c2311?w=800&q=80',
+                image: '/country/usa.jpg',
                 gradient: 'from-blue-600 to-blue-800'
               },
               {
                 country: 'Canada',
                 title: 'Study In Canada',
                 visas: ['Student Visa', 'Permanent Resident Visa', 'Visitor/Tourist Visa', 'Business Visa'],
-                image: 'https://images.unsplash.com/photo-1617469767053-d3b523a0b982?w=800&q=80',
+                image: '/country/canada.jpg',
                 gradient: 'from-red-600 to-red-800'
               },
               {
                 country: 'Australia',
                 title: 'Study In Australia',
                 visas: ['Student Visa', 'Permanent Resident Visa', 'Visitor/Tourist Visa', 'Business Visa'],
-                image: 'https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?w=800&q=80',
+                image: '/country/australia.jpg',
                 gradient: 'from-green-600 to-green-800'
               },
               {
                 country: 'UK',
                 title: 'Study In UK',
                 visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
-                image: 'https://images.unsplash.com/photo-1639591294767-b3e7e7c53cee?w=800&q=80',
+                image: '/country/uk.jpg',
                 gradient: 'from-indigo-600 to-indigo-800'
               },
               {
                 country: 'Germany',
                 title: 'Study In Germany',
                 visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
-                image: 'https://images.unsplash.com/photo-1560930950-5cc20e80e392?w=800&q=80',
+                image: '/country/Germany.jpg',
                 gradient: 'from-gray-700 to-gray-900'
               },
               {
                 country: 'Europe',
                 title: 'Study In Europe',
                 visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
-                image: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80',
+                image: '/country/Europe.jpeg',
                 gradient: 'from-purple-600 to-purple-800'
               }
             ].map((country, index) => (
