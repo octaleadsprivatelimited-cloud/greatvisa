@@ -80,21 +80,21 @@ const Header: React.FC = () => {
               <a href="tel:+919533974711" className="flex items-center space-x-1 md:space-x-1.5 hover:text-white/80 transition-colors group">
                 <div className="w-5 h-5 md:w-6 md:h-6 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
                   <Phone size={10} className="md:w-3 md:h-3" strokeWidth={2.5} />
-                </div>
+              </div>
                 <span className="font-medium text-[10px] md:text-xs">+91 9533 974 711</span>
               </a>
               <a href="mailto:info@greatvisanetwork.com" className="hidden md:flex items-center space-x-1.5 hover:text-white/80 transition-colors group">
                 <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
                   <Mail size={12} strokeWidth={2.5} />
-                </div>
+              </div>
                 <span className="font-medium">info@greatvisanetwork.com</span>
               </a>
             </div>
             {/* Mobile: WhatsApp Button | Desktop: Consultation Button */}
             <div className="flex items-center">
               <a 
-                href="https://wa.me/919533974711"
-                target="_blank"
+                href="https://wa.me/919533974711" 
+                target="_blank" 
                 rel="noopener noreferrer"
                 className="md:hidden group inline-flex items-center space-x-1 bg-white text-green-600 hover:bg-white/90 px-3 py-1 rounded-full text-[10px] font-bold transition-all duration-300 hover:scale-105 shadow-lg"
               >
@@ -186,7 +186,7 @@ const Header: React.FC = () => {
       </motion.header>
 
       {/* Full-Page Services Dropdown - Professional Mega Menu */}
-      <AnimatePresence>
+        <AnimatePresence>
         {activeDropdown === 'services' && (
           <>
             {/* Overlay below header only - Desktop Only */}
@@ -226,20 +226,28 @@ const Header: React.FC = () => {
                       <h4 className="text-sm font-bold text-gray-900">Visa Services</h4>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {servicesCategories.visaServices.map((service) => (
-                        <Link
+                      {servicesCategories.visaServices.map((service, index) => (
+                        <motion.div
                           key={service.name}
-                          to={service.path}
-                          onClick={() => setActiveDropdown(null)}
-                          className="group relative overflow-hidden p-4 rounded-xl bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3, delay: index * 0.05 }}
+                          whileHover={{ scale: 1.05, y: -5 }}
+                          whileTap={{ scale: 0.98 }}
                         >
-                          <div className="relative">
-                            <h5 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-indigo-600 transition-colors">
-                              {service.name}
-                            </h5>
-                            <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
-                          </div>
-                        </Link>
+                          <Link
+                            to={service.path}
+                            onClick={() => setActiveDropdown(null)}
+                            className="group relative overflow-hidden p-4 rounded-xl bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg block h-full"
+                          >
+                            <div className="relative">
+                              <h5 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-indigo-600 transition-colors">
+                                {service.name}
+                              </h5>
+                              <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
+                            </div>
+                          </Link>
+                        </motion.div>
                       ))}
                     </div>
                   </div>
@@ -251,20 +259,28 @@ const Header: React.FC = () => {
                       <h4 className="text-sm font-bold text-gray-900">Consultation Services</h4>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {servicesCategories.consultationServices.map((service) => (
-                        <Link
+                      {servicesCategories.consultationServices.map((service, index) => (
+                        <motion.div
                           key={service.name}
-                          to={service.path}
-                          onClick={() => setActiveDropdown(null)}
-                          className="group relative overflow-hidden p-4 rounded-xl bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:shadow-lg"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3, delay: (servicesCategories.visaServices.length + index) * 0.05 }}
+                          whileHover={{ scale: 1.05, y: -5 }}
+                          whileTap={{ scale: 0.98 }}
                         >
-                          <div className="relative">
-                            <h5 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
-                              {service.name}
-                            </h5>
-                            <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
-                          </div>
-                        </Link>
+                          <Link
+                            to={service.path}
+                            onClick={() => setActiveDropdown(null)}
+                            className="group relative overflow-hidden p-4 rounded-xl bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:shadow-lg block h-full"
+                          >
+                            <div className="relative">
+                              <h5 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                                {service.name}
+                              </h5>
+                              <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
+                            </div>
+                          </Link>
+                        </motion.div>
                       ))}
                     </div>
                   </div>
@@ -301,25 +317,30 @@ const Header: React.FC = () => {
           >
             <div className="px-3 py-2">
               <nav className="space-y-0.5">
-                {mainNavigation.map((item) => (
-                  <div key={item.name}>
+                {mainNavigation.map((item, index) => (
+              <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                  >
                     {item.hasDropdown ? (
-                      <div>
-                        <button
+                        <div>
+                        <motion.button
                           onClick={() => toggleDropdown('services')}
                           className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-gray-900 hover:bg-slate-50 rounded-lg transition-all duration-200"
+                          whileTap={{ scale: 0.95 }}
                         >
                           <span>{item.name}</span>
-                          <ChevronDown 
-                            size={14} 
-                            strokeWidth={2.5}
-                            className={`transition-transform duration-300 ${
-                              activeDropdown === 'services' ? 'rotate-180' : ''
-                            }`}
-                          />
-                        </button>
-                        
-                        <AnimatePresence>
+                          <motion.div
+                            animate={{ rotate: activeDropdown === 'services' ? 180 : 0 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <ChevronDown size={14} strokeWidth={2.5} />
+                          </motion.div>
+                        </motion.button>
+                          
+                          <AnimatePresence>
                           {activeDropdown === 'services' && (
                             <motion.div
                               initial={{ opacity: 0, height: 0 }}
@@ -329,57 +350,71 @@ const Header: React.FC = () => {
                               className="mt-1 space-y-0.5 bg-slate-50 rounded-lg p-1.5"
                             >
                               <div className="text-[10px] font-bold text-indigo-600 px-2 py-1 uppercase tracking-wider">Visa Services</div>
-                              {servicesCategories.visaServices.map((service) => (
-                                <Link
+                              {servicesCategories.visaServices.map((service, idx) => (
+                              <motion.div
                                   key={service.name}
-                                  to={service.path}
-                                  onClick={() => {
-                                    setIsMobileMenuOpen(false);
-                                    setActiveDropdown(null);
-                                  }}
-                                  className="block px-2 py-1.5 text-[11px] text-gray-700 hover:bg-white hover:text-indigo-600 rounded transition-all duration-200 font-medium"
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.2, delay: idx * 0.03 }}
                                 >
-                                  {service.name}
-                                </Link>
+                                  <Link
+                                    to={service.path}
+                                    onClick={() => {
+                                      setIsMobileMenuOpen(false);
+                                      setActiveDropdown(null);
+                                    }}
+                                    className="block px-2 py-1.5 text-[11px] text-gray-700 hover:bg-white hover:text-indigo-600 rounded transition-all duration-200 font-medium"
+                                  >
+                                    {service.name}
+                                  </Link>
+                                </motion.div>
                               ))}
                               <div className="text-[10px] font-bold text-purple-600 px-2 py-1 mt-1 uppercase tracking-wider">Consultation Services</div>
-                              {servicesCategories.consultationServices.map((service) => (
-                                <Link
+                              {servicesCategories.consultationServices.map((service, idx) => (
+                                <motion.div
                                   key={service.name}
-                                  to={service.path}
-                                  onClick={() => {
-                                    setIsMobileMenuOpen(false);
-                                    setActiveDropdown(null);
-                                  }}
-                                  className="block px-2 py-1.5 text-[11px] text-gray-700 hover:bg-white hover:text-purple-600 rounded transition-all duration-200 font-medium"
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.2, delay: (servicesCategories.visaServices.length + idx) * 0.03 }}
                                 >
-                                  {service.name}
-                                </Link>
-                              ))}
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    ) : (
-                      <Link
-                        to={item.path}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className={`block px-3 py-2 text-xs font-semibold rounded-lg transition-all duration-200 ${
-                          location.pathname === item.path
-                            ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
-                            : 'text-gray-900 hover:bg-slate-50'
-                        }`}
-                      >
-                        {item.name}
-                      </Link>
-                    )}
-                  </div>
-                ))}
-              </nav>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                                    <Link
+                                    to={service.path}
+                                    onClick={() => {
+                                      setIsMobileMenuOpen(false);
+                                      setActiveDropdown(null);
+                                    }}
+                                    className="block px-2 py-1.5 text-[11px] text-gray-700 hover:bg-white hover:text-purple-600 rounded transition-all duration-200 font-medium"
+                                  >
+                                    {service.name}
+                                    </Link>
+                                  </motion.div>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                      <motion.div whileTap={{ scale: 0.95 }}>
+                          <Link
+                            to={item.path}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={`block px-3 py-2 text-xs font-semibold rounded-lg transition-all duration-200 ${
+                            location.pathname === item.path
+                              ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
+                              : 'text-gray-900 hover:bg-slate-50'
+                          }`}
+                        >
+                          {item.name}
+                          </Link>
+                        </motion.div>
+                      )}
+                    </motion.div>
+                  ))}
+                </nav>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
     </>
   );
 };
