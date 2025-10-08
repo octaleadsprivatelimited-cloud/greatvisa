@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Phone, 
-  Mail,
+  Mail, 
   Clock,
   Facebook,
   Twitter,
@@ -82,26 +82,26 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-8">
             {/* Company Info - 2 cols */}
             <div className="lg:col-span-2">
-              <h3 className="text-white text-2xl font-bold mb-6">GREAT Visa Network</h3>
-              <p className="text-slate-400 mb-6 leading-relaxed text-sm">
+              <h3 className="text-white text-lg md:text-2xl font-bold mb-4 md:mb-6">GREAT Visa Network</h3>
+              <p className="text-slate-400 mb-4 md:mb-6 leading-relaxed text-xs md:text-sm">
                 Your trusted partner for visa consultancy and immigration services. 
                 We help individuals and businesses achieve their international goals 
                 with expert guidance and proven success.
               </p>
               
               {/* Trust Badges */}
-              <div className="flex flex-wrap gap-3 mb-6">
+              <div className="flex flex-wrap gap-2 md:gap-3 mb-4 md:mb-6">
                 {trustBadges.map((badge, index) => (
-                  <div key={index} className="flex items-center space-x-2 bg-slate-800/50 px-3 py-2 rounded-lg">
-                    <badge.icon size={16} className="text-blue-400" />
-                    <span className="text-xs font-medium text-slate-300">{badge.text}</span>
+                  <div key={index} className="flex items-center space-x-1 md:space-x-2 bg-slate-800/50 px-2 py-1 md:px-3 md:py-2 rounded-lg">
+                    <badge.icon size={14} className="md:w-4 md:h-4 text-blue-400" />
+                    <span className="text-[10px] md:text-xs font-medium text-slate-300">{badge.text}</span>
                   </div>
                 ))}
               </div>
 
               {/* Social Links */}
                   <div>
-                <p className="text-sm font-semibold text-slate-400 mb-3">Connect With Us</p>
+                <p className="text-xs md:text-sm font-semibold text-slate-400 mb-2 md:mb-3">Connect With Us</p>
                 <div className="flex space-x-2">
                 {socialLinks.map((social) => (
                   <a
@@ -120,27 +120,27 @@ const Footer: React.FC = () => {
           </div>
 
             {/* Visa Services - 1 col */}
-            <div className="lg:col-span-1">
+          <div className="lg:col-span-1">
               {/* Mobile Accordion */}
               <button
                 onClick={() => toggleSection('visa')}
-                className="lg:hidden w-full flex items-center justify-between text-white text-lg font-bold mb-4"
+                className="lg:hidden w-full flex items-center justify-between text-white text-base font-bold mb-3"
               >
                 <span>Visa Services</span>
                 <ChevronDown 
-                  size={20} 
+                  size={18} 
                   className={`transition-transform duration-300 ${openSections.visa ? 'rotate-180' : ''}`}
                 />
               </button>
               {/* Desktop Title */}
               <h3 className="hidden lg:block text-white text-lg font-bold mb-6">Visa Services</h3>
               
-              <ul className={`space-y-3 ${openSections.visa || window.innerWidth >= 1024 ? 'block' : 'hidden'} lg:block`}>
+              <ul className={`space-y-2 md:space-y-3 ${openSections.visa || window.innerWidth >= 1024 ? 'block' : 'hidden'} lg:block`}>
                 {visaServices.map((link) => (
                   <li key={link.path}>
                     <Link
                       to={link.path}
-                      className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-sm"
+                      className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-xs md:text-sm"
                     >
                       <ChevronRight size={14} className="mr-1 group-hover:translate-x-1 transition-transform" />
                       <span>{link.name}</span>
@@ -153,25 +153,25 @@ const Footer: React.FC = () => {
             {/* Consulting Services - 1 col */}
             <div className="lg:col-span-1">
               {/* Mobile Accordion */}
-              <button
+                  <button 
                 onClick={() => toggleSection('consulting')}
-                className="lg:hidden w-full flex items-center justify-between text-white text-lg font-bold mb-4 border-t border-slate-800 pt-4"
+                className="lg:hidden w-full flex items-center justify-between text-white text-base font-bold mb-3 border-t border-slate-800 pt-3"
               >
                 <span>Consulting Services</span>
                 <ChevronDown 
-                  size={20} 
+                  size={18} 
                   className={`transition-transform duration-300 ${openSections.consulting ? 'rotate-180' : ''}`}
                 />
-              </button>
+                  </button>
               {/* Desktop Title */}
               <h3 className="hidden lg:block text-white text-lg font-bold mb-6">Consulting Services</h3>
               
-              <ul className={`space-y-3 mb-4 lg:mb-0 ${openSections.consulting || window.innerWidth >= 1024 ? 'block' : 'hidden'} lg:block`}>
+              <ul className={`space-y-2 md:space-y-3 mb-3 lg:mb-0 ${openSections.consulting || window.innerWidth >= 1024 ? 'block' : 'hidden'} lg:block`}>
                 {consultingServices.map((link) => (
                   <li key={link.path}>
                     <Link
                       to={link.path}
-                      className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-sm"
+                      className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-xs md:text-sm"
                     >
                       <ChevronRight size={14} className="mr-1 group-hover:translate-x-1 transition-transform" />
                       <span>{link.name}</span>
@@ -186,23 +186,23 @@ const Footer: React.FC = () => {
               {/* Mobile Accordion */}
               <button
                 onClick={() => toggleSection('company')}
-                className="lg:hidden w-full flex items-center justify-between text-white text-lg font-bold mb-4 border-t border-slate-800 pt-4"
+                className="lg:hidden w-full flex items-center justify-between text-white text-base font-bold mb-3 border-t border-slate-800 pt-3"
               >
                 <span>Company</span>
                 <ChevronDown 
-                  size={20} 
+                  size={18} 
                   className={`transition-transform duration-300 ${openSections.company ? 'rotate-180' : ''}`}
                 />
               </button>
               {/* Desktop Title */}
               <h3 className="hidden lg:block text-white text-lg font-bold mb-6">Company</h3>
               
-              <ul className={`space-y-3 mb-4 lg:mb-0 ${openSections.company || window.innerWidth >= 1024 ? 'block' : 'hidden'} lg:block`}>
+              <ul className={`space-y-2 md:space-y-3 mb-3 lg:mb-0 ${openSections.company || window.innerWidth >= 1024 ? 'block' : 'hidden'} lg:block`}>
                 {company.map((link) => (
                   <li key={link.path}>
                     <Link
                       to={link.path}
-                      className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-sm"
+                      className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-xs md:text-sm"
                     >
                       <ChevronRight size={14} className="mr-1 group-hover:translate-x-1 transition-transform" />
                       <span>{link.name}</span>
@@ -217,23 +217,23 @@ const Footer: React.FC = () => {
               {/* Mobile Accordion */}
               <button
                 onClick={() => toggleSection('support')}
-                className="lg:hidden w-full flex items-center justify-between text-white text-lg font-bold mb-4 border-t border-slate-800 pt-4"
+                className="lg:hidden w-full flex items-center justify-between text-white text-base font-bold mb-3 border-t border-slate-800 pt-3"
               >
                 <span>Support</span>
                 <ChevronDown 
-                  size={20} 
+                  size={18} 
                   className={`transition-transform duration-300 ${openSections.support ? 'rotate-180' : ''}`}
                 />
               </button>
               {/* Desktop Title */}
               <h3 className="hidden lg:block text-white text-lg font-bold mb-6">Support</h3>
               
-              <ul className={`space-y-3 ${openSections.support || window.innerWidth >= 1024 ? 'block' : 'hidden'} lg:block`}>
+              <ul className={`space-y-2 md:space-y-3 ${openSections.support || window.innerWidth >= 1024 ? 'block' : 'hidden'} lg:block`}>
                 {support.map((link) => (
                   <li key={link.path}>
                     <Link
                       to={link.path}
-                      className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-sm"
+                      className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-xs md:text-sm"
                     >
                       <ChevronRight size={14} className="mr-1 group-hover:translate-x-1 transition-transform" />
                       <span>{link.name}</span>
@@ -241,46 +241,46 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+              </div>
           </div>
         </div>
         </div>
 
       {/* Contact Bar */}
       <div className="bg-slate-950 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Phone size={20} className="text-blue-400" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
+            <div className="flex items-center space-x-3 md:space-x-4">
+              <div className="w-8 h-8 md:w-12 md:h-12 bg-slate-800 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0">
+                <Phone size={16} className="md:w-5 md:h-5 text-blue-400" />
               </div>
               <div>
-                <p className="text-xs text-slate-500 font-medium">Call Us</p>
-                <a href="tel:+919533974711" className="text-white font-semibold hover:text-blue-400 transition-colors">
+                <p className="text-[10px] md:text-xs text-slate-500 font-medium">Call Us</p>
+                <a href="tel:+919533974711" className="text-white text-xs md:text-base font-semibold hover:text-blue-400 transition-colors">
                   +91 9533 974 711
                 </a>
-        </div>
-      </div>
+              </div>
+            </div>
 
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Mail size={20} className="text-blue-400" />
+            <div className="flex items-center space-x-3 md:space-x-4">
+              <div className="w-8 h-8 md:w-12 md:h-12 bg-slate-800 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0">
+                <Mail size={16} className="md:w-5 md:h-5 text-blue-400" />
               </div>
               <div>
-                <p className="text-xs text-slate-500 font-medium">Email Us</p>
-                <a href="mailto:info@greatvisanetwork.com" className="text-white font-semibold hover:text-blue-400 transition-colors">
+                <p className="text-[10px] md:text-xs text-slate-500 font-medium">Email Us</p>
+                <a href="mailto:info@greatvisanetwork.com" className="text-white text-xs md:text-base font-semibold hover:text-blue-400 transition-colors">
                   info@greatvisanetwork.com
                 </a>
               </div>
             </div>
-            
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Clock size={20} className="text-blue-400" />
+
+            <div className="flex items-center space-x-3 md:space-x-4">
+              <div className="w-8 h-8 md:w-12 md:h-12 bg-slate-800 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0">
+                <Clock size={16} className="md:w-5 md:h-5 text-blue-400" />
               </div>
               <div>
-                <p className="text-xs text-slate-500 font-medium">Working Hours</p>
-                <p className="text-white font-semibold text-sm">Mon - Sat: 9:00 AM - 6:00 PM</p>
+                <p className="text-[10px] md:text-xs text-slate-500 font-medium">Working Hours</p>
+                <p className="text-white font-semibold text-xs md:text-sm">Mon - Sat: 9:00 AM - 6:00 PM</p>
               </div>
             </div>
           </div>
@@ -289,13 +289,13 @@ const Footer: React.FC = () => {
 
       {/* Bottom Bar */}
       <div className="bg-slate-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm">
-            <div className="flex flex-col items-center md:items-start space-y-2">
-              <p className="text-slate-500">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0 text-xs md:text-sm">
+            <div className="flex flex-col items-center md:items-start space-y-1 md:space-y-2">
+              <p className="text-slate-500 text-[10px] md:text-sm">
                 © {currentYear} <span className="text-white font-semibold">GREAT Visa Network</span>. All rights reserved.
               </p>
-              <p className="text-slate-600 text-xs">
+              <p className="text-slate-600 text-[9px] md:text-xs">
                 Developed by{' '}
                 <a 
                   href="https://www.octaleads.com" 
@@ -307,7 +307,7 @@ const Footer: React.FC = () => {
                 </a>
               </p>
             </div>
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-4 md:space-x-6 text-[10px] md:text-sm">
               <Link to="/privacy-policy" className="text-slate-500 hover:text-white transition-colors">
                 Privacy
               </Link>

@@ -201,7 +201,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Stats Section - Bold & Modern */}
-      <section className="py-20 bg-aurora relative overflow-hidden">
+      <section className="py-12 md:py-20 bg-aurora relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/30"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -209,17 +209,17 @@ const Home: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-4">
               Trusted by Thousands
             </h2>
-            <p className="text-2xl text-white/90 font-semibold">
+            <p className="text-lg md:text-2xl text-white/90 font-semibold">
               Join the success stories
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {[
               { icon: Users, value: '5,000+', label: 'Happy Clients' },
               { icon: Award, value: '98%', label: 'Success Rate' },
@@ -232,13 +232,13 @@ const Home: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center glass-effect p-8 rounded-3xl hover:scale-110 transition-all duration-300"
+                className="text-center glass-effect p-4 md:p-8 rounded-2xl md:rounded-3xl hover:scale-110 transition-all duration-300"
               >
-                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <stat.icon size={32} className="text-white" />
+                <div className="w-10 h-10 md:w-16 md:h-16 bg-white/20 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-2 md:mb-4">
+                  <stat.icon size={20} className="md:w-8 md:h-8 text-white" />
                 </div>
-                <div className="text-5xl md:text-6xl font-black text-white mb-2">{stat.value}</div>
-                <div className="text-lg text-white/90 font-bold">{stat.label}</div>
+                <div className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2">{stat.value}</div>
+                <div className="text-xs md:text-lg text-white/90 font-bold">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -293,24 +293,24 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials - Modern Cards */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
-            <div className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 rounded-full font-bold mb-6">
-              <Star size={20} className="fill-current" />
+            <div className="inline-flex items-center space-x-2 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 rounded-full font-bold mb-4 md:mb-6 text-sm md:text-base">
+              <Star size={16} className="md:w-5 md:h-5 fill-current" />
               <span>Success Stories</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
               What Clients Say
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}
@@ -318,22 +318,22 @@ const Home: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="glass-card p-8 rounded-3xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="glass-card p-5 md:p-8 rounded-2xl md:rounded-3xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-3 md:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={20} className="text-amber-400 fill-current" />
+                    <Star key={i} size={16} className="md:w-5 md:h-5 text-amber-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 font-semibold text-lg mb-6 italic">
+                <p className="text-gray-700 font-semibold text-sm md:text-lg mb-4 md:mb-6 italic">
                   "{testimonial.text}"
                 </p>
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-200">
+                  <div className="flex items-center justify-between pt-4 md:pt-6 border-t border-gray-200">
                     <div>
-                      <div className="font-black text-gray-900 text-lg">{testimonial.name}</div>
-                      <div className="text-gray-600 font-semibold">{testimonial.role}</div>
+                      <div className="font-black text-gray-900 text-base md:text-lg">{testimonial.name}</div>
+                      <div className="text-gray-600 font-semibold text-xs md:text-base">{testimonial.role}</div>
                     </div>
-                    <div className="text-sm font-bold text-gray-500">{testimonial.country}</div>
+                    <div className="text-xs md:text-sm font-bold text-gray-500">{testimonial.country}</div>
                   </div>
               </motion.div>
             ))}
@@ -342,7 +342,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA Section - Bold & Impactful */}
-      <section className="py-24 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 relative overflow-hidden">
+      <section className="py-12 md:py-24 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 relative overflow-hidden">
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -366,30 +366,30 @@ const Home: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
               Ready to Start Your
               <br />
               <span className="text-yellow-300">Dream Journey?</span>
             </h2>
-            <p className="text-2xl text-white/90 mb-12 font-semibold">
+            <p className="text-base md:text-2xl text-white/90 mb-8 md:mb-12 font-semibold">
               Don't wait! Your future starts today
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
               <Link
                 to="/contact"
-                className="group inline-flex items-center justify-center bg-white text-purple-600 hover:bg-yellow-300 hover:text-purple-900 px-12 py-6 rounded-2xl font-black text-xl transition-all duration-300 hover:scale-110 shadow-2xl"
+                className="group inline-flex items-center justify-center bg-white text-purple-600 hover:bg-yellow-300 hover:text-purple-900 px-6 py-4 md:px-12 md:py-6 rounded-xl md:rounded-2xl font-black text-base md:text-xl transition-all duration-300 hover:scale-110 shadow-2xl"
               >
-                <Sparkles size={24} className="mr-3 group-hover:rotate-12 transition-transform" />
+                <Sparkles size={20} className="md:w-6 md:h-6 mr-2 md:mr-3 group-hover:rotate-12 transition-transform" />
                 <span>Get Free Consultation</span>
-                <ArrowRight size={24} className="ml-3 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight size={20} className="md:w-6 md:h-6 ml-2 md:ml-3 group-hover:translate-x-2 transition-transform" />
               </Link>
               
               <a
                 href="tel:+919533974711"
-                className="inline-flex items-center justify-center bg-transparent border-4 border-white text-white hover:bg-white hover:text-purple-600 px-12 py-6 rounded-2xl font-black text-xl transition-all duration-300 hover:scale-110"
+                className="inline-flex items-center justify-center bg-transparent border-2 md:border-4 border-white text-white hover:bg-white hover:text-purple-600 px-6 py-4 md:px-12 md:py-6 rounded-xl md:rounded-2xl font-black text-base md:text-xl transition-all duration-300 hover:scale-110"
               >
-                <Phone size={24} className="mr-3" />
+                <Phone size={20} className="md:w-6 md:h-6 mr-2 md:mr-3" />
                 <span>Call Us Now</span>
               </a>
             </div>
