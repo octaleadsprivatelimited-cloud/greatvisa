@@ -2,12 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Phone, 
-  Mail, 
   Menu, 
   X, 
-  ChevronDown,
-  Sparkles
+  ChevronDown
 } from 'lucide-react';
 
 const Header: React.FC = () => {
@@ -18,7 +15,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -53,9 +50,8 @@ const Header: React.FC = () => {
   ];
 
   const mainNavigation = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
     { name: 'Services', path: '/services', hasDropdown: true },
+    { name: 'About', path: '/about' },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'Testimonials', path: '/testimonials' },
     { name: 'Contact', path: '/contact' }
@@ -63,104 +59,61 @@ const Header: React.FC = () => {
 
   return (
     <>
-      {/* Top Bar with Gradient - Compact */}
-      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-1 text-xs">
-            <div className="hidden md:flex items-center space-x-3">
-              <a href="tel:+919533974711" className="flex items-center space-x-1 hover:text-white/80 transition-colors group">
-                <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                  <Phone size={10} strokeWidth={2.5} />
-                </div>
-                <span className="font-medium text-xs">+91 9533 974 711</span>
-              </a>
-              <a href="mailto:info@greatvisanetwork.com" className="flex items-center space-x-1 hover:text-white/80 transition-colors group">
-                <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                  <Mail size={10} strokeWidth={2.5} />
-                </div>
-                <span className="font-medium text-xs">info@greatvisanetwork.com</span>
-              </a>
-            </div>
-            <div className="flex items-center">
-              <a 
-                href="/contact"
-                className="group inline-flex items-center space-x-1 bg-white text-indigo-600 hover:bg-white/90 px-3 py-1 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-105 shadow-md"
-              >
-                <Sparkles size={10} className="group-hover:rotate-12 transition-transform" />
-                <span>Free Consultation</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header - Glassmorphism */}
-      <motion.header 
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+      {/* Apple-inspired Header */}
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'glass-card shadow-xl' 
-            : 'bg-white/95 backdrop-blur-sm shadow-md'
+            ? 'bg-white/80 backdrop-blur-2xl shadow-sm' 
+            : 'bg-white/70 backdrop-blur-2xl'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-[68px]">
+        <div className="max-w-[980px] mx-auto px-6">
+          <div className="flex justify-between items-center h-11">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="relative h-14 w-44">
+            <Link to="/" className="flex items-center group -ml-2">
+              <div className="relative h-8 w-32">
                 <img
                   src="/logo.png"
                   alt="GREAT Visa Network"
-                  className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="h-full w-full object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-200"
                   loading="eager"
                 />
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-2">
+            {/* Desktop Navigation - Centered */}
+            <nav className="hidden md:flex items-center space-x-8">
               {mainNavigation.map((item) => (
                 <div key={item.name} className="relative">
                   {item.hasDropdown ? (
                     <div className="relative group">
                       <button
                         onMouseEnter={() => setActiveDropdown('services')}
-                        className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 flex items-center space-x-1.5 ${
-                          location.pathname.includes('/services') || location.pathname.includes('visa') || location.pathname.includes('immigration') || location.pathname.includes('job') || location.pathname.includes('skill') || location.pathname.includes('document')
-                            ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
-                            : 'text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600'
-                        }`}
+                        className="text-xs font-normal text-gray-800 hover:text-gray-900 transition-colors duration-200 py-1"
                       >
-                        <span>{item.name}</span>
-                        <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300" />
+                        {item.name}
                       </button>
                       
                       <AnimatePresence>
                         {activeDropdown === 'services' && (
                           <motion.div
-                            initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                            transition={{ duration: 0.2 }}
+                            initial={{ opacity: 0, y: 5 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 5 }}
+                            transition={{ duration: 0.15 }}
                             onMouseLeave={() => setActiveDropdown(null)}
-                            className="absolute top-full left-0 mt-3 w-80 glass-card rounded-3xl shadow-2xl py-4 z-50 border border-purple-100"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white/95 backdrop-blur-2xl rounded-xl shadow-2xl py-2 z-50 border border-gray-200/50"
                           >
-                            <div className="px-4 pb-3 mb-3 border-b border-gray-200">
-              <p className="text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 uppercase tracking-wider">
-                Our Services
-              </p>
-                            </div>
-                            <div className="max-h-96 overflow-y-auto px-2">
-                              {services.map((service) => (
-                                <Link
-                                  key={service.name}
-                                  to={service.path}
-                                  className="group flex items-center space-x-3 px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-2xl transition-all duration-300 font-semibold"
-                                  onClick={() => setActiveDropdown(null)}
-                                >
-                                  <span className="group-hover:text-indigo-600 transition-colors">{service.name}</span>
-                                </Link>
-                              ))}
-                            </div>
+                            {services.map((service) => (
+                              <Link
+                                key={service.name}
+                                to={service.path}
+                                className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50/80 hover:text-gray-900 transition-colors duration-150"
+                                onClick={() => setActiveDropdown(null)}
+                              >
+                                {service.name}
+                              </Link>
+                            ))}
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -168,11 +121,7 @@ const Header: React.FC = () => {
                   ) : (
                     <Link
                       to={item.path}
-                      className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
-                        location.pathname === item.path
-                          ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
-                          : 'text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600'
-                      }`}
+                      className="text-xs font-normal text-gray-800 hover:text-gray-900 transition-colors duration-200"
                     >
                       {item.name}
                     </Link>
@@ -184,10 +133,10 @@ const Header: React.FC = () => {
             {/* Mobile menu button */}
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden p-3 rounded-2xl text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 transition-all duration-300"
+              className="md:hidden p-1 text-gray-800 hover:text-gray-900 transition-colors"
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
+              {isMobileMenuOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
             </button>
           </div>
         </div>
@@ -199,23 +148,23 @@ const Header: React.FC = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="lg:hidden border-t border-gray-200 bg-white"
+              transition={{ duration: 0.2 }}
+              className="md:hidden border-t border-gray-200/50 bg-white/95 backdrop-blur-2xl"
             >
-              <div className="max-w-7xl mx-auto px-4 py-6 max-h-[calc(100vh-180px)] overflow-y-auto">
-                <nav className="space-y-2">
+              <div className="max-w-[980px] mx-auto px-6 py-4">
+                <nav className="space-y-1">
                   {mainNavigation.map((item) => (
                     <div key={item.name}>
                       {item.hasDropdown ? (
                         <div>
                           <button
                             onClick={() => toggleDropdown('services')}
-                            className="w-full flex items-center justify-between px-5 py-3.5 text-sm font-bold text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-2xl transition-all duration-300"
+                            className="w-full flex items-center justify-between px-4 py-2.5 text-sm text-gray-800 hover:bg-gray-50/80 rounded-lg transition-colors"
                           >
                             <span>{item.name}</span>
                             <ChevronDown 
-                              size={18} 
-                              className={`transition-transform duration-300 ${
+                              size={16} 
+                              className={`transition-transform duration-200 ${
                                 activeDropdown === 'services' ? 'rotate-180' : ''
                               }`}
                             />
@@ -227,16 +176,16 @@ const Header: React.FC = () => {
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
-                                transition={{ duration: 0.2 }}
-                                className="ml-4 mt-2 space-y-1"
+                                transition={{ duration: 0.15 }}
+                                className="ml-4 mt-1 space-y-1"
                               >
                                 {services.map((service) => (
                                   <Link
                                     key={service.name}
                                     to={service.path}
-                                    className="flex items-center space-x-3 px-5 py-3 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-2xl transition-all duration-300 font-semibold"
+                                    className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50/80 hover:text-gray-900 rounded-lg transition-colors"
                                   >
-                                      <span>{service.name}</span>
+                                    {service.name}
                                   </Link>
                                 ))}
                               </motion.div>
@@ -246,11 +195,7 @@ const Header: React.FC = () => {
                       ) : (
                         <Link
                           to={item.path}
-                          className={`block px-5 py-3.5 text-sm font-bold rounded-2xl transition-all duration-300 ${
-                            location.pathname === item.path
-                              ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
-                              : 'text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50'
-                          }`}
+                          className="block px-4 py-2.5 text-sm text-gray-800 hover:bg-gray-50/80 rounded-lg transition-colors"
                         >
                           {item.name}
                         </Link>
@@ -258,33 +203,14 @@ const Header: React.FC = () => {
                     </div>
                   ))}
                 </nav>
-
-                {/* Mobile Contact Info */}
-                <div className="mt-6 pt-6 border-t border-gray-200 space-y-3">
-                  <a 
-                    href="tel:+919533974711" 
-                    className="flex items-center space-x-3 text-gray-700 hover:text-indigo-600 transition-colors font-semibold"
-                  >
-                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center">
-                      <Phone size={18} />
-                    </div>
-                    <span>+91 9533 974 711</span>
-                  </a>
-                  <a 
-                    href="mailto:info@greatvisanetwork.com"
-                    className="flex items-center space-x-3 text-gray-700 hover:text-indigo-600 transition-colors font-semibold"
-                  >
-                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center">
-                      <Mail size={18} />
-                    </div>
-                    <span>info@greatvisanetwork.com</span>
-                  </a>
-                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.header>
+      </header>
+
+      {/* Spacer to prevent content from hiding under fixed header */}
+      <div className="h-11"></div>
     </>
   );
 };
