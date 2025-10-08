@@ -146,6 +146,7 @@ const Header: React.FC = () => {
                   ) : (
                     <Link
                       to={item.path}
+                      onMouseEnter={() => setActiveDropdown(null)}
                       className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
                         location.pathname === item.path
                           ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
@@ -187,7 +188,7 @@ const Header: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="bg-gradient-to-br from-white via-slate-50 to-indigo-50/30 shadow-2xl border-b border-slate-200"
+              className="absolute top-[96px] left-0 right-0 bg-gradient-to-br from-white via-slate-50 to-indigo-50/30 shadow-2xl border-b border-slate-200"
               onClick={(e) => e.stopPropagation()}
               onMouseLeave={() => setActiveDropdown(null)}
             >
