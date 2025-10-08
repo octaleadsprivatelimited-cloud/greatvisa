@@ -335,6 +335,10 @@ const Header: React.FC = () => {
                                 <Link
                                   key={service.name}
                                   to={service.path}
+                                  onClick={() => {
+                                    setIsMobileMenuOpen(false);
+                                    setActiveDropdown(null);
+                                  }}
                                   className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-2xl transition-all duration-300 font-semibold"
                                 >
                                   {service.icon} {service.name}
@@ -345,6 +349,10 @@ const Header: React.FC = () => {
                                 <Link
                                   key={service.name}
                                   to={service.path}
+                                  onClick={() => {
+                                    setIsMobileMenuOpen(false);
+                                    setActiveDropdown(null);
+                                  }}
                                   className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600 rounded-2xl transition-all duration-300 font-semibold"
                                 >
                                   {service.icon} {service.name}
@@ -357,6 +365,7 @@ const Header: React.FC = () => {
                     ) : (
                       <Link
                         to={item.path}
+                        onClick={() => setIsMobileMenuOpen(false)}
                         className={`block px-4 py-3 text-sm font-bold rounded-2xl transition-all duration-300 ${
                           location.pathname === item.path
                             ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
