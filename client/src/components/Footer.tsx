@@ -3,182 +3,250 @@ import { Link } from 'react-router-dom';
 import { 
   Phone, 
   Mail, 
-  MapPin, 
+  Clock,
   Facebook,
   Twitter,
   Instagram,
   Linkedin,
   Youtube,
-  ArrowRight
+  ChevronRight,
+  Globe,
+  Award,
+  Shield
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
-  const services = [
+  const visaServices = [
     { name: 'Study Visa', path: '/study-visa' },
     { name: 'Work Visa', path: '/work-visa' },
     { name: 'Tourist Visa', path: '/tourist-visa' },
     { name: 'Family Visa', path: '/family-visa' },
     { name: 'Business Visa', path: '/business-visa' },
-    { name: 'Immigration', path: '/immigration-consultation' }
+    { name: 'Visa Extension', path: '/visa-extension' }
+  ];
+
+  const consultingServices = [
+    { name: 'Immigration Consultation', path: '/immigration-consultation' },
+    { name: 'Job Placement', path: '/job-placement' },
+    { name: 'Skill Assessment', path: '/skill-assessment' },
+    { name: 'Document Attestation', path: '/document-attestation' }
   ];
 
   const company = [
     { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services' },
+    { name: 'Our Services', path: '/services' },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'Testimonials', path: '/testimonials' },
-    { name: 'Careers', path: '/careers' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Blog', path: '/blog' },
+    { name: 'Careers', path: '/careers' }
+  ];
+
+  const support = [
+    { name: 'Contact Us', path: '/contact' },
+    { name: 'FAQ', path: '/faq' },
+    { name: 'Privacy Policy', path: '/privacy-policy' },
+    { name: 'Terms of Service', path: '/terms-of-service' },
+    { name: 'Sitemap', path: '/sitemap' }
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: '#', gradient: 'from-blue-600 to-blue-700' },
-    { name: 'Instagram', icon: Instagram, href: '#', gradient: 'from-pink-600 to-purple-600' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#', gradient: 'from-blue-700 to-blue-800' },
-    { name: 'Twitter', icon: Twitter, href: '#', gradient: 'from-sky-500 to-blue-500' },
-    { name: 'YouTube', icon: Youtube, href: '#', gradient: 'from-red-600 to-red-700' }
+    { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:bg-blue-600' },
+    { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:bg-pink-600' },
+    { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:bg-blue-700' },
+    { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:bg-sky-500' },
+    { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:bg-red-600' }
+  ];
+
+  const trustBadges = [
+    { icon: Award, text: '98% Success Rate' },
+    { icon: Shield, text: 'Secure & Trusted' },
+    { icon: Globe, text: '50+ Countries' }
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
-      </div>
-
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
-            <Link to="/" className="inline-block mb-6">
-              <img
-                src="/logo.webp"
-                alt="GREAT Visa Network"
-                className="h-16 w-auto brightness-0 invert"
-              />
-            </Link>
-            <p className="text-white/80 mb-6 text-lg font-medium leading-relaxed">
-              Your trusted partner for visa consultancy & immigration services. 
-              Making international dreams come true!
-            </p>
-            
-            {/* Contact Info - Modern Cards */}
-            <div className="space-y-4">
-              <a 
-                href="tel:+919533974711" 
-                className="group flex items-center space-x-3 glass-effect p-4 rounded-2xl hover:bg-white/20 transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Phone size={20} />
-                </div>
-                <span className="font-bold text-lg">+91 9533 974 711</span>
-              </a>
-              <a 
-                href="mailto:info@greatvisanetwork.com"
-                className="group flex items-center space-x-3 glass-effect p-4 rounded-2xl hover:bg-white/20 transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Mail size={20} />
-                </div>
-                <span className="font-bold text-lg">info@greatvisanetwork.com</span>
-              </a>
-              <div className="flex items-start space-x-3 glass-effect p-4 rounded-2xl">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <MapPin size={20} />
-                </div>
-                <span className="font-bold text-lg">Hyderabad, Telangana, India</span>
+    <footer className="bg-slate-900 text-slate-300">
+      {/* Main Footer */}
+      <div className="border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+            {/* Company Info - 4 cols */}
+            <div className="lg:col-span-4">
+              <Link to="/" className="inline-block mb-6">
+                <img
+                  src="/logo.webp"
+                  alt="GREAT Visa Network"
+                  className="h-12 w-auto brightness-0 invert opacity-90"
+                />
+              </Link>
+              <p className="text-slate-400 mb-6 leading-relaxed text-sm">
+                Your trusted partner for visa consultancy and immigration services. 
+                We help individuals and businesses achieve their international goals 
+                with expert guidance and proven success.
+              </p>
+              
+              {/* Trust Badges */}
+              <div className="flex flex-wrap gap-3 mb-6">
+                {trustBadges.map((badge, index) => (
+                  <div key={index} className="flex items-center space-x-2 bg-slate-800/50 px-3 py-2 rounded-lg">
+                    <badge.icon size={16} className="text-blue-400" />
+                    <span className="text-xs font-medium text-slate-300">{badge.text}</span>
+                  </div>
+                ))}
               </div>
-            </div>
-          </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-2xl font-black mb-6 text-gradient-rainbow">Services</h3>
-            <ul className="space-y-3">
-              {services.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="group flex items-center text-white/70 hover:text-white transition-colors font-semibold"
-                  >
-                    <ArrowRight size={16} className="mr-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-                    <span>{link.name}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="text-2xl font-black mb-6 text-gradient-rainbow">Company</h3>
-            <ul className="space-y-3">
-              {company.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="group flex items-center text-white/70 hover:text-white transition-colors font-semibold"
-                  >
-                    <ArrowRight size={16} className="mr-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-                    <span>{link.name}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Social Links - Creative Design */}
-        <div className="border-t border-white/10 pt-8 mb-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <div>
-              <p className="text-white/60 font-semibold mb-3">Follow Us</p>
-              <div className="flex space-x-3">
+              {/* Social Links */}
+                  <div>
+                <p className="text-sm font-semibold text-slate-400 mb-3">Connect With Us</p>
+                <div className="flex space-x-2">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group w-12 h-12 bg-gradient-to-br ${social.gradient} rounded-xl flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl`}
+                      className={`w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 ${social.color} hover:text-white transition-all duration-300`}
                     aria-label={social.name}
                   >
-                    <social.icon size={20} className="group-hover:rotate-12 transition-transform" />
+                      <social.icon size={18} />
                   </a>
                 ))}
+                </div>
               </div>
           </div>
 
-            {/* Newsletter - Creative */}
-            <div className="text-center md:text-right">
-              <p className="text-white/60 font-semibold mb-3">Stay Updated</p>
-              <a
-                href="/contact"
-                className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-xl font-bold transition-all duration-300 hover:scale-105 shadow-lg"
-              >
-                <span>Subscribe Now</span>
-                <ArrowRight size={18} className="ml-2" />
-              </a>
+            {/* Visa Services - 2 cols */}
+            <div className="lg:col-span-2">
+              <h3 className="text-white text-lg font-bold mb-6">Visa Services</h3>
+              <ul className="space-y-3">
+                {visaServices.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-sm"
+                    >
+                      <ChevronRight size={14} className="mr-1 group-hover:translate-x-1 transition-transform" />
+                      <span>{link.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Consulting Services - 2 cols */}
+            <div className="lg:col-span-2">
+              <h3 className="text-white text-lg font-bold mb-6">Consulting Services</h3>
+              <ul className="space-y-3">
+                {consultingServices.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-sm"
+                    >
+                      <ChevronRight size={14} className="mr-1 group-hover:translate-x-1 transition-transform" />
+                      <span>{link.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+                </div>
+                
+            {/* Company - 2 cols */}
+            <div className="lg:col-span-2">
+              <h3 className="text-white text-lg font-bold mb-6">Company</h3>
+              <ul className="space-y-3">
+                {company.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-sm"
+                    >
+                      <ChevronRight size={14} className="mr-1 group-hover:translate-x-1 transition-transform" />
+                      <span>{link.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-6">
+                <h4 className="text-white text-sm font-bold mb-3">Support</h4>
+                <ul className="space-y-2">
+                  {support.map((link) => (
+                    <li key={link.path}>
+                      <Link
+                        to={link.path}
+                        className="group inline-flex items-center text-slate-400 hover:text-white transition-colors text-xs"
+                      >
+                        <ChevronRight size={12} className="mr-1 group-hover:translate-x-1 transition-transform" />
+                        <span>{link.name}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
+            </div>
           </div>
         </div>
+        </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-white/60 font-semibold">
-            <p>
-              © {currentYear} GREAT Visa Network. All rights reserved.
+      {/* Contact Bar */}
+      <div className="bg-slate-950 border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Phone size={20} className="text-blue-400" />
+              </div>
+              <div>
+                <p className="text-xs text-slate-500 font-medium">Call Us</p>
+                <a href="tel:+919533974711" className="text-white font-semibold hover:text-blue-400 transition-colors">
+                  +91 9533 974 711
+                </a>
+        </div>
+      </div>
+
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Mail size={20} className="text-blue-400" />
+              </div>
+              <div>
+                <p className="text-xs text-slate-500 font-medium">Email Us</p>
+                <a href="mailto:info@greatvisanetwork.com" className="text-white font-semibold hover:text-blue-400 transition-colors">
+                  info@greatvisanetwork.com
+                </a>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Clock size={20} className="text-blue-400" />
+              </div>
+              <div>
+                <p className="text-xs text-slate-500 font-medium">Working Hours</p>
+                <p className="text-white font-semibold text-sm">Mon - Sat: 9:00 AM - 6:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="bg-slate-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm">
+            <p className="text-slate-500">
+              © {currentYear} <span className="text-white font-semibold">GREAT Visa Network</span>. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
-              <Link to="/privacy-policy" className="hover:text-white transition-colors">
-                Privacy Policy
+              <Link to="/privacy-policy" className="text-slate-500 hover:text-white transition-colors">
+                Privacy
               </Link>
-              <Link to="/terms-of-service" className="hover:text-white transition-colors">
-                Terms of Service
+              <Link to="/terms-of-service" className="text-slate-500 hover:text-white transition-colors">
+                Terms
+              </Link>
+              <Link to="/sitemap" className="text-slate-500 hover:text-white transition-colors">
+                Sitemap
               </Link>
             </div>
           </div>
