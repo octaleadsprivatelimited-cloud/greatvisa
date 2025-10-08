@@ -8,7 +8,6 @@ import {
   Sparkles,
   Zap,
   Shield,
-  TrendingUp,
   Phone
 } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -84,23 +83,6 @@ const Home: React.FC = () => {
       {/* Services - Bento Box Layout */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 rounded-full font-bold mb-6">
-              <TrendingUp size={20} />
-              <span>Our Services</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Visa Solutions
-              <br />
-              <span className="text-gradient-neon">That Work</span>
-            </h2>
-          </motion.div>
-
           {/* Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((service, index) => (
