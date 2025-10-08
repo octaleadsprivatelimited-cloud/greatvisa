@@ -204,18 +204,18 @@ const Hero: React.FC = () => {
               className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-3xl blur-2xl opacity-60"
             />
 
-            <div className="relative glass-card rounded-3xl shadow-2xl p-8 lg:p-10 border-2 border-white/50">
+            <div className="relative glass-card rounded-2xl shadow-xl p-5 lg:p-6 border-2 border-white/50">
               {/* Form Header */}
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-sm font-bold mb-4">
-                  <TrendingUp size={16} />
+              <div className="text-center mb-5">
+                <div className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-xs font-bold mb-3">
+                  <TrendingUp size={14} />
                   <span>Quick Start</span>
                 </div>
-                <h3 className="text-3xl font-black text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-1">
                   Start Your Journey
                 </h3>
-                <p className="text-gray-600 font-medium">
-                  Get expert consultation within 24 hours ⚡
+                <p className="text-gray-600 text-sm">
+                  Get expert consultation within 24 hours
                 </p>
               </div>
 
@@ -225,18 +225,18 @@ const Hero: React.FC = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12"
                 >
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h4 className="text-2xl font-bold text-gray-900 mb-2">Success!</h4>
-                  <p className="text-gray-600 font-medium">
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">Success!</h4>
+                  <p className="text-gray-600 text-sm">
                     We'll contact you within 24 hours
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-3">
                   <div>
                     <input
                       type="text"
@@ -244,19 +244,19 @@ const Hero: React.FC = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 font-semibold text-lg"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 text-sm"
                       placeholder="Your Full Name"
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 font-semibold"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 text-sm"
                       placeholder="Email"
                     />
 
@@ -265,7 +265,7 @@ const Hero: React.FC = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 font-semibold"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 text-sm"
                       placeholder="Phone"
                     />
                   </div>
@@ -275,7 +275,7 @@ const Hero: React.FC = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 font-semibold text-lg"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 text-sm"
                     >
                       <option value="">Select Service</option>
                       {services.map((service) => (
@@ -289,26 +289,26 @@ const Hero: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white font-bold py-5 px-8 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-3 text-lg group"
+                    className="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-sm group"
                   >
                     {isSubmitting ? (
                       <span>Submitting...</span>
                     ) : (
                       <>
-                        <Sparkles size={22} className="group-hover:rotate-12 transition-transform" />
+                        <Sparkles size={16} className="group-hover:rotate-12 transition-transform" />
                         <span>Get Free Consultation</span>
-                        <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform" />
+                        <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
                       </>
                     )}
                   </button>
 
                   {submitStatus === 'error' && (
-                    <p className="text-red-600 text-center font-semibold">
+                    <p className="text-red-600 text-center text-xs">
                       Something went wrong. Please try again.
                     </p>
                   )}
 
-                  <p className="text-center text-xs text-gray-500 pt-4">
+                  <p className="text-center text-[10px] text-gray-500 pt-2">
                     Your information is secure & confidential
                   </p>
                 </form>
