@@ -60,7 +60,7 @@ const Home: React.FC = () => {
       desc: 'Expert consultation', 
       link: '/immigration-consultation', 
       gradient: 'from-amber-500 to-yellow-500', 
-      size: 'small',
+      size: 'medium',
       image: '/services/immigration.jpg'
     }
   ];
