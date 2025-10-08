@@ -221,42 +221,42 @@ const Home: React.FC = () => {
             {[
               {
                 country: 'USA',
-                title: 'Study In USA',
+                title: 'USA',
                 visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
                 image: '/country/usa.jpg',
                 gradient: 'from-blue-600 to-blue-800'
               },
               {
                 country: 'Canada',
-                title: 'Study In Canada',
+                title: 'Canada',
                 visas: ['Student Visa', 'Permanent Resident Visa', 'Visitor/Tourist Visa', 'Business Visa'],
                 image: '/country/canada.jpg',
                 gradient: 'from-red-600 to-red-800'
               },
               {
                 country: 'Australia',
-                title: 'Study In Australia',
+                title: 'Australia',
                 visas: ['Student Visa', 'Permanent Resident Visa', 'Visitor/Tourist Visa', 'Business Visa'],
                 image: '/country/australia.jpg',
                 gradient: 'from-green-600 to-green-800'
               },
               {
                 country: 'UK',
-                title: 'Study In UK',
+                title: 'UK',
                 visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
                 image: '/country/uk.jpg',
                 gradient: 'from-indigo-600 to-indigo-800'
               },
               {
                 country: 'Germany',
-                title: 'Study In Germany',
+                title: 'Germany',
                 visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
                 image: '/country/Germany.jpg',
                 gradient: 'from-gray-700 to-gray-900'
               },
               {
                 country: 'Europe',
-                title: 'Study In Europe',
+                title: 'Europe',
                 visas: ['Student Visa', 'Visitor/Tourist Visa', 'Business Visa'],
                 image: '/country/Europe.jpeg',
                 gradient: 'from-purple-600 to-purple-800'
