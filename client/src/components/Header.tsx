@@ -292,7 +292,7 @@ const Header: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Simple Dropdown */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -300,9 +300,9 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden border-t border-gray-200 bg-white"
+            className="lg:hidden fixed top-[116px] left-0 right-0 bg-white border-t border-gray-200 shadow-xl z-40 max-h-[calc(100vh-116px)] overflow-y-auto"
           >
-            <div className="max-w-7xl mx-auto px-4 py-4 max-h-[calc(100vh-180px)] overflow-y-auto">
+            <div className="px-4 py-4">
               <nav className="space-y-2">
                 {mainNavigation.map((item) => (
                   <div key={item.name}>
@@ -310,11 +310,12 @@ const Header: React.FC = () => {
                       <div>
                         <button
                           onClick={() => toggleDropdown('services')}
-                          className="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-2xl transition-all duration-300"
+                          className="w-full flex items-center justify-between px-4 py-3 text-base font-bold text-gray-900 hover:bg-slate-50 rounded-xl transition-all duration-200"
                         >
                           <span>{item.name}</span>
                           <ChevronDown 
-                            size={18} 
+                            size={20} 
+                            strokeWidth={2.5}
                             className={`transition-transform duration-300 ${
                               activeDropdown === 'services' ? 'rotate-180' : ''
                             }`}
@@ -327,10 +328,10 @@ const Header: React.FC = () => {
                               initial={{ opacity: 0, height: 0 }}
                               animate={{ opacity: 1, height: 'auto' }}
                               exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.2 }}
-                              className="ml-4 mt-2 space-y-1"
+                              transition={{ duration: 0.3 }}
+                              className="mt-2 space-y-1 bg-slate-50 rounded-xl p-2"
                             >
-                              <div className="text-xs font-bold text-indigo-600 px-4 py-2">Visa Services</div>
+                              <div className="text-xs font-bold text-indigo-600 px-3 py-2 uppercase tracking-wider">Visa Services</div>
                               {servicesCategories.visaServices.map((service) => (
                                 <Link
                                   key={service.name}
@@ -339,12 +340,13 @@ const Header: React.FC = () => {
                                     setIsMobileMenuOpen(false);
                                     setActiveDropdown(null);
                                   }}
-                                  className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-2xl transition-all duration-300 font-semibold"
+                                  className="flex items-center space-x-2 px-3 py-2.5 text-sm text-gray-700 hover:bg-white hover:text-indigo-600 rounded-lg transition-all duration-200 font-medium"
                                 >
-                                  {service.icon} {service.name}
+                                  <span className="text-lg">{service.icon}</span>
+                                  <span>{service.name}</span>
                                 </Link>
                               ))}
-                              <div className="text-xs font-bold text-purple-600 px-4 py-2 mt-2">Consultation Services</div>
+                              <div className="text-xs font-bold text-purple-600 px-3 py-2 mt-3 uppercase tracking-wider">Consultation Services</div>
                               {servicesCategories.consultationServices.map((service) => (
                                 <Link
                                   key={service.name}
@@ -353,9 +355,10 @@ const Header: React.FC = () => {
                                     setIsMobileMenuOpen(false);
                                     setActiveDropdown(null);
                                   }}
-                                  className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600 rounded-2xl transition-all duration-300 font-semibold"
+                                  className="flex items-center space-x-2 px-3 py-2.5 text-sm text-gray-700 hover:bg-white hover:text-purple-600 rounded-lg transition-all duration-200 font-medium"
                                 >
-                                  {service.icon} {service.name}
+                                  <span className="text-lg">{service.icon}</span>
+                                  <span>{service.name}</span>
                                 </Link>
                               ))}
                             </motion.div>
@@ -366,10 +369,10 @@ const Header: React.FC = () => {
                       <Link
                         to={item.path}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`block px-4 py-3 text-sm font-bold rounded-2xl transition-all duration-300 ${
+                        className={`block px-4 py-3 text-base font-bold rounded-xl transition-all duration-200 ${
                           location.pathname === item.path
                             ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
-                            : 'text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50'
+                            : 'text-gray-900 hover:bg-slate-50'
                         }`}
                       >
                         {item.name}
