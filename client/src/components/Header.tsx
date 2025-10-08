@@ -302,19 +302,19 @@ const Header: React.FC = () => {
             transition={{ duration: 0.3 }}
             className="lg:hidden fixed top-[116px] left-0 right-0 bg-white border-t border-gray-200 shadow-xl z-40 max-h-[calc(100vh-116px)] overflow-y-auto"
           >
-            <div className="px-4 py-4">
-              <nav className="space-y-2">
+            <div className="px-3 py-2">
+              <nav className="space-y-0.5">
                 {mainNavigation.map((item) => (
                   <div key={item.name}>
                     {item.hasDropdown ? (
                       <div>
                         <button
                           onClick={() => toggleDropdown('services')}
-                          className="w-full flex items-center justify-between px-4 py-2.5 text-sm font-semibold text-gray-900 hover:bg-slate-50 rounded-lg transition-all duration-200"
+                          className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-gray-900 hover:bg-slate-50 rounded-lg transition-all duration-200"
                         >
                           <span>{item.name}</span>
                           <ChevronDown 
-                            size={16} 
+                            size={14} 
                             strokeWidth={2.5}
                             className={`transition-transform duration-300 ${
                               activeDropdown === 'services' ? 'rotate-180' : ''
@@ -329,9 +329,9 @@ const Header: React.FC = () => {
                               animate={{ opacity: 1, height: 'auto' }}
                               exit={{ opacity: 0, height: 0 }}
                               transition={{ duration: 0.3 }}
-                              className="mt-2 space-y-1 bg-slate-50 rounded-xl p-2"
+                              className="mt-1 space-y-0.5 bg-slate-50 rounded-lg p-1.5"
                             >
-                              <div className="text-xs font-bold text-indigo-600 px-3 py-1.5 uppercase tracking-wider">Visa Services</div>
+                              <div className="text-[10px] font-bold text-indigo-600 px-2 py-1 uppercase tracking-wider">Visa Services</div>
                               {servicesCategories.visaServices.map((service) => (
                                 <Link
                                   key={service.name}
@@ -340,12 +340,12 @@ const Header: React.FC = () => {
                                     setIsMobileMenuOpen(false);
                                     setActiveDropdown(null);
                                   }}
-                                  className="block px-3 py-2 text-xs text-gray-700 hover:bg-white hover:text-indigo-600 rounded-lg transition-all duration-200 font-medium"
+                                  className="block px-2 py-1.5 text-[11px] text-gray-700 hover:bg-white hover:text-indigo-600 rounded transition-all duration-200 font-medium"
                                 >
                                   {service.name}
                                 </Link>
                               ))}
-                              <div className="text-xs font-bold text-purple-600 px-3 py-1.5 mt-2 uppercase tracking-wider">Consultation Services</div>
+                              <div className="text-[10px] font-bold text-purple-600 px-2 py-1 mt-1 uppercase tracking-wider">Consultation Services</div>
                               {servicesCategories.consultationServices.map((service) => (
                                 <Link
                                   key={service.name}
@@ -354,7 +354,7 @@ const Header: React.FC = () => {
                                     setIsMobileMenuOpen(false);
                                     setActiveDropdown(null);
                                   }}
-                                  className="block px-3 py-2 text-xs text-gray-700 hover:bg-white hover:text-purple-600 rounded-lg transition-all duration-200 font-medium"
+                                  className="block px-2 py-1.5 text-[11px] text-gray-700 hover:bg-white hover:text-purple-600 rounded transition-all duration-200 font-medium"
                                 >
                                   {service.name}
                                 </Link>
@@ -367,7 +367,7 @@ const Header: React.FC = () => {
                       <Link
                         to={item.path}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`block px-4 py-2.5 text-sm font-semibold rounded-lg transition-all duration-200 ${
+                        className={`block px-3 py-2 text-xs font-semibold rounded-lg transition-all duration-200 ${
                           location.pathname === item.path
                             ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
                             : 'text-gray-900 hover:bg-slate-50'
