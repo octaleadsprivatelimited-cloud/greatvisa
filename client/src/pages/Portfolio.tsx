@@ -4,9 +4,12 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 
 const Portfolio: React.FC = () => {
   const projects = [
-    { title: 'Study Visa Approvals', description: 'Admissions and visas for top universities in Canada, UK, and Australia.', image: '/study-visa.jpg', stats: '1200+ approvals' },
-    { title: 'Work Visa Placements', description: 'Skilled professionals placed in reputed companies across multiple countries.', image: '/work.jpg', stats: '900+ placements' },
-    { title: 'Tourist Visa Success', description: 'Quick turnaround for family trips and solo travellers worldwide.', image: '/visitor-visa-application.jpg', stats: '2000+ trips' },
+    { title: 'Study Visa Approvals', description: 'Admissions and visas for top universities in Canada, UK, and Australia.', image: '/services/study_visa.jpg', stats: '1200+ approvals' },
+    { title: 'Work Visa Placements', description: 'Skilled professionals placed in reputed companies across multiple countries.', image: '/services/word_visa.jpg', stats: '900+ placements' },
+    { title: 'Tourist Visa Success', description: 'Quick turnaround for family trips and solo travellers worldwide.', image: '/services/tourist_visa.jpeg', stats: '2000+ trips' },
+    { title: 'Family Reunification', description: 'Helping families reunite across borders with successful visa applications.', image: '/services/family_visa.jpg', stats: '800+ families' },
+    { title: 'Business Visa Solutions', description: 'Enabling entrepreneurs and businesses to expand globally.', image: '/services/businessvisa.jpg', stats: '600+ businesses' },
+    { title: 'Immigration Consultation', description: 'Expert guidance for permanent residency and citizenship pathways.', image: '/services/immigration.jpg', stats: '1500+ consultations' },
   ];
 
   return (
