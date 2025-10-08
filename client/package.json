@@ -32,12 +32,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "DISABLE_ESLINT_PLUGIN=true npx react-scripts start",
-    "build": "DISABLE_ESLINT_PLUGIN=true npx react-scripts build",
-    "build:prod": "GENERATE_SOURCEMAP=false DISABLE_ESLINT_PLUGIN=true npx react-scripts build",
-    "test": "npx react-scripts test",
-    "test:coverage": "npx react-scripts test --coverage --watchAll=false",
-    "eject": "npx react-scripts eject",
+    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "build:prod": "GENERATE_SOURCEMAP=false DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "eject": "react-scripts eject",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "type-check": "tsc --noEmit"
