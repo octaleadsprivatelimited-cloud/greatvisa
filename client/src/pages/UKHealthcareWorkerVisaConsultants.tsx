@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, CheckCircle, Clock, Users, Mail, Phone, MapPin, ArrowRight, MessageCircle, Stethoscope, Activity } from 'lucide-react';
+import { CheckCircle, Users, Mail, Phone, ArrowRight, MessageCircle, Stethoscope, Activity } from 'lucide-react';
 
 const UKHealthcareWorkerVisaConsultants = () => {
   const [formData, setFormData] = useState({

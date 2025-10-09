@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Briefcase, 
   CheckCircle, 
   Users, 
   Award,
   ArrowRight,
   Building,
   FileText,
-  Star,
   TrendingUp,
   Phone,
   MessageCircle,
@@ -16,7 +14,6 @@ import {
   Globe,
   Plane,
   ShieldCheck,
-  Target,
   Mail,
 } from 'lucide-react';
 
@@ -225,7 +222,7 @@ const WorkVisa: React.FC = () => {
               >
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">High-Demand Industries</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {industries.map((industry, index) => (
+                  {industries.map((industry) => (
                     <div key={industry.name} className="bg-gray-50 rounded-xl p-6">
                       <div className="text-center mb-4">
                         <div className="text-5xl mb-2">{industry.icon}</div>

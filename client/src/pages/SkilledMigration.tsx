@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Globe, CheckCircle, Clock, Users, Mail, Phone, MapPin, ArrowRight, MessageCircle, Award, TrendingUp, Plane, FileText, ClipboardCheck, ShieldCheck, Target } from 'lucide-react';
+import { Globe, CheckCircle, Mail, Phone, ArrowRight, MessageCircle, Award, TrendingUp, Plane, FileText, ClipboardCheck, ShieldCheck, Target } from 'lucide-react';
 
 const SkilledMigration = () => {
   const [formData, setFormData] = useState({
@@ -21,11 +21,6 @@ const SkilledMigration = () => {
     e.preventDefault();
     const whatsappMessage = `Hi, I'm interested in Skilled Migration services. Name: ${formData.name}, Email: ${formData.email}, Phone: ${formData.phone}, Message: ${formData.message}`;
     window.open(`https://wa.me/919848158627?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
-  };
-
-  const handleWhatsAppClick = () => {
-    const message = "Hi, I'm interested in Skilled Migration consultancy. Could you please provide more information?";
-    window.open(`https://wa.me/919848158627?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const countries = [

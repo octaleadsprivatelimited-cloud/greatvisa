@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, CheckCircle, Clock, Users, Mail, Phone, MapPin, ArrowRight, MessageCircle, Award, Globe } from 'lucide-react';
+import { Briefcase, CheckCircle, Users, Mail, Phone, ArrowRight, MessageCircle, Award } from 'lucide-react';
 
 const NetherlandsSkilledWorkerVisa = () => {
   const [formData, setFormData] = useState({

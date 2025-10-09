@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, CheckCircle, Clock, Users, Mail, Phone, MapPin, ArrowRight, MessageCircle, Award, FileText } from 'lucide-react';
+import { Briefcase, CheckCircle, Users, Mail, Phone, MapPin, ArrowRight, MessageCircle, FileText } from 'lucide-react';
 
 const UKTier2VisaConsultantsHyderabad = () => {
   const [formData, setFormData] = useState({

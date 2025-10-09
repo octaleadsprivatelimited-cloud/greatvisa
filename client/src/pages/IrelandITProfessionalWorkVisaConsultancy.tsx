@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Code, CheckCircle, Clock, Users, Mail, Phone, MapPin, ArrowRight, MessageCircle, Laptop, Zap } from 'lucide-react';
+import { Code, CheckCircle, Users, Mail, Phone, ArrowRight, MessageCircle, Laptop, Zap } from 'lucide-react';
 
 const IrelandITProfessionalWorkVisaConsultancy = () => {
   const [formData, setFormData] = useState({
