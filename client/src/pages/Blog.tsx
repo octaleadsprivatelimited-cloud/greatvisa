@@ -1,38 +1,98 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { blogPosts } from '../data/blogPosts';
 
 const Blog: React.FC = () => {
-  const posts = [
-    { title: 'How to Choose the Right Study Visa', date: 'Sep 20, 2025', excerpt: 'A step-by-step guide on selecting the best study visa route for your profile.', image: '/study-visa.jpg' },
-    { title: 'Work Abroad: Documents Checklist', date: 'Sep 10, 2025', excerpt: 'Essential documentation for smooth work visa processing and onboarding.', image: '/work.jpg' },
-    { title: 'Tourist Visa Tips for First-Timers', date: 'Aug 30, 2025', excerpt: 'Plan your first international trip with these visa and travel tips.', image: '/visitor-visa-application.jpg' },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-4">Blog</h1>
-            <p className="text-lg text-gray-600">Insights and updates on visas, immigration, and travel.</p>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-4"
+            >
+              Blog & Resources
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-gray-600"
+            >
+              Expert insights, guides, and updates on visas, immigration, and international opportunities.
+            </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {posts.map((p) => (
-              <motion.article key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                <div className="h-44 bg-gray-100">
-                  <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
-                </div>
-                <div className="p-6">
-                  <div className="text-sm text-gray-500 mb-1">{p.date}</div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-2">{p.title}</h2>
-                  <p className="text-gray-600 mb-4">{p.excerpt}</p>
-                  <a href="/contact" className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700">Read More <ArrowRight size={16} className="ml-1" /></a>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {blogPosts.map((post, index) => (
+              <motion.article 
+                key={post.id} 
+                initial={{ opacity: 0, y: 20 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ duration: 0.5, delay: index * 0.1 }} 
+                className="group bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300"
+              >
+                <Link to={`/blog/${post.slug}`}>
+                  <div className="h-48 bg-gray-100 overflow-hidden">
+                    <img 
+                      src={post.image} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs font-semibold">
+                        {post.category}
+                      </span>
+                      <div className="flex items-center text-xs text-gray-500">
+                        <Clock size={14} className="mr-1" />
+                        {post.readTime}
+                      </div>
+                    </div>
+                    <h2 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition">
+                      {post.title}
+                    </h2>
+                    <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-sm text-gray-500">
+                        <Calendar size={14} className="mr-1" />
+                        {post.date}
+                      </div>
+                      <span className="inline-flex items-center text-indigo-600 font-semibold group-hover:text-indigo-700">
+                        Read More <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
               </motion.article>
             ))}
           </div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 max-w-4xl mx-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-8 md:p-12 text-center text-white"
+          >
+            <h2 className="text-3xl font-bold mb-4">Ready to Start Your Visa Journey?</h2>
+            <p className="text-white/90 mb-6 text-lg">
+              Get expert guidance from our experienced visa consultants.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center px-8 py-4 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-yellow-400 hover:text-gray-900 transition"
+            >
+              Get Free Consultation
+              <ArrowRight size={20} className="ml-2" />
+            </Link>
+          </motion.div>
         </div>
       </section>
     </div>

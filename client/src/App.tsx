@@ -39,6 +39,7 @@ import UKTier2VisaConsultantsHyderabad from './pages/UKTier2VisaConsultantsHyder
 import UKSkilledWorkVisaConsultancy from './pages/UKSkilledWorkVisaConsultancy';
 import SkilledMigration from './pages/SkilledMigration';
 import AlbaniaWorkVisa from './pages/AlbaniaWorkVisa';
+import BlogPost from './pages/BlogPost';
 
 function App() {
   return (
@@ -87,6 +88,7 @@ function App() {
             <Route path="/uk-skilled-work-visa-consultancy" element={<UKSkilledWorkVisaConsultancy />} />
             <Route path="/skilled-migration" element={<SkilledMigration />} />
             <Route path="/albania-work-visa" element={<AlbaniaWorkVisa />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </main>
         <Footer />
