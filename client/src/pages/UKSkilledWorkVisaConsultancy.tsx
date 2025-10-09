@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, CheckCircle, Mail, Phone, ArrowRight, MessageCircle, Award, TrendingUp } from 'lucide-react';
+import { Briefcase, CheckCircle, Mail, Phone, ArrowRight, MessageCircle, Award, TrendingUp, Globe, ClipboardCheck, FileText, ShieldCheck, Building, Users } from 'lucide-react';
 
 const UKSkilledWorkVisaConsultancy = () => {
   const [formData, setFormData] = useState({
@@ -16,55 +16,95 @@ const UKSkilledWorkVisaConsultancy = () => {
     window.open(`https://wa.me/919848158627?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
   };
 
-  const handleWhatsAppClick = () => {
-    const message = "Hi, I'm interested in UK Skilled Work Visa consultancy. Could you please provide more information?";
-    window.open(`https://wa.me/919848158627?text=${encodeURIComponent(message)}`, '_blank');
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  const handleScrollToAssessment = () => {
+    const node = document.getElementById('assessment');
+    if (node) node.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Hero Section */}
-      <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-900">
-          <div className="absolute inset-0 bg-black/40"></div>
-          <div className="absolute inset-0 flex items-center justify-center text-white/20 text-6xl font-bold">
-            [UK Skilled Work Visa Image]
-          </div>
-        </div>
+      <section className="relative h-[520px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/services/word_visa.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 via-purple-900/80 to-blue-900/80"></div>
 
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-2xl"
-          >
-            UK Skilled Work Visa Consultancy
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl mb-8 drop-shadow-lg"
-          >
-            Your Pathway to UK Employment
-          </motion.p>
-          <motion.button
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            onClick={handleWhatsAppClick}
-            className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-xl flex items-center mx-auto"
-          >
-            <MessageCircle className="mr-2" size={24} />
-            Get Free Consultation
-          </motion.button>
+        <div className="relative z-10 container mx-auto px-4 w-full">
+          <div className="max-w-6xl mx-auto">
+            <nav className="text-sm text-white/80 mb-6">
+              <a href="/" className="hover:text-white">Home</a>
+              <span className="mx-2">/</span>
+              <span className="text-white">UK Skilled Work Visa Consultancy</span>
+            </nav>
+
+            <div className="grid md:grid-cols-2 gap-8 items-center text-white">
+              <div>
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
+                >
+                  UK Skilled Work Visa Consultancy
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 }}
+                  className="text-lg md:text-xl mb-6 text-white/90"
+                >
+                  Your pathway to UK employment and career success.
+                </motion.p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={handleScrollToAssessment}
+                    className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-xl flex items-center justify-center"
+                  >
+                    <ClipboardCheck className="mr-2" size={20} />
+                    Free Assessment
+                  </button>
+                  <a
+                    href="tel:+919848158627"
+                    className="glass-effect px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
+                  >
+                    <Phone className="mr-2" size={20} />
+                    Call Expert
+                  </a>
+                </div>
+              </div>
+              <div className="hidden md:block">
+                <div className="glass-effect rounded-2xl p-6 shadow-neon-lg">
+                  <div className="grid grid-cols-2 gap-4">
+                    {[{label: 'Success Rate', value: '95%'}, {label: 'Visas Approved', value: '1k+'}, {label: 'Years Experience', value: '15+'}, {label: 'Industries', value: '25+'}].map((s, idx) => (
+                      <div key={idx} className="bg-white/10 rounded-xl p-4">
+                        <div className="text-2xl font-extrabold">{s.value}</div>
+                        <div className="text-sm text-white/80">{s.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[{icon: Globe, label: 'UK Employers'}, {icon: Award, label: 'Expert Guidance'}, {icon: TrendingUp, label: 'Career Growth'}, {icon: Briefcase, label: 'Job Placement'}].map((it, idx) => (
+                <div key={idx} className="glass-effect rounded-xl py-3 px-4 text-white/90 flex items-center gap-2 hover:bg-white/15 transition">
+                  <it.icon size={18} />
+                  <span className="text-sm">{it.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Service Overview */}
+      {/* Main Content */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 space-y-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -82,8 +122,7 @@ const UKSkilledWorkVisaConsultancy = () => {
               </p>
             </motion.div>
 
-            {/* Key Benefits */}
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="grid md:grid-cols-2 gap-6">
               {[
                 { icon: Briefcase, title: "Job Placement", desc: "Connect with licensed UK sponsors across industries" },
                 { icon: Award, title: "Expert Guidance", desc: "Navigate UK immigration system successfully" },
@@ -95,8 +134,8 @@ const UKSkilledWorkVisaConsultancy = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+                  transition={{ delay: index * 0.05 }}
+                  className="bg-white rounded-xl shadow-lifted p-6 hover:shadow-neon transition"
                 >
                   <benefit.icon className="text-indigo-600 mb-4" size={40} />
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
@@ -110,10 +149,10 @@ const UKSkilledWorkVisaConsultancy = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 mb-12 text-white"
+              className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 text-white"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-8">Skilled Worker Visa Requirements</h2>
-              <ul className="space-y-4">
+              <ul className="grid md:grid-cols-2 gap-4">
                 {[
                   "Valid job offer from a UK licensed sponsor",
                   "Certificate of Sponsorship (CoS) from employer",
@@ -127,11 +166,40 @@ const UKSkilledWorkVisaConsultancy = () => {
                   "Criminal record certificate (for some countries)"
                 ].map((requirement, index) => (
                   <li key={index} className="flex items-center text-lg">
-                    <CheckCircle className="mr-3 flex-shrink-0" size={24} />
+                    <CheckCircle className="mr-3 flex-shrink-0" size={22} />
                     <span>{requirement}</span>
                   </li>
                 ))}
               </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Process</h2>
+              <div className="relative border-l-2 border-indigo-100 pl-6">
+                {[
+                  { icon: ClipboardCheck, title: 'Profile Assessment', desc: 'Evaluate your skills and eligibility for UK work visa' },
+                  { icon: Building, title: 'Job Matching', desc: 'Connect with UK licensed sponsors in your field' },
+                  { icon: FileText, title: 'Documentation', desc: 'Prepare complete visa documentation package' },
+                  { icon: ShieldCheck, title: 'Visa Filing', desc: 'Submit application and track status' },
+                  { icon: Users, title: 'Relocation Support', desc: 'Pre-departure and settlement assistance' }
+                ].map((step, idx) => (
+                  <div key={idx} className="mb-8 group">
+                    <div className="absolute -left-[11px] mt-2 w-5 h-5 rounded-full bg-indigo-600 ring-4 ring-indigo-100 group-hover:scale-110 transition" />
+                    <div className="flex items-start gap-3">
+                      <step.icon className="text-indigo-600 mt-0.5" size={22} />
+                      <div>
+                        <h3 className="text-xl font-semibold">{step.title}</h3>
+                        <p className="text-gray-600">{step.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </motion.div>
 
             {/* Eligible Occupations */}
@@ -139,7 +207,7 @@ const UKSkilledWorkVisaConsultancy = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12"
+              className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
             >
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Eligible Skilled Occupations</h2>
               <div className="grid md:grid-cols-2 gap-4">
@@ -165,73 +233,69 @@ const UKSkilledWorkVisaConsultancy = () => {
               </div>
             </motion.div>
 
-            {/* Visa Benefits */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12"
+              className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Benefits of UK Skilled Worker Visa</h2>
-              <ul className="space-y-4">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+              <div className="divide-y divide-gray-200">
                 {[
-                  "Work in the UK for up to 5 years (renewable)",
-                  "Bring your spouse/partner and children under 18",
-                  "Apply for settlement (ILR) after 5 years",
-                  "Pathway to British citizenship",
-                  "Access to NHS healthcare services",
-                  "Switch employers (with new sponsor license)",
-                  "Travel in and out of UK freely",
-                  "Take up additional employment in certain cases",
-                  "Study part-time while working",
-                  "Work towards permanent residence"
-                ].map((benefit, index) => (
-                  <li key={index} className="flex items-start text-gray-700">
-                    <CheckCircle className="text-indigo-600 mr-3 flex-shrink-0 mt-1" size={24} />
-                    <span className="text-lg">{benefit}</span>
-                  </li>
+                  { q: 'Do I need a job offer for UK Skilled Worker Visa?', a: 'Yes, you need a valid job offer from a UK licensed sponsor with a Certificate of Sponsorship.' },
+                  { q: 'Can you help with job placement?', a: 'Yes, we connect professionals with UK employers and licensed sponsors across various industries.' },
+                  { q: 'How long does the visa process take?', a: 'Typically 3-8 weeks after submission. We provide realistic timelines after your assessment.' },
+                  { q: 'Can I bring my family?', a: 'Yes, we assist with dependent visa applications for your spouse and children.' }
+                ].map((item, idx) => (
+                  <div key={idx} className="py-4">
+                    <button type="button" onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)} className="w-full flex items-center justify-between text-left">
+                      <span className="font-semibold text-gray-900">{item.q}</span>
+                      <span className="text-indigo-600">{openFaqIndex === idx ? '-' : '+'}</span>
+                    </button>
+                    {openFaqIndex === idx && (
+                      <p className="mt-2 text-gray-600">{item.a}</p>
+                    )}
+                  </div>
                 ))}
-              </ul>
+              </div>
             </motion.div>
+            </div>
 
-            {/* Our Services */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Our Consultancy Services</h2>
-              <ul className="space-y-4 text-white">
-                {[
-                  "Free eligibility assessment",
-                  "UK job search and employer matching",
-                  "CV optimization for UK market",
-                  "Skills assessment and qualification verification",
-                  "Employer sponsorship assistance",
-                  "Certificate of Sponsorship verification",
-                  "Points calculation and optimization",
-                  "Complete visa documentation preparation",
-                  "Application form filling and submission",
-                  "English language test guidance (IELTS/PTE)",
-                  "Interview preparation",
-                  "Dependent visa applications",
-                  "Pre-departure briefing",
-                  "Post-landing settlement support"
-                ].map((service, index) => (
-                  <li key={index} className="flex items-center text-lg">
-                    <CheckCircle className="mr-3 flex-shrink-0" size={24} />
-                    <span>{service}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            {/* Sidebar */}
+            <aside className="lg:col-span-1">
+              <div className="lg:sticky lg:top-24 space-y-6">
+                <div className="bg-white rounded-2xl shadow-xl p-6">
+                  <img
+                    src={`${import.meta.env.BASE_URL}services/word_visa.jpg`}
+                    alt="Migration Expert"
+                    className="w-full h-40 rounded-xl object-cover mb-4 ring-4 ring-indigo-50"
+                  />
+                  <h3 className="text-xl font-bold mb-2">Talk to a Migration Expert</h3>
+                  <p className="text-gray-600 mb-4">Get a free profile evaluation within 24 hours.</p>
+                  <div className="flex flex-col gap-3">
+                    <button onClick={handleScrollToAssessment} className="bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-500 transition flex items-center justify-center">
+                      <ClipboardCheck size={18} className="mr-2" />
+                      Free Assessment
+                    </button>
+                    <a href="https://wa.me/919848158627" target="_blank" rel="noreferrer noopener" className="bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-400 transition flex items-center justify-center">
+                      <MessageCircle size={18} className="mr-2" />
+                      Chat on WhatsApp
+                    </a>
+                    <a href="tel:+919848158627" className="bg-white border border-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:border-gray-300 transition flex items-center justify-center">
+                      <Phone size={18} className="mr-2" />
+                      +91 98481 58627
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
 
+
       {/* Contact Form Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+      <section id="assessment" className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-stretch">
