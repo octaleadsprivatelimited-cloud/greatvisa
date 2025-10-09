@@ -317,7 +317,7 @@ const WorkVisa: React.FC = () => {
               <div className="lg:sticky lg:top-24 space-y-6">
                 <div className="bg-white rounded-2xl shadow-xl p-6">
                   <img
-                    src="/images.jpeg"
+                    src={`${import.meta.env.BASE_URL}images.jpeg`}
                     alt="Migration Expert"
                     className="w-full h-40 rounded-xl object-cover mb-4 ring-4 ring-indigo-50"
                   />

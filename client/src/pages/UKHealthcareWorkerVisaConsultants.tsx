@@ -199,91 +199,101 @@ const UKHealthcareWorkerVisaConsultants = () => {
       {/* Contact Form Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-2xl p-8 md:p-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center">
-                Start Your UK Healthcare Career
-              </h2>
-              <p className="text-gray-600 text-center mb-8">
-                Fill out the form below and we'll guide you through the process
-              </p>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 items-stretch">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="order-2 md:order-1 bg-white rounded-xl shadow-lg p-6 md:p-8"
+              >
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                  Start Your UK Healthcare Career
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  Fill out the form below and we'll guide you through the process
+                </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-                    placeholder="Enter your full name"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-                    placeholder="+91 98765 43210"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Message / Healthcare Role</label>
-                  <textarea
-                    required
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-                    placeholder="Tell us about your healthcare qualifications and role..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-yellow-400 text-gray-900 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center"
-                >
-                  <span>Get Free Consultation</span>
-                  <ArrowRight className="ml-2" size={20} />
-                </button>
-              </form>
-
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-600">
-                  <div className="flex items-center">
-                    <Phone className="mr-2 text-indigo-600" size={20} />
-                    <span>+91 98481 58627</span>
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                      placeholder="Enter your full name"
+                    />
                   </div>
-                  <div className="flex items-center">
-                    <Mail className="mr-2 text-indigo-600" size={20} />
-                    <span>info@greatvisanetwork.com</span>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                      placeholder="+91 98765 43210"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Message / Healthcare Role</label>
+                    <textarea
+                      required
+                      value={formData.message}
+                      onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                      placeholder="Tell us about your healthcare qualifications and role..."
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-yellow-400 text-gray-900 py-3.5 rounded-lg font-semibold text-base hover:bg-yellow-300 transition-all duration-300 hover:scale-[1.02] shadow-md flex items-center justify-center"
+                  >
+                    <span>Get Free Consultation</span>
+                    <ArrowRight className="ml-2" size={18} />
+                  </button>
+                </form>
+
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-600">
+                    <div className="flex items-center">
+                      <Phone className="mr-2 text-indigo-600" size={20} />
+                      <span>+91 98481 58627</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Mail className="mr-2 text-indigo-600" size={20} />
+                      <span>info@greatvisanetwork.com</span>
+                    </div>
                   </div>
                 </div>
+              </motion.div>
+
+              <div className="order-1 md:order-2">
+                <img
+                  src={`${import.meta.env.BASE_URL}services/immigration.jpg`}
+                  alt="Professional migration consultation"
+                  className="w-full h-56 md:h-full rounded-xl object-cover shadow-lg"
+                />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
