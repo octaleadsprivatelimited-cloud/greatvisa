@@ -69,7 +69,7 @@ const Testimonials: React.FC = () => {
           <img
             src="/home/slider-1.jpg"
             alt="Success Stories Background"
-            className="w-full h-full object-cover object-[center_40%]"
+            className="w-full h-full object-cover object-[center_20%]"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-indigo-900/80 to-purple-900/80"></div>
         </div>
