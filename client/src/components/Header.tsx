@@ -60,6 +60,7 @@ const Header: React.FC = () => {
   const specializedCategories = {
     internationalWorkVisas: [
       { name: 'Skilled Migration', path: '/skilled-migration', desc: 'Migrate to top countries worldwide', icon: '🌍' },
+      { name: 'Albania Work Visa', path: '/albania-work-visa', desc: 'Work opportunities in Albania', icon: '🇦🇱' },
       { name: 'UK Visitor Visa', path: '/uk-visitor-visa-consultants', desc: 'Expert UK visitor visa services', icon: '🇬🇧' },
       { name: 'UK Healthcare Professionals', path: '/uk-health-care-professionals-work-visa', desc: 'Work in UK healthcare sector', icon: '🏥' },
       { name: 'UK IT Professionals', path: '/uk-it-professionals-visa-consultancy', desc: 'Tech careers in the UK', icon: '💻' },
