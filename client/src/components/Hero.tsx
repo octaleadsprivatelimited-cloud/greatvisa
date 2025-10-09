@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
   Sparkles,
@@ -149,19 +150,19 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-10 lg:mb-12"
             >
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="group inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-xl font-semibold text-sm md:text-base hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-xl"
               >
                 <span>Get Started</span>
                 <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform" />
-              </a>
-              <a
-                href="/services"
+              </Link>
+              <Link
+                to="/services"
                 className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-gray-900 rounded-xl font-semibold text-sm md:text-base hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-indigo-200"
               >
                 <span>Explore Services</span>
-              </a>
+              </Link>
             </motion.div>
 
             {/* Stats - Horizontal Cards */}
