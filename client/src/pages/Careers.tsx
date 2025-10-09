@@ -271,7 +271,16 @@ const Careers: React.FC = () => {
 
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 bg-pattern-grid"></div>
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(https://media.istockphoto.com/id/949182974/photo/male-manager-shaking-hands-with-female-applicant.jpg?s=612x612&w=0&k=20&c=QCjfJPKUckGpX9FdZU-8bw2szQuxa2_CPATyCBAazWM=)'
+          }}
+        >
+          {/* Blue overlay for brand consistency */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-indigo-900/85 to-purple-900/90"></div>
+        </div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
