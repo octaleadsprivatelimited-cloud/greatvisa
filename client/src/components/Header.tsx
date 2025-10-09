@@ -232,42 +232,42 @@ const Header: React.FC = () => {
               onClick={(e) => e.stopPropagation()}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-8">
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
                 {/* Header */}
-                <div className="mb-6 text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <div className="mb-4 text-center">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
                     Our Services
                   </h3>
-                  <p className="text-sm text-gray-600">Choose the service that fits your needs</p>
+                  <p className="text-xs text-gray-600">Choose the service that fits your needs</p>
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
                   {/* Visa Services */}
                   <div>
-                    <div className="flex items-center mb-3">
-                      <div className="w-1.5 h-6 bg-gradient-to-b from-indigo-600 to-purple-600 rounded-full mr-2"></div>
-                      <h4 className="text-sm font-bold text-gray-900">Visa Services</h4>
+                    <div className="flex items-center mb-2">
+                      <div className="w-1 h-4 bg-gradient-to-b from-indigo-600 to-purple-600 rounded-full mr-2"></div>
+                      <h4 className="text-xs font-bold text-gray-900">Visa Services</h4>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {servicesCategories.visaServices.map((service, index) => (
                         <motion.div
                           key={service.name}
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3, delay: index * 0.05 }}
-                          whileHover={{ scale: 1.05, y: -5 }}
+                          whileHover={{ scale: 1.02, y: -2 }}
                           whileTap={{ scale: 0.98 }}
                         >
                           <Link
                             to={service.path}
                             onClick={() => setActiveDropdown(null)}
-                            className="group relative overflow-hidden p-4 rounded-xl bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg block h-full"
+                            className="group relative overflow-hidden p-3 rounded-lg bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-md block h-full"
                           >
                             <div className="relative">
-                              <h5 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-indigo-600 transition-colors">
+                              <h5 className="text-xs font-bold text-gray-900 mb-0.5 group-hover:text-indigo-600 transition-colors">
                                 {service.name}
                               </h5>
-                              <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
+                              <p className="text-[10px] text-gray-600 leading-snug">{service.desc}</p>
                             </div>
                           </Link>
                         </motion.div>
@@ -277,30 +277,30 @@ const Header: React.FC = () => {
 
                   {/* Consultation Services */}
                   <div>
-                    <div className="flex items-center mb-3">
-                      <div className="w-1.5 h-6 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full mr-2"></div>
-                      <h4 className="text-sm font-bold text-gray-900">Consultation Services</h4>
+                    <div className="flex items-center mb-2">
+                      <div className="w-1 h-4 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full mr-2"></div>
+                      <h4 className="text-xs font-bold text-gray-900">Consultation Services</h4>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {servicesCategories.consultationServices.map((service, index) => (
                         <motion.div
                           key={service.name}
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3, delay: (servicesCategories.visaServices.length + index) * 0.05 }}
-                          whileHover={{ scale: 1.05, y: -5 }}
+                          whileHover={{ scale: 1.02, y: -2 }}
                           whileTap={{ scale: 0.98 }}
                         >
                           <Link
                             to={service.path}
                             onClick={() => setActiveDropdown(null)}
-                            className="group relative overflow-hidden p-4 rounded-xl bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:shadow-lg block h-full"
+                            className="group relative overflow-hidden p-3 rounded-lg bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:shadow-md block h-full"
                           >
                             <div className="relative">
-                              <h5 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                              <h5 className="text-xs font-bold text-gray-900 mb-0.5 group-hover:text-purple-600 transition-colors">
                                 {service.name}
                               </h5>
-                              <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
+                              <p className="text-[10px] text-gray-600 leading-snug">{service.desc}</p>
                             </div>
                           </Link>
                         </motion.div>
@@ -310,16 +310,16 @@ const Header: React.FC = () => {
                 </div>
 
                 {/* CTA Banner */}
-                <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-xl p-5 text-center text-white">
-                  <h4 className="text-lg font-bold mb-2">Not Sure Which Service You Need?</h4>
-                  <p className="text-white/90 mb-4 text-sm">Get a free consultation with our experts</p>
+                <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-lg p-3 text-center text-white">
+                  <h4 className="text-sm font-bold mb-1">Not Sure Which Service You Need?</h4>
+                  <p className="text-white/90 mb-2 text-xs">Get a free consultation with our experts</p>
                   <Link
                     to="/contact"
                     onClick={() => setActiveDropdown(null)}
-                    className="inline-flex items-center px-6 py-2.5 bg-white text-indigo-600 hover:bg-yellow-300 hover:text-purple-900 rounded-lg font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-lg"
+                    className="inline-flex items-center px-4 py-2 bg-white text-indigo-600 hover:bg-yellow-300 hover:text-purple-900 rounded-lg font-semibold text-xs transition-all duration-300 hover:scale-105 shadow-lg"
                   >
                     <span>Get Free Consultation</span>
-                    <ArrowRight size={16} className="ml-2" />
+                    <ArrowRight size={14} className="ml-1.5" />
                   </Link>
                 </div>
               </div>
@@ -352,45 +352,45 @@ const Header: React.FC = () => {
               onClick={(e) => e.stopPropagation()}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-8">
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
                 {/* Header */}
-                <div className="mb-6 text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <div className="mb-4 text-center">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
                     Specialized Services
                   </h3>
-                  <p className="text-sm text-gray-600">Country-specific and professional visa services</p>
+                  <p className="text-xs text-gray-600">Country-specific and professional visa services</p>
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
                   {/* International Work Visas */}
                   <div>
-                    <div className="flex items-center mb-3">
-                      <div className="w-1.5 h-6 bg-gradient-to-b from-indigo-600 to-purple-600 rounded-full mr-2"></div>
-                      <h4 className="text-sm font-bold text-gray-900">International Work Visas</h4>
+                    <div className="flex items-center mb-2">
+                      <div className="w-1 h-4 bg-gradient-to-b from-indigo-600 to-purple-600 rounded-full mr-2"></div>
+                      <h4 className="text-xs font-bold text-gray-900">International Work Visas</h4>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {specializedCategories.internationalWorkVisas.map((service, index) => (
                         <motion.div
                           key={service.name}
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3, delay: index * 0.05 }}
-                          whileHover={{ scale: 1.05, y: -5 }}
+                          whileHover={{ scale: 1.02, y: -2 }}
                           whileTap={{ scale: 0.98 }}
                         >
                           <Link
                             to={service.path}
                             onClick={() => setActiveDropdown(null)}
-                            className="group relative overflow-hidden p-4 rounded-xl bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg block h-full"
+                            className="group relative overflow-hidden p-2.5 rounded-lg bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-md block h-full"
                           >
                             <div className="relative">
-                              <div className="flex items-center mb-1">
-                                <span className="text-lg mr-2">{service.icon}</span>
-                                <h5 className="text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                              <div className="flex items-center mb-0.5">
+                                <span className="text-sm mr-1.5">{service.icon}</span>
+                                <h5 className="text-xs font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
                                   {service.name}
                                 </h5>
                               </div>
-                              <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
+                              <p className="text-[10px] text-gray-600 leading-snug">{service.desc}</p>
                             </div>
                           </Link>
                         </motion.div>
@@ -400,33 +400,33 @@ const Header: React.FC = () => {
 
                   {/* Hyderabad Services */}
                   <div>
-                    <div className="flex items-center mb-3">
-                      <div className="w-1.5 h-6 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full mr-2"></div>
-                      <h4 className="text-sm font-bold text-gray-900">Hyderabad Consultancy</h4>
+                    <div className="flex items-center mb-2">
+                      <div className="w-1 h-4 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full mr-2"></div>
+                      <h4 className="text-xs font-bold text-gray-900">Hyderabad Consultancy</h4>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {specializedCategories.hyderabadServices.map((service, index) => (
                         <motion.div
                           key={service.name}
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3, delay: (specializedCategories.internationalWorkVisas.length + index) * 0.05 }}
-                          whileHover={{ scale: 1.05, y: -5 }}
+                          whileHover={{ scale: 1.02, y: -2 }}
                           whileTap={{ scale: 0.98 }}
                         >
                           <Link
                             to={service.path}
                             onClick={() => setActiveDropdown(null)}
-                            className="group relative overflow-hidden p-4 rounded-xl bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:shadow-lg block h-full"
+                            className="group relative overflow-hidden p-2.5 rounded-lg bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:shadow-md block h-full"
                           >
                             <div className="relative">
-                              <div className="flex items-center mb-1">
-                                <span className="text-lg mr-2">{service.icon}</span>
-                                <h5 className="text-sm font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                              <div className="flex items-center mb-0.5">
+                                <span className="text-sm mr-1.5">{service.icon}</span>
+                                <h5 className="text-xs font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
                                   {service.name}
                                 </h5>
                               </div>
-                              <p className="text-xs text-gray-600 leading-relaxed">{service.desc}</p>
+                              <p className="text-[10px] text-gray-600 leading-snug">{service.desc}</p>
                             </div>
                           </Link>
                         </motion.div>
@@ -436,16 +436,16 @@ const Header: React.FC = () => {
                 </div>
 
                 {/* CTA Banner */}
-                <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-xl p-5 text-center text-white">
-                  <h4 className="text-lg font-bold mb-2">Need Expert Guidance?</h4>
-                  <p className="text-white/90 mb-4 text-sm">Connect with our specialized visa consultants</p>
+                <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-lg p-3 text-center text-white">
+                  <h4 className="text-sm font-bold mb-1">Need Expert Guidance?</h4>
+                  <p className="text-white/90 mb-2 text-xs">Connect with our specialized visa consultants</p>
                   <Link
                     to="/contact"
                     onClick={() => setActiveDropdown(null)}
-                    className="inline-flex items-center px-6 py-2.5 bg-white text-indigo-600 hover:bg-yellow-300 hover:text-purple-900 rounded-lg font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-lg"
+                    className="inline-flex items-center px-4 py-2 bg-white text-indigo-600 hover:bg-yellow-300 hover:text-purple-900 rounded-lg font-semibold text-xs transition-all duration-300 hover:scale-105 shadow-lg"
                   >
                     <span>Contact Us</span>
-                    <ArrowRight size={16} className="ml-2" />
+                    <ArrowRight size={14} className="ml-1.5" />
                   </Link>
                 </div>
               </div>
