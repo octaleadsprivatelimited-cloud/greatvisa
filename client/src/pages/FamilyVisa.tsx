@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, CheckCircle, Users, Clock, Shield, ArrowRight } from 'lucide-react';
+import { Heart, CheckCircle, Users, Clock, Shield, ArrowRight, Phone, Mail } from 'lucide-react';
 
 const FamilyVisa: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const whatsappMessage = `Hi, I'm interested in Family Visa services. Name: ${formData.name}, Email: ${formData.email}, Phone: ${formData.phone}, Message: ${formData.message}`;
+    window.open(`https://wa.me/919848158627?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+  };
+
   const features = [
     { icon: Users, title: 'Family Reunification', description: 'Help reunite families separated by borders' },
     { icon: Heart, title: 'Spouse Visa', description: 'Bring your spouse to join you abroad' },
@@ -28,8 +41,7 @@ const FamilyVisa: React.FC = () => {
           <img
             src="/services/family_visa.jpg"
             alt="Family Visa"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 10%' }}
+            className="w-full h-full object-cover object-[center_10%]"
           />
         </div>
         <div className="absolute inset-0 bg-black/50"></div>
@@ -148,38 +160,66 @@ const FamilyVisa: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-primary-600">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Reunite with Your Family?
-            </h2>
-            <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-              Get a free consultation with our family visa experts and start your family reunification journey.
-            </p>
-            
-            <div className="flex flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+      {/* Contact Form Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-pink-900 to-rose-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 items-stretch">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="order-2 md:order-1 bg-white rounded-xl shadow-lg p-6 md:p-8"
               >
-                Get Free Consultation
-                <ArrowRight size={20} className="ml-2" />
-              </a>
-              
-              <a
-                href="/services"
-                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
-              >
-                View All Services
-              </a>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Ready to Reunite with Your Family?</h2>
+                <p className="text-gray-600 mb-6">Fill out the form below for a free consultation</p>
+
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                    <input type="text" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-500 focus:border-transparent transition" placeholder="Enter your full name" />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                    <input type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-500 focus:border-transparent transition" placeholder="your.email@example.com" />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                    <input type="tel" required value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-500 focus:border-transparent transition" placeholder="+91 98765 43210" />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Message / Relationship Details</label>
+                    <textarea required value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} rows={4} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-500 focus:border-transparent transition" placeholder="Tell us about your family reunification plans..."></textarea>
+                  </div>
+
+                  <button type="submit" className="w-full bg-yellow-400 text-gray-900 py-3.5 rounded-lg font-semibold text-base hover:bg-yellow-300 transition-all duration-300 hover:scale-[1.02] shadow-md flex items-center justify-center">
+                    <span>Get Free Consultation</span>
+                    <ArrowRight className="ml-2" size={18} />
+                  </button>
+                </form>
+
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-600">
+                    <div className="flex items-center">
+                      <Phone className="mr-2 text-pink-600" size={20} />
+                      <span>+91 98481 58627</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Mail className="mr-2 text-pink-600" size={20} />
+                      <span>info@greatvisanetwork.com</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <div className="order-1 md:order-2">
+                <img src={`${import.meta.env.BASE_URL}services/family_visa.jpg`} alt="Family Visa" className="w-full h-56 md:h-full rounded-xl object-cover shadow-lg" />
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
