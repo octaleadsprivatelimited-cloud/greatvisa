@@ -11,6 +11,7 @@ import {
 
 const Hero: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,6 +26,17 @@ const Hero: React.FC = () => {
     '/home/Silder-2.jpg',
     '/home/slider-3.jpg'
   ];
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -48,7 +60,7 @@ const Hero: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/myznnzyo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -89,27 +101,38 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen overflow-hidden pt-24 pb-12 md:pb-16 lg:pb-20">
       {/* Background Image Slider */}
       <div className="absolute inset-0 bg-black">
-        {sliderImages.map((image, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: currentSlide === index ? 1 : 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
-            <img
-              src={image}
-              alt={`Hero slide ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-            {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/40"></div>
-          </motion.div>
-        ))}
+        {sliderImages.map((image, index) => {
+          // Slider 1 (index 0): 70% right, Slider 2 (index 1): 50% left, Slider 3 (index 2): center
+          const getMobilePosition = () => {
+            if (index === 0) return '70% center'; // slider-1.jpg - right
+            if (index === 1) return '50% center'; // Silder-2.jpg - left
+            return 'center'; // slider-3.jpg - center
+          };
+
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: currentSlide === index ? 1 : 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <div 
+                className="w-full h-full bg-cover"
+                style={{
+                  backgroundImage: `url(${image})`,
+                  backgroundPosition: isMobile ? getMobilePosition() : 'center'
+                }}
+              ></div>
+              {/* Dark overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/40"></div>
+            </motion.div>
+          );
+        })}
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 gap-8 lg:gap-12 items-center pt-[50%] md:pt-0">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

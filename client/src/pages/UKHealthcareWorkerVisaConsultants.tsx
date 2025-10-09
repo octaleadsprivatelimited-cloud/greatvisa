@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Users, Mail, Phone, ArrowRight, MessageCircle, Stethoscope, Activity } from 'lucide-react';
+import { CheckCircle, Users, Mail, Phone, ArrowRight, MessageCircle, Stethoscope, Activity, Award, TrendingUp, ClipboardCheck, FileText, ShieldCheck, Building, Heart } from 'lucide-react';
 
 const UKHealthcareWorkerVisaConsultants = () => {
   const [formData, setFormData] = useState({
@@ -16,188 +16,278 @@ const UKHealthcareWorkerVisaConsultants = () => {
     window.open(`https://wa.me/919848158627?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
   };
 
-  const handleWhatsAppClick = () => {
-    const message = "Hi, I'm interested in UK Healthcare Worker Visa consultancy. Could you please provide more information?";
-    window.open(`https://wa.me/919848158627?text=${encodeURIComponent(message)}`, '_blank');
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  const handleScrollToAssessment = () => {
+    const node = document.getElementById('assessment');
+    if (node) node.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Hero Section */}
-      <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-900">
-          <div className="absolute inset-0 bg-black/40"></div>
-          <div className="absolute inset-0 flex items-center justify-center text-white/20 text-6xl font-bold">
-            [UK Healthcare Worker Visa Image]
-          </div>
-        </div>
+      <section className="relative h-[520px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/services/immigration.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-indigo-900/80 to-purple-900/80"></div>
 
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-2xl"
-          >
-            UK Healthcare Worker Visa Consultants
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl mb-8 drop-shadow-lg"
-          >
-            Join the UK's World-Class Healthcare System
-          </motion.p>
-          <motion.button
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            onClick={handleWhatsAppClick}
-            className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-xl flex items-center mx-auto"
-          >
-            <MessageCircle className="mr-2" size={24} />
-            Get Free Consultation
-          </motion.button>
+        <div className="relative z-10 container mx-auto px-4 w-full">
+          <div className="max-w-6xl mx-auto">
+            <nav className="text-sm text-white/80 mb-6">
+              <a href="/" className="hover:text-white">Home</a>
+              <span className="mx-2">/</span>
+              <span className="text-white">UK Healthcare Worker Visa</span>
+            </nav>
+
+            <div className="grid md:grid-cols-2 gap-8 items-center text-white">
+              <div>
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
+                >
+                  UK Healthcare Worker Visa Consultants
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 }}
+                  className="text-lg md:text-xl mb-6 text-white/90"
+                >
+                  Join the UK's world-class healthcare system.
+                </motion.p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={handleScrollToAssessment}
+                    className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-xl flex items-center justify-center"
+                  >
+                    <ClipboardCheck className="mr-2" size={20} />
+                    Free Assessment
+                  </button>
+                  <a
+                    href="tel:+919848158627"
+                    className="glass-effect px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
+                  >
+                    <Phone className="mr-2" size={20} />
+                    Call Expert
+                  </a>
+                </div>
+              </div>
+              <div className="hidden md:block">
+                <div className="glass-effect rounded-2xl p-6 shadow-neon-lg">
+                  <div className="grid grid-cols-2 gap-4">
+                    {[{label: 'Success Rate', value: '96%'}, {label: 'Placements', value: '600+'}, {label: 'NHS Trusts', value: '60+'}, {label: 'Processing', value: '2-4 wks'}].map((s, idx) => (
+                      <div key={idx} className="bg-white/10 rounded-xl p-4">
+                        <div className="text-2xl font-extrabold">{s.value}</div>
+                        <div className="text-sm text-white/80">{s.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[{icon: Stethoscope, label: 'NHS Jobs'}, {icon: Award, label: 'Registration'}, {icon: TrendingUp, label: 'Fast-Track'}, {icon: Heart, label: 'Care Visa'}].map((it, idx) => (
+                <div key={idx} className="glass-effect rounded-xl py-3 px-4 text-white/90 flex items-center gap-2 hover:bg-white/15 transition">
+                  <it.icon size={18} />
+                  <span className="text-sm">{it.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Service Overview */}
+      {/* Main Content */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                UK Health and Care Worker Visa
-              </h2>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                The UK Health and Care Worker visa is designed for medical professionals taking up eligible jobs in the NHS, an NHS supplier, or adult social care sector. As leading healthcare visa consultants, we provide specialized support to help you secure your position in the UK's healthcare system.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                We offer comprehensive services including credential verification, NHS/NMC/GMC registration support, visa application processing, and family dependent visa assistance.
-              </p>
-            </motion.div>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 space-y-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">UK Health and Care Worker Visa</h2>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  The UK Health and Care Worker visa is designed for medical professionals taking up eligible jobs in the NHS, an NHS supplier, or adult social care sector. As leading healthcare visa consultants, we provide specialized support to help you secure your position in the UK's healthcare system.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  We offer comprehensive services including credential verification, NHS/NMC/GMC registration support, visa application processing, and family dependent visa assistance.
+                </p>
+              </motion.div>
 
-            {/* Key Benefits */}
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-              {[
-                { icon: Stethoscope, title: "Credential Assessment", desc: "Verify your medical qualifications for UK" },
-                { icon: Activity, title: "Professional Registration", desc: "GMC, NMC, HCPC registration support" },
-                { icon: CheckCircle, title: "Fast-Track Visa", desc: "Faster processing for healthcare workers" },
-                { icon: Users, title: "Family Sponsorship", desc: "Bring your family to the UK" }
-              ].map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
-                >
-                  <benefit.icon className="text-indigo-600 mb-4" size={40} />
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.desc}</p>
-                </motion.div>
-              ))}
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  { icon: Stethoscope, title: "Credential Assessment", desc: "Verify your medical qualifications for UK" },
+                  { icon: Activity, title: "Professional Registration", desc: "GMC, NMC, HCPC registration support" },
+                  { icon: CheckCircle, title: "Fast-Track Visa", desc: "Faster processing for healthcare workers" },
+                  { icon: Users, title: "Family Sponsorship", desc: "Bring your family to the UK" }
+                ].map((benefit, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                    className="bg-white rounded-xl shadow-lifted p-6 hover:shadow-neon transition"
+                  >
+                    <benefit.icon className="text-indigo-600 mb-4" size={40} />
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
+                    <p className="text-gray-600">{benefit.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 text-white"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">Eligible Healthcare Roles</h2>
+                <ul className="grid md:grid-cols-2 gap-4">
+                  {[
+                    "Doctors (All Specializations)",
+                    "Registered Nurses (General & Specialist)",
+                    "Midwives",
+                    "Nursing Associates",
+                    "Paramedics",
+                    "Pharmacists",
+                    "Dentists & Dental Hygienists",
+                    "Physiotherapists",
+                    "Occupational Therapists",
+                    "Radiographers (Diagnostic & Therapeutic)",
+                    "Social Workers",
+                    "Care Workers & Home Care Workers",
+                    "Senior Care Workers"
+                  ].map((role, index) => (
+                    <li key={index} className="flex items-center text-lg">
+                      <CheckCircle className="mr-3 flex-shrink-0" size={22} />
+                      <span>{role}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Process</h2>
+                <div className="relative border-l-2 border-indigo-100 pl-6">
+                  {[
+                    { icon: ClipboardCheck, title: 'Qualification Assessment', desc: 'Evaluate your medical credentials and eligibility' },
+                    { icon: Building, title: 'Professional Registration', desc: 'Support with GMC/NMC/HCPC registration' },
+                    { icon: FileText, title: 'Job Placement', desc: 'Connect with NHS and care sector employers' },
+                    { icon: ShieldCheck, title: 'Visa Application', desc: 'Complete Health & Care Worker visa processing' },
+                    { icon: Users, title: 'Relocation Support', desc: 'Pre-departure and settlement assistance' }
+                  ].map((step, idx) => (
+                    <div key={idx} className="mb-8 group">
+                      <div className="absolute -left-[11px] mt-2 w-5 h-5 rounded-full bg-indigo-600 ring-4 ring-indigo-100 group-hover:scale-110 transition" />
+                      <div className="flex items-start gap-3">
+                        <step.icon className="text-indigo-600 mt-0.5" size={22} />
+                        <div>
+                          <h3 className="text-xl font-semibold">{step.title}</h3>
+                          <p className="text-gray-600">{step.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Visa Benefits</h2>
+                <ul className="space-y-3">
+                  {[
+                    "Reduced visa application fee",
+                    "Exempt from Immigration Health Surcharge",
+                    "Faster visa processing (2-4 weeks)",
+                    "Lower salary threshold (£23,200)",
+                    "Bring spouse/partner and children",
+                    "Pathway to settlement after 5 years"
+                  ].map((benefit, index) => (
+                    <li key={index} className="flex items-start text-gray-700">
+                      <CheckCircle className="text-indigo-600 mr-3 flex-shrink-0 mt-1" size={20} />
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div className="divide-y divide-gray-200">
+                  {[
+                    { q: 'What is the Health and Care Worker visa?', a: 'It\'s a special visa route for healthcare professionals with reduced fees, no health surcharge, and faster processing.' },
+                    { q: 'Do I need professional registration?', a: 'Yes, you need registration with the appropriate UK professional body (GMC, NMC, HCPC, etc.) before starting work.' },
+                    { q: 'Can you help with NHS job placement?', a: 'Yes, we connect healthcare professionals with NHS trusts and care providers across the UK.' },
+                    { q: 'How long does the visa process take?', a: 'Typically 2-4 weeks, faster than standard Skilled Worker visa.' }
+                  ].map((item, idx) => (
+                    <div key={idx} className="py-4">
+                      <button type="button" onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)} className="w-full flex items-center justify-between text-left">
+                        <span className="font-semibold text-gray-900">{item.q}</span>
+                        <span className="text-indigo-600">{openFaqIndex === idx ? '-' : '+'}</span>
+                      </button>
+                      {openFaqIndex === idx && (
+                        <p className="mt-2 text-gray-600">{item.a}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
 
-            {/* Healthcare Roles */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 mb-12 text-white"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Eligible Healthcare Roles</h2>
-              <ul className="space-y-4">
-                {[
-                  "Doctors (All Specializations)",
-                  "Registered Nurses (General & Specialist)",
-                  "Midwives",
-                  "Nursing Associates",
-                  "Paramedics",
-                  "Pharmacists",
-                  "Dentists & Dental Hygienists",
-                  "Physiotherapists",
-                  "Occupational Therapists",
-                  "Radiographers (Diagnostic & Therapeutic)",
-                  "Social Workers",
-                  "Care Workers & Home Care Workers",
-                  "Senior Care Workers"
-                ].map((role, index) => (
-                  <li key={index} className="flex items-center text-lg">
-                    <CheckCircle className="mr-3 flex-shrink-0" size={24} />
-                    <span>{role}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Visa Benefits */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12"
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Health and Care Worker Visa Benefits</h2>
-              <ul className="space-y-4">
-                {[
-                  "Reduced visa application fee",
-                  "Exempt from Immigration Health Surcharge",
-                  "Faster visa processing",
-                  "Lower salary threshold (£23,200)",
-                  "Visa valid for up to 5 years",
-                  "Bring spouse/partner and children",
-                  "Pathway to settlement (ILR) after 5 years",
-                  "Can switch employers within healthcare sector",
-                  "Access to public services and NHS"
-                ].map((benefit, index) => (
-                  <li key={index} className="flex items-start text-gray-700">
-                    <CheckCircle className="text-indigo-600 mr-3 flex-shrink-0 mt-1" size={24} />
-                    <span className="text-lg">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Requirements */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Eligibility Requirements</h2>
-              <ul className="space-y-4">
-                {[
-                  "Valid job offer from NHS or eligible employer",
-                  "Certificate of Sponsorship from licensed sponsor",
-                  "Job must be on eligible occupation list",
-                  "Minimum salary of £23,200 or job going rate",
-                  "Professional registration (GMC, NMC, HCPC, etc.)",
-                  "English language proficiency (IELTS or equivalent)",
-                  "Tuberculosis test (if from listed countries)",
-                  "Clean criminal record certificate",
-                  "Meet points-based immigration system requirements"
-                ].map((requirement, index) => (
-                  <li key={index} className="flex items-start text-gray-700">
-                    <CheckCircle className="text-indigo-600 mr-3 flex-shrink-0 mt-1" size={24} />
-                    <span className="text-lg">{requirement}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            {/* Sidebar */}
+            <aside className="lg:col-span-1">
+              <div className="lg:sticky lg:top-24 space-y-6">
+                <div className="bg-white rounded-2xl shadow-xl p-6">
+                  <img
+                    src={`${import.meta.env.BASE_URL}services/immigration.jpg`}
+                    alt="Healthcare Expert"
+                    className="w-full h-40 rounded-xl object-cover mb-4 ring-4 ring-indigo-50"
+                  />
+                  <h3 className="text-xl font-bold mb-2">Talk to Healthcare Visa Expert</h3>
+                  <p className="text-gray-600 mb-4">Get a free profile evaluation within 24 hours.</p>
+                  <div className="flex flex-col gap-3">
+                    <button onClick={handleScrollToAssessment} className="bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-500 transition flex items-center justify-center">
+                      <ClipboardCheck size={18} className="mr-2" />
+                      Free Assessment
+                    </button>
+                    <a href="https://wa.me/919848158627" target="_blank" rel="noreferrer noopener" className="bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-400 transition flex items-center justify-center">
+                      <MessageCircle size={18} className="mr-2" />
+                      Chat on WhatsApp
+                    </a>
+                    <a href="tel:+919848158627" className="bg-white border border-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:border-gray-300 transition flex items-center justify-center">
+                      <Phone size={18} className="mr-2" />
+                      +91 98481 58627
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+      <section id="assessment" className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-stretch">
@@ -302,4 +392,3 @@ const UKHealthcareWorkerVisaConsultants = () => {
 };
 
 export default UKHealthcareWorkerVisaConsultants;
-

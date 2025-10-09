@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/myznnzyo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
