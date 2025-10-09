@@ -108,13 +108,13 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-[1.5fr_1fr] gap-8 lg:gap-12 items-start lg:items-center">
+        <div className="grid grid-cols-1 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
+            className="text-center"
           >
             {/* Main Heading */}
             <motion.h1
@@ -172,7 +172,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-base sm:text-lg md:text-xl text-white/95 mb-6 md:mb-8 lg:mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium drop-shadow-lg"
+              className="text-base sm:text-lg md:text-xl text-white/95 mb-6 md:mb-8 lg:mb-10 leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-lg"
             >
               Transform your international dreams into reality with{' '}
               <span className="font-bold text-yellow-300">
@@ -186,10 +186,10 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start mb-8 md:mb-10 lg:mb-12"
+              className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-10 lg:mb-12"
             >
               <a
-                href="#quick-form"
+                href="/contact"
                 className="group inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-xl font-semibold text-sm md:text-base hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-xl"
               >
                 <span>Get Started</span>
@@ -212,7 +212,7 @@ const Hero: React.FC = () => {
             >
               {stats.map((stat, index) => (
                 <div key={index} className="glass-effect backdrop-blur-md p-4 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-white/20">
-                  <div className={`w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center mb-3 mx-auto lg:mx-0`}>
+                  <div className={`w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center mb-3 mx-auto`}>
                     <stat.icon size={20} className="text-white md:w-6 md:h-6" />
                   </div>
                   <div className="text-xl md:text-2xl font-bold text-white mb-1 drop-shadow-lg">{stat.value}</div>
@@ -228,7 +228,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             id="quick-form"
-            className="relative max-w-md mx-auto lg:ml-auto lg:mr-0"
+            className="hidden relative max-w-md mx-auto lg:ml-auto lg:mr-0"
           >
             {/* Floating Elements */}
             <motion.div
@@ -309,6 +309,7 @@ const Hero: React.FC = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleInputChange}
+                      aria-label="Select Service"
                       className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 transition-all duration-200 text-sm"
                     >
                       <option value="">Select Service</option>
