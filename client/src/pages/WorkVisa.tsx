@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Briefcase, 
@@ -9,10 +9,37 @@ import {
   Building,
   FileText,
   Star,
-  TrendingUp
+  TrendingUp,
+  Phone,
+  MessageCircle,
+  ClipboardCheck,
+  Globe,
+  Plane,
+  ShieldCheck,
+  Target,
+  Mail,
 } from 'lucide-react';
 
 const WorkVisa: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const whatsappMessage = `Hi, I'm interested in International Work Visas. Name: ${formData.name}, Email: ${formData.email}, Phone: ${formData.phone}, Message: ${formData.message}`;
+    window.open(`https://wa.me/919848158627?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+  };
+
+  const handleScrollToAssessment = () => {
+    const node = document.getElementById('assessment');
+    if (node) node.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   const features = [
     {
       icon: Building,
@@ -59,278 +86,352 @@ const WorkVisa: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="/services/word_visa.jpg"
-            alt="Work Visa"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 5%' }}
-          />
-        </div>
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
-                <Briefcase size={40} />
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Work Visa Services</h1>
-            <p className="text-xl text-primary-100 leading-relaxed">
-              Advance your career with international work opportunities. We help you secure work visas 
-              and find employment in top companies worldwide with our comprehensive recruitment and visa services.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <section className="relative h-[520px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/services/word_visa.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 via-purple-900/80 to-blue-900/80"></div>
 
-      {/* Features Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Complete Work Visa Solutions</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From job placement to visa processing, we provide end-to-end support for your international career journey.
-            </p>
-          </motion.div>
+        <div className="relative z-10 container mx-auto px-4 w-full">
+          <div className="max-w-6xl mx-auto">
+            <nav className="text-sm text-white/80 mb-6">
+              <a href="/" className="hover:text-white">Home</a>
+              <span className="mx-2">/</span>
+              <span className="text-white">International Work Visas</span>
+            </nav>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center"
-              >
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <feature.icon size={32} className="text-primary-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Requirements Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Required Documents</h2>
-              <p className="text-lg text-gray-600 mb-8">
-                To ensure a smooth work visa application process, you'll need to prepare the following documents. 
-                We'll help you gather and organize everything properly.
-              </p>
-              
-              <div className="space-y-4">
-                {requirements.map((requirement, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle size={20} className="text-green-500 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">{requirement}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8"
-            >
-              <div className="text-center mb-8">
-                <div className="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp size={40} className="text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">98% Success Rate</h3>
-                <p className="text-gray-600">Our work visa applications have an outstanding success rate</p>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-700">Processing Time</span>
-                  <span className="font-semibold text-gray-900">3-6 weeks</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-700">Countries Covered</span>
-                  <span className="font-semibold text-gray-900">50+</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-700">Job Placements</span>
-                  <span className="font-semibold text-gray-900">2000+</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-700">Support</span>
-                  <span className="font-semibold text-gray-900">24/7</span>
+            <div className="grid md:grid-cols-2 gap-8 items-center text-white">
+              <div>
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
+                >
+                  International Work Visas
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 }}
+                  className="text-lg md:text-xl mb-6 text-white/90"
+                >
+                  Advance your career with global opportunities. End-to-end recruitment and visa support.
+                </motion.p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={handleScrollToAssessment}
+                    className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-xl flex items-center justify-center"
+                  >
+                    <ClipboardCheck className="mr-2" size={20} />
+                    Free Assessment
+                  </button>
+                  <a
+                    href="tel:+919848158627"
+                    className="glass-effect px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
+                  >
+                    <Phone className="mr-2" size={20} />
+                    Call Expert
+                  </a>
                 </div>
               </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">High-Demand Industries</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We help professionals find opportunities in these high-demand industries worldwide.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, index) => (
-              <motion.div
-                key={industry.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="text-center mb-6">
-                  <div className="text-6xl mb-4">{industry.icon}</div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{industry.name}</h3>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Available Jobs</span>
-                    <span className="font-semibold text-gray-900">{industry.jobs}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Demand Level</span>
-                    <span className={`font-semibold px-3 py-1 rounded-full text-sm ${
-                      industry.demand === 'Very High' ? 'bg-red-100 text-red-800' :
-                      industry.demand === 'High' ? 'bg-orange-100 text-orange-800' :
-                      'bg-yellow-100 text-yellow-800'
-                    }`}>
-                      {industry.demand}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mt-6">
-                  <div className="flex items-center justify-center text-yellow-500 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={16} className="fill-current" />
+              <div className="hidden md:block">
+                <div className="glass-effect rounded-2xl p-6 shadow-neon-lg">
+                  <div className="grid grid-cols-2 gap-4">
+                    {[{label: 'Success Rate', value: '98%'}, {label: 'Countries', value: '50+'}, {label: 'Years Experience', value: '15+'}, {label: 'Placements', value: '2k+'}].map((s, idx) => (
+                      <div key={idx} className="bg-white/10 rounded-xl p-4">
+                        <div className="text-2xl font-extrabold">{s.value}</div>
+                        <div className="text-sm text-white/80">{s.label}</div>
+                      </div>
                     ))}
                   </div>
-                  <p className="text-sm text-gray-600 text-center">Excellent opportunities available</p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Process</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We follow a systematic approach to ensure your work visa application is successful.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { step: '01', title: 'Profile Assessment', description: 'Free evaluation of your skills and career goals' },
-              { step: '02', title: 'Job Matching', description: 'Connect you with suitable job opportunities' },
-              { step: '03', title: 'Employer Coordination', description: 'Facilitate interviews and job offers' },
-              { step: '04', title: 'Visa Processing', description: 'Expert guidance through the visa application process' }
-            ].map((process, index) => (
-              <motion.div
-                key={process.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold">
-                  {process.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{process.title}</h3>
-                <p className="text-gray-600">{process.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-primary-600">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Advance Your Career Abroad?
-            </h2>
-            <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-              Get a free consultation with our work visa experts and take the first step towards 
-              your international career.
-            </p>
-            
-            <div className="flex flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
-              >
-                Get Free Consultation
-                <ArrowRight size={20} className="ml-2" />
-              </a>
-              
-              <a
-                href="/services"
-                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
-              >
-                View All Services
-              </a>
+              </div>
             </div>
-          </motion.div>
+          </div>
+
+          <div className="mt-8">
+            <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[{icon: Globe, label: 'Global Employers'}, {icon: Award, label: 'Skill Assessment'}, {icon: TrendingUp, label: 'Career Growth'}, {icon: Plane, label: 'Relocation Support'}].map((it, idx) => (
+                <div key={idx} className="glass-effect rounded-xl py-3 px-4 text-white/90 flex items-center gap-2 hover:bg-white/15 transition">
+                  <it.icon size={18} />
+                  <span className="text-sm">{it.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 space-y-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">International Work Visa Services</h2>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  From job placement to visa processing, we provide end-to-end support for your international career journey. Our team connects you with employers and manages the entire visa process for a seamless move abroad.
+                </p>
+              </motion.div>
+
+              {/* Key Features */}
+              <div className="grid md:grid-cols-2 gap-6">
+                {features.map((feature, index) => (
+                  <motion.div
+                    key={feature.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                    className="bg-white rounded-xl shadow-lifted p-6 hover:shadow-neon transition"
+                  >
+                    <feature.icon size={40} className="text-indigo-600 mb-4" />
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
+                    <p className="text-gray-600">{feature.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Requirements */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Required Documents</h2>
+                <p className="text-lg text-gray-600 mb-6">We'll help you gather and organize everything properly.</p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {requirements.map((requirement, index) => (
+                    <div key={index} className="flex items-start">
+                      <CheckCircle size={20} className="text-indigo-600 mr-2 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">{requirement}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Industries */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">High-Demand Industries</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {industries.map((industry, index) => (
+                    <div key={industry.name} className="bg-gray-50 rounded-xl p-6">
+                      <div className="text-center mb-4">
+                        <div className="text-5xl mb-2">{industry.icon}</div>
+                        <h3 className="text-xl font-semibold text-gray-900">{industry.name}</h3>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600">Available Jobs</span>
+                          <span className="font-semibold text-gray-900">{industry.jobs}</span>
+                        </div>
+                        <div className="flex justify-between text-sm items-center">
+                          <span className="text-gray-600">Demand Level</span>
+                          <span className={`font-semibold px-2 py-0.5 rounded-full text-xs ${
+                            industry.demand === 'Very High' ? 'bg-red-100 text-red-800' :
+                            industry.demand === 'High' ? 'bg-orange-100 text-orange-800' :
+                            'bg-yellow-100 text-yellow-800'
+                          }`}>
+                            {industry.demand}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Process Timeline */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Process</h2>
+                <div className="relative border-l-2 border-indigo-100 pl-6">
+                  {[
+                    { icon: ClipboardCheck, title: 'Profile Assessment', desc: 'Free evaluation of your skills and career goals' },
+                    { icon: Users, title: 'Job Matching', desc: 'Connect you with suitable job opportunities' },
+                    { icon: Building, title: 'Employer Coordination', desc: 'Facilitate interviews and job offers' },
+                    { icon: ShieldCheck, title: 'Visa Processing', desc: 'Expert guidance through the visa application process' },
+                    { icon: Plane, title: 'Relocation Support', desc: 'Pre-departure orientation and settlement assistance' }
+                  ].map((step, idx) => (
+                    <div key={idx} className="mb-8 group">
+                      <div className="absolute -left-[11px] mt-2 w-5 h-5 rounded-full bg-indigo-600 ring-4 ring-indigo-100 group-hover:scale-110 transition" />
+                      <div className="flex items-start gap-3">
+                        <step.icon className="text-indigo-600 mt-0.5" size={22} />
+                        <div>
+                          <h3 className="text-xl font-semibold">{step.title}</h3>
+                          <p className="text-gray-600">{step.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* FAQ */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div className="divide-y divide-gray-200">
+                  {[
+                    { q: 'Do I need a job offer for a work visa?', a: 'Many countries require a valid job offer; we help with job matching and employer coordination.' },
+                    { q: 'How long does visa processing take?', a: 'Typically 3-6 weeks after submission; varies by country and case specifics.' },
+                    { q: 'Can you help with relocation?', a: 'Yes, we provide pre-departure orientation and post-landing settlement support.' },
+                    { q: 'What are the top industries in demand?', a: 'IT, healthcare, engineering, and construction currently show high demand globally.' }
+                  ].map((item, idx) => (
+                    <div key={idx} className="py-4">
+                      <button
+                        type="button"
+                        onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
+                        className="w-full flex items-center justify-between text-left"
+                      >
+                        <span className="font-semibold text-gray-900">{item.q}</span>
+                        <span className="text-indigo-600">{openFaqIndex === idx ? '-' : '+'}</span>
+                      </button>
+                      {openFaqIndex === idx && (
+                        <p className="mt-2 text-gray-600">{item.a}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Sidebar */}
+            <aside className="lg:col-span-1">
+              <div className="lg:sticky lg:top-24 space-y-6">
+                <div className="bg-white rounded-2xl shadow-xl p-6">
+                  <img
+                    src="/images.jpeg"
+                    alt="Migration Expert"
+                    className="w-full h-40 rounded-xl object-cover mb-4 ring-4 ring-indigo-50"
+                  />
+                  <h3 className="text-xl font-bold mb-2">Talk to a Migration Expert</h3>
+                  <p className="text-gray-600 mb-4">Get a free profile evaluation within 24 hours.</p>
+                  <div className="flex flex-col gap-3">
+                    <button onClick={handleScrollToAssessment} className="bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-500 transition flex items-center justify-center">
+                      <ClipboardCheck size={18} className="mr-2" />
+                      Free Assessment
+                    </button>
+                    <a href="https://wa.me/919848158627" target="_blank" rel="noreferrer noopener" className="bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-400 transition flex items-center justify-center">
+                      <MessageCircle size={18} className="mr-2" />
+                      Chat on WhatsApp
+                    </a>
+                    <a href="tel:+919848158627" className="bg-white border border-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:border-gray-300 transition flex items-center justify-center">
+                      <Phone size={18} className="mr-2" />
+                      +91 98481 58627
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* Assessment Form Section */}
+      <section id="assessment" className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl shadow-2xl p-8 md:p-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center">Start Your International Work Journey</h2>
+              <p className="text-gray-600 text-center mb-8">Fill out the form below for a free assessment</p>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                    placeholder="+91 98765 43210"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Message / Preferred Country</label>
+                  <textarea
+                    required
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                    placeholder="Tell us about your profession, experience, and preferred destination..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-yellow-400 text-gray-900 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center"
+                >
+                  <span>Get Free Assessment</span>
+                  <ArrowRight className="ml-2" size={20} />
+                </button>
+              </form>
+
+              <div className="mt-8 pt-8 border-t border-gray-200">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-600">
+                  <div className="flex items-center">
+                    <Phone className="mr-2 text-indigo-600" size={20} />
+                    <span>+91 98481 58627</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Mail className="mr-2 text-indigo-600" size={20} />
+                    <span>info@greatvisanetwork.com</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>
