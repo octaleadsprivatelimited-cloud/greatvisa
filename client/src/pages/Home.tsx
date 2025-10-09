@@ -288,18 +288,18 @@ const Home: React.FC = () => {
                   </div>
 
                   {/* Content - 30% */}
-                  <div className="h-[30%] bg-gradient-to-br from-slate-50 to-white p-5 flex flex-col justify-between">
-                    <div>
-                      <ul className="space-y-1.5">
+                  <div className="h-[30%] bg-gradient-to-br from-slate-50 to-white p-4 flex flex-col justify-between">
+                    <div className="flex-1 overflow-y-auto">
+                      <ul className="space-y-1">
                         {country.visas.map((visa, idx) => (
-                          <li key={idx} className="flex items-center text-sm text-gray-700">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mr-2"></div>
+                          <li key={idx} className="flex items-center text-xs md:text-sm text-gray-700">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mr-2 flex-shrink-0"></div>
                             <span className="font-medium">{visa}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <button className={`mt-3 w-full bg-gradient-to-r ${country.gradient} text-white py-2.5 px-4 rounded-lg font-semibold text-sm hover:shadow-lg transition-all duration-300 group-hover:scale-105 flex items-center justify-center`}>
+                    <button className={`mt-2 w-full bg-gradient-to-r ${country.gradient} text-white py-2.5 px-4 rounded-lg font-bold text-sm hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center shadow-lg`}>
                       <span>Learn More</span>
                       <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </button>
