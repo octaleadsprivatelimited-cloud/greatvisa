@@ -417,7 +417,7 @@ const Home: React.FC = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://img.freepik.com/premium-photo/businessman-businesswoman-formal-wear-working-together-looking-new-employees-hire-international-business-consulting-hr-social-media-icons-modern-panoramic-office-background_269648-17517.jpg?semt=ais_hybrid&w=740&q=80"
+            src="/home/slider-1.jpg"
             alt="Professional background"
             className="w-full h-full object-cover"
           />
