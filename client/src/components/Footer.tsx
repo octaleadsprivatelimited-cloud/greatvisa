@@ -62,10 +62,10 @@ const Footer: React.FC = () => {
 
   const socialLinks = [
     { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:bg-blue-600' },
-    { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:bg-pink-600' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/greatvisanetwork?igsh=ajdlY2Y0MW44aTFm', color: 'hover:bg-pink-600' },
     { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:bg-blue-700' },
     { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:bg-sky-500' },
-    { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:bg-red-600' }
+    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@greatvisanetwork', color: 'hover:bg-red-600' }
   ];
 
   const trustBadges = [
