@@ -123,48 +123,9 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight"
             >
-              <motion.span 
-                className="text-white drop-shadow-2xl inline-block"
-                animate={{ 
-                  y: [0, -10, 0],
-                }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                Your
-              </motion.span>{' '}
-              <motion.span 
-                className="text-yellow-400 inline-block drop-shadow-2xl"
-                animate={{ 
-                  scale: [1, 1.1, 1],
-                  rotate: [0, 5, -5, 0],
-                }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                Dream
-              </motion.span>
-              <br />
-              <motion.span 
-                className="text-white drop-shadow-2xl inline-block"
-                animate={{ 
-                  y: [0, -10, 0],
-                }}
-                transition={{ 
-                  duration: 2,
-                  delay: 0.5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                Destination
-              </motion.span>
+              <span className="text-white drop-shadow-2xl">
+                Your Dream Destination
+              </span>
             </motion.h1>
 
             {/* Description */}
