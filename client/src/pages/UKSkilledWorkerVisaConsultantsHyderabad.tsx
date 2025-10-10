@@ -172,9 +172,11 @@ const UKSkilledWorkerVisaConsultantsHyderabad = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 text-white"
+                className="relative bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 text-white overflow-hidden"
               >
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Skilled Occupations We Support</h2>
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200')] bg-cover bg-center opacity-20"></div>
+                <div className="relative z-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-8">Skilled Occupations We Support</h2>
                 <ul className="grid md:grid-cols-2 gap-4">
                   {[
                     "IT Professionals & Software Engineers",
@@ -194,6 +196,7 @@ const UKSkilledWorkerVisaConsultantsHyderabad = () => {
                     </li>
                   ))}
                 </ul>
+                </div>
               </motion.div>
 
               <motion.div

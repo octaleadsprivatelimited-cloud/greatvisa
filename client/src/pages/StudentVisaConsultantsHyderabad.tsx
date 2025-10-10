@@ -146,9 +146,11 @@ const StudentVisaConsultantsHyderabad = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 text-white"
+                className="relative bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 text-white overflow-hidden"
               >
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Countries We Support</h2>
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200')] bg-cover bg-center opacity-20"></div>
+                <div className="relative z-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-8">Countries We Support</h2>
                 <ul className="grid md:grid-cols-2 gap-4">
                   {[
                     "USA Student Visa (F-1, J-1)",
@@ -166,6 +168,7 @@ const StudentVisaConsultantsHyderabad = () => {
                     </li>
                   ))}
                 </ul>
+                </div>
               </motion.div>
 
               <motion.div

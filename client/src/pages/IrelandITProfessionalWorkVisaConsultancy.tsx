@@ -179,9 +179,11 @@ const IrelandITProfessionalWorkVisaConsultancy = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl shadow-lg p-8 text-white"
+                  className="relative bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl shadow-lg p-8 text-white overflow-hidden"
                 >
-                  <h2 className="text-3xl font-bold mb-6">IT Roles We Support</h2>
+                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1200')] bg-cover bg-center opacity-20"></div>
+                  <div className="relative z-10">
+                    <h2 className="text-3xl font-bold mb-6">IT Roles We Support</h2>
                   <div className="grid md:grid-cols-2 gap-3">
                     {[
                       "Software Engineers / Developers",
@@ -202,6 +204,7 @@ const IrelandITProfessionalWorkVisaConsultancy = () => {
                         <span>{role}</span>
                       </div>
                     ))}
+                  </div>
                   </div>
                 </motion.div>
 

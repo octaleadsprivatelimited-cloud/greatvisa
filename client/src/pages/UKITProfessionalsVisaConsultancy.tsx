@@ -131,9 +131,11 @@ const UKITProfessionalsVisaConsultancy = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 mb-12 text-white"
+              className="relative bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 mb-12 text-white overflow-hidden"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">IT Roles We Support</h2>
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200')] bg-cover bg-center opacity-20"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">IT Roles We Support</h2>
               <ul className="space-y-4">
                 {[
                   "Software Developers / Engineers",
@@ -153,6 +155,7 @@ const UKITProfessionalsVisaConsultancy = () => {
                   </li>
                 ))}
               </ul>
+              </div>
             </motion.div>
           </div>
         </div>
