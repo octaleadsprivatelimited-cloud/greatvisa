@@ -182,21 +182,21 @@ const Contact: React.FC = () => {
             <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto mb-8">
               Ready to take the first step towards your dream destination? Contact our expert team for a free consultation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-row gap-2 md:gap-4 justify-center">
               <a
                 href="tel:+919533974711"
-                className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 px-5 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 px-3 py-2.5 md:px-5 md:py-3 rounded-lg md:rounded-xl font-semibold text-xs md:text-sm transition-all duration-300 hover:scale-105 shadow-lg"
               >
-                <Phone className="w-5 h-5 mr-2" />
-                Call Now: +91 9533974711
+                <Phone className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                <span className="whitespace-nowrap">Call Now: +91 9533974711</span>
               </a>
               <a
                 href="https://wa.me/919533974711"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-5 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-3 py-2.5 md:px-5 md:py-3 rounded-lg md:rounded-xl font-semibold text-xs md:text-sm transition-all duration-300 hover:scale-105"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
+                <MessageCircle className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                 WhatsApp Us
               </a>
             </div>
@@ -491,23 +491,23 @@ const Contact: React.FC = () => {
               Every day you wait is a day lost. Contact us now and take the first step towards your dream destination.
             </p>
             
-            <div className="flex flex-row gap-6 justify-center items-center">
+            <div className="flex flex-row gap-2 md:gap-6 justify-center items-center">
               <a
                 href="tel:+919533974711"
-                className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 px-3 py-2.5 md:px-6 md:py-3 rounded-lg md:rounded-xl font-semibold text-xs md:text-sm transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                <Phone className="w-5 h-5 mr-2" />
-                Call Now: +91 9533974711
-                <ArrowRight size={20} className="ml-2" />
+                <Phone className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                <span className="whitespace-nowrap">Call Now: +91 9533974711</span>
+                <ArrowRight size={16} className="ml-1 md:ml-2 md:w-5 md:h-5" />
               </a>
               
               <a
                 href="https://wa.me/919533974711"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-3 py-2.5 md:px-6 md:py-3 rounded-lg md:rounded-xl font-semibold text-xs md:text-sm transition-all duration-300 hover:scale-105"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
+                <MessageCircle className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                 WhatsApp Us
               </a>
             </div>

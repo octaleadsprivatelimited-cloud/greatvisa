@@ -371,7 +371,7 @@ const AlbaniaWorkVisa = () => {
                       className="bg-white border border-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:border-gray-300 transition flex items-center justify-center"
                     >
                       <Phone size={18} className="mr-2" />
-                      +91 98481 58627
+                      +91 9533974711
                     </a>
                   </div>
                 </div>
@@ -478,7 +478,7 @@ const AlbaniaWorkVisa = () => {
                   <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-600">
                     <div className="flex items-center">
                       <Phone className="mr-2 text-red-600" size={20} />
-                      <span>+91 98481 58627</span>
+                      <span>+91 9533974711</span>
                     </div>
                     <div className="flex items-center">
                       <Mail className="mr-2 text-red-600" size={20} />

@@ -547,21 +547,21 @@ const Home: React.FC = () => {
               Don't wait! Your future starts today
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+            <div className="flex flex-row gap-2 md:gap-4 justify-center">
               <Link
                 to="/contact"
-                className="group inline-flex items-center justify-center bg-yellow-400 text-gray-900 hover:bg-yellow-500 hover:text-black px-5 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all duration-300 hover:scale-105 shadow-xl"
+                className="group inline-flex items-center justify-center bg-yellow-400 text-gray-900 hover:bg-yellow-500 hover:text-black px-3 py-2.5 md:px-8 md:py-4 rounded-lg md:rounded-xl font-bold text-xs md:text-base transition-all duration-300 hover:scale-105 shadow-xl"
               >
-                <Sparkles size={18} className="md:w-5 md:h-5 mr-2 group-hover:rotate-12 transition-transform" />
+                <Sparkles size={14} className="md:w-5 md:h-5 mr-1 md:mr-2 group-hover:rotate-12 transition-transform" />
                 <span>Get Free Consultation</span>
-                <ArrowRight size={18} className="md:w-5 md:h-5 ml-2 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight size={14} className="md:w-5 md:h-5 ml-1 md:ml-2 group-hover:translate-x-2 transition-transform" />
               </Link>
               
               <a
                 href="tel:+919533974711"
-                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-5 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-3 py-2.5 md:px-8 md:py-4 rounded-lg md:rounded-xl font-bold text-xs md:text-base transition-all duration-300 hover:scale-105"
               >
-                <Phone size={18} className="md:w-5 md:h-5 mr-2" />
+                <Phone size={14} className="md:w-5 md:h-5 mr-1 md:mr-2" />
                 <span>Call Us Now</span>
               </a>
             </div>

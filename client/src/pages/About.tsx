@@ -154,17 +154,17 @@ const About: React.FC = () => {
             <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto mb-8">
               We are a leading immigration consultancy dedicated to helping individuals and families achieve their dreams of living, working, and studying abroad.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-row gap-2 md:gap-4 justify-center">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 shadow-xl"
+                className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 px-4 py-3 md:px-8 md:py-4 rounded-lg md:rounded-2xl font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105 shadow-xl"
               >
                 <span>Get Started Today</span>
-                <ArrowRight size={20} className="ml-2" />
+                <ArrowRight size={16} className="ml-1 md:ml-2 md:w-5 md:h-5" />
               </a>
               <a
                 href="/services"
-                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-4 py-3 md:px-8 md:py-4 rounded-lg md:rounded-2xl font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105"
               >
                 <span>Our Services</span>
               </a>
@@ -382,18 +382,18 @@ const About: React.FC = () => {
             </div>
             
             {/* Trust Indicators */}
-            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 text-white/80">
+            <div className="mt-12 flex flex-row items-center justify-center gap-3 md:gap-8 text-white/80">
               <div className="flex items-center">
-                <Shield className="w-5 h-5 mr-2" />
-                <span className="text-sm font-medium">Certified Experts</span>
+                <Shield className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                <span className="text-xs md:text-sm font-medium">Certified Experts</span>
               </div>
               <div className="flex items-center">
-                <Award className="w-5 h-5 mr-2" />
-                <span className="text-sm font-medium">98% Success Rate</span>
+                <Award className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                <span className="text-xs md:text-sm font-medium">98% Success Rate</span>
               </div>
               <div className="flex items-center">
-                <Users className="w-5 h-5 mr-2" />
-                <span className="text-sm font-medium">5000+ Happy Clients</span>
+                <Users className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                <span className="text-xs md:text-sm font-medium">5000+ Happy Clients</span>
               </div>
             </div>
           </motion.div>

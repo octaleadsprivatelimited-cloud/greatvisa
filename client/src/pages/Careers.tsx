@@ -325,18 +325,18 @@ const Careers: React.FC = () => {
               Don't see a position that fits? We're always looking for talented individuals. Send us your resume and let's start a conversation.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-row gap-2 md:gap-4 justify-center">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 px-4 py-3 md:px-8 md:py-4 rounded-lg md:rounded-xl font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 <span>Send Your Resume</span>
-                <ArrowRight size={18} className="ml-2" />
+                <ArrowRight size={16} className="ml-1 md:ml-2 md:w-[18px] md:h-[18px]" />
               </a>
               
               <a
                 href="mailto:careers@greatvisanetwork.com"
-                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-4 py-3 md:px-8 md:py-4 rounded-lg md:rounded-xl font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105"
               >
                 <span>Email Us</span>
               </a>

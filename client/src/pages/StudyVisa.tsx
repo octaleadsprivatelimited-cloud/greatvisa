@@ -93,12 +93,12 @@ const StudyVisa: React.FC = () => {
   ];
 
   const countries = [
-    { name: 'Canada', flag: '🇨🇦', universities: '100+', duration: '2-4 weeks' },
-    { name: 'United States', flag: '🇺🇸', universities: '500+', duration: '3-5 weeks' },
-    { name: 'United Kingdom', flag: '🇬🇧', universities: '150+', duration: '2-4 weeks' },
-    { name: 'Australia', flag: '🇦🇺', universities: '80+', duration: '2-4 weeks' },
-    { name: 'Germany', flag: '🇩🇪', universities: '200+', duration: '3-6 weeks' },
-    { name: 'France', flag: '🇫🇷', universities: '120+', duration: '3-5 weeks' }
+    { name: 'Canada', image: '/country/canada.jpg', universities: '100+', duration: '2-4 weeks' },
+    { name: 'United States', image: '/country/usa.jpg', universities: '500+', duration: '3-5 weeks' },
+    { name: 'United Kingdom', image: '/country/uk.jpg', universities: '150+', duration: '2-4 weeks' },
+    { name: 'Australia', image: '/country/australia.jpg', universities: '80+', duration: '2-4 weeks' },
+    { name: 'Germany', image: '/country/Germany.jpg', universities: '200+', duration: '3-6 weeks' },
+    { name: 'France', image: '/country/Europe.jpeg', universities: '120+', duration: '3-5 weeks' }
   ];
 
   return (
@@ -259,35 +259,38 @@ const StudyVisa: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
               >
-                <div className="text-center mb-6">
-                  <div className="mb-6">
-                    <div className="text-8xl sm:text-9xl md:text-10xl lg:text-11xl xl:text-12xl transform hover:scale-110 transition-transform duration-300 inline-block">
-                      {country.flag}
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{country.name}</h3>
+                <div className="relative h-64 md:h-72 overflow-hidden">
+                  <img 
+                    src={country.image} 
+                    alt={country.name}
+                    className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-white">{country.name}</h3>
                 </div>
                 
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Universities</span>
-                    <span className="font-semibold text-gray-900">{country.universities}</span>
+                <div className="p-6">
+                  <div className="space-y-4 mb-6">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Universities</span>
+                      <span className="font-semibold text-gray-900">{country.universities}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Processing Time</span>
+                      <span className="font-semibold text-gray-900">{country.duration}</span>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Processing Time</span>
-                    <span className="font-semibold text-gray-900">{country.duration}</span>
-                  </div>
-                </div>
 
-                <div className="mt-6">
-                  <div className="flex items-center justify-center text-yellow-500 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={16} className="fill-current" />
-                    ))}
+                  <div>
+                    <div className="flex items-center justify-center text-yellow-500 mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={16} className="fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-sm text-gray-600 text-center">Highly recommended destination</p>
                   </div>
-                  <p className="text-sm text-gray-600 text-center">Highly recommended destination</p>
                 </div>
               </motion.div>
             ))}
@@ -382,7 +385,7 @@ const StudyVisa: React.FC = () => {
                   <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-600">
                     <div className="flex items-center">
                       <Phone className="mr-2 text-indigo-600" size={20} />
-                      <span>+91 98481 58627</span>
+                      <span>+91 9533974711</span>
                     </div>
                     <div className="flex items-center">
                       <Mail className="mr-2 text-indigo-600" size={20} />

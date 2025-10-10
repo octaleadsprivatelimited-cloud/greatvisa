@@ -113,19 +113,19 @@ const SkilledMigration = () => {
                 >
                   Migrate to your dream country with expert guidance and end-to-end support.
                 </motion.p>
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-row gap-2 md:gap-3">
                   <button
                     onClick={handleScrollToAssessment}
-                    className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-xl flex items-center justify-center"
+                    className="bg-yellow-400 text-gray-900 px-4 py-2.5 md:px-6 md:py-3 rounded-full font-semibold text-sm md:text-base hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-xl flex items-center justify-center"
                   >
-                    <ClipboardCheck className="mr-2" size={20} />
+                    <ClipboardCheck className="mr-1 md:mr-2" size={18} />
                     Free Assessment
                   </button>
                   <a
-                    href="tel:+919848158627"
-                    className="glass-effect px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
+                    href="tel:+919533974711"
+                    className="glass-effect px-4 py-2.5 md:px-6 md:py-3 rounded-full font-semibold text-sm md:text-base hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
                   >
-                    <Phone className="mr-2" size={20} />
+                    <Phone className="mr-1 md:mr-2" size={18} />
                     Call Expert
                   </a>
                 </div>
@@ -402,7 +402,7 @@ const SkilledMigration = () => {
                     </a>
                     <a href="tel:+919848158627" className="bg-white border border-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:border-gray-300 transition flex items-center justify-center">
                       <Phone size={18} className="mr-2" />
-                      +91 98481 58627
+                      +91 9533974711
                     </a>
                   </div>
                 </div>
@@ -508,7 +508,7 @@ const SkilledMigration = () => {
                   <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-600">
                     <div className="flex items-center">
                       <Phone className="mr-2 text-indigo-600" size={20} />
-                      <span>+91 98481 58627</span>
+                      <span>+91 9533974711</span>
                     </div>
                     <div className="flex items-center">
                       <Mail className="mr-2 text-indigo-600" size={20} />
@@ -521,7 +521,7 @@ const SkilledMigration = () => {
               {/* Professional migration image */}
               <div className="order-1 md:order-2">
                 <img
-                  src={`${import.meta.env.BASE_URL}services/immigration.jpg`}
+                  src="/services/immigration.jpg"
                   alt="Professional migration consultation"
                   className="w-full h-56 md:h-full rounded-xl object-cover shadow-lg"
                 />

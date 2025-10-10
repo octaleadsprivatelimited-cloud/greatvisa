@@ -137,25 +137,25 @@ const WorkVisa: React.FC = () => {
                 </motion.h1>
                 <motion.p
                   initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15 }}
                   className="text-lg md:text-xl mb-6 text-white/90"
                 >
                   Advance your career with global opportunities. End-to-end recruitment and visa support.
                 </motion.p>
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-row gap-2 md:gap-3">
                   <button
                     onClick={handleScrollToAssessment}
-                    className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-xl flex items-center justify-center"
+                    className="bg-yellow-400 text-gray-900 px-4 py-2.5 md:px-6 md:py-3 rounded-full font-semibold text-sm md:text-base hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-xl flex items-center justify-center"
                   >
-                    <ClipboardCheck className="mr-2" size={20} />
+                    <ClipboardCheck className="mr-1 md:mr-2" size={18} />
                     Free Assessment
                   </button>
                   <a
-                    href="tel:+919848158627"
-                    className="glass-effect px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
+                    href="tel:+919533974711"
+                    className="glass-effect px-4 py-2.5 md:px-6 md:py-3 rounded-full font-semibold text-sm md:text-base hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
                   >
-                    <Phone className="mr-2" size={20} />
+                    <Phone className="mr-1 md:mr-2" size={18} />
                     Call Expert
                   </a>
                 </div>
@@ -193,23 +193,23 @@ const WorkVisa: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-8">
-              <motion.div
+          <motion.div
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
                 className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">International Work Visa Services</h2>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                   From job placement to visa processing, we provide end-to-end support for your international career journey. Our team connects you with employers and manages the entire visa process for a seamless move abroad.
-                </p>
-              </motion.div>
+            </p>
+          </motion.div>
 
               {/* Key Features */}
               <div className="grid md:grid-cols-2 gap-6">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={feature.title}
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.title}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -233,14 +233,14 @@ const WorkVisa: React.FC = () => {
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Required Documents</h2>
                 <p className="text-lg text-gray-600 mb-6">We'll help you gather and organize everything properly.</p>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {requirements.map((requirement, index) => (
+                {requirements.map((requirement, index) => (
                     <div key={index} className="flex items-start">
                       <CheckCircle size={20} className="text-indigo-600 mr-2 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700">{requirement}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
+                    <span className="text-gray-700">{requirement}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
               {/* Industries */}
               <motion.div
@@ -256,33 +256,33 @@ const WorkVisa: React.FC = () => {
                       <div className="text-center mb-4">
                         <div className="text-5xl mb-2">{industry.icon}</div>
                         <h3 className="text-xl font-semibold text-gray-900">{industry.name}</h3>
-                      </div>
+                </div>
                       <div className="space-y-2">
                         <div className="flex justify-between text-sm">
-                          <span className="text-gray-600">Available Jobs</span>
-                          <span className="font-semibold text-gray-900">{industry.jobs}</span>
-                        </div>
+                    <span className="text-gray-600">Available Jobs</span>
+                    <span className="font-semibold text-gray-900">{industry.jobs}</span>
+                  </div>
                         <div className="flex justify-between text-sm items-center">
-                          <span className="text-gray-600">Demand Level</span>
+                    <span className="text-gray-600">Demand Level</span>
                           <span className={`font-semibold px-2 py-0.5 rounded-full text-xs ${
-                            industry.demand === 'Very High' ? 'bg-red-100 text-red-800' :
-                            industry.demand === 'High' ? 'bg-orange-100 text-orange-800' :
-                            'bg-yellow-100 text-yellow-800'
-                          }`}>
-                            {industry.demand}
-                          </span>
-                        </div>
-                      </div>
+                      industry.demand === 'Very High' ? 'bg-red-100 text-red-800' :
+                      industry.demand === 'High' ? 'bg-orange-100 text-orange-800' :
+                      'bg-yellow-100 text-yellow-800'
+                    }`}>
+                      {industry.demand}
+                    </span>
+                  </div>
+                </div>
                     </div>
                   ))}
                 </div>
               </motion.div>
 
               {/* Process Timeline */}
-              <motion.div
+          <motion.div
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
                 className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
               >
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Process</h2>
@@ -306,7 +306,7 @@ const WorkVisa: React.FC = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+          </motion.div>
 
               {/* FAQ */}
               <motion.div
@@ -363,7 +363,7 @@ const WorkVisa: React.FC = () => {
                     </a>
                     <a href="tel:+919848158627" className="bg-white border border-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:border-gray-300 transition flex items-center justify-center">
                       <Phone size={18} className="mr-2" />
-                      +91 98481 58627
+                      +91 9533974711
                     </a>
                   </div>
                 </div>
@@ -377,10 +377,10 @@ const WorkVisa: React.FC = () => {
       <section id="assessment" className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <motion.div
+          <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
               className="bg-white rounded-2xl shadow-2xl p-8 md:p-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center">Start Your International Work Journey</h2>
@@ -448,15 +448,15 @@ const WorkVisa: React.FC = () => {
                 <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-600">
                   <div className="flex items-center">
                     <Phone className="mr-2 text-indigo-600" size={20} />
-                    <span>+91 98481 58627</span>
+                    <span>+91 9533974711</span>
                   </div>
                   <div className="flex items-center">
                     <Mail className="mr-2 text-indigo-600" size={20} />
                     <span>info@greatvisanetwork.com</span>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+            </div>
+          </motion.div>
           </div>
         </div>
       </section>

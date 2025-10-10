@@ -284,7 +284,7 @@ const Tier2WorkVisaUK = () => {
                     <div className="space-y-3 text-sm">
                       <div className="flex items-center text-gray-600">
                         <Phone className="mr-2 text-indigo-600" size={18} />
-                        <span>+91 98481 58627</span>
+                        <span>+91 9533974711</span>
                       </div>
                       <div className="flex items-center text-gray-600">
                         <Mail className="mr-2 text-indigo-600" size={18} />
@@ -444,7 +444,7 @@ const Tier2WorkVisaUK = () => {
                   <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-gray-600 text-sm">
                     <div className="flex items-center">
                       <Phone className="mr-2 text-indigo-600" size={18} />
-                      <span>+91 98481 58627</span>
+                      <span>+91 9533974711</span>
                     </div>
                     <div className="flex items-center">
                       <Mail className="mr-2 text-indigo-600" size={18} />

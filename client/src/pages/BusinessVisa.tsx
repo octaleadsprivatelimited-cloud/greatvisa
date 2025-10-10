@@ -234,7 +234,7 @@ const BusinessVisa: React.FC = () => {
                   <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-600">
                     <div className="flex items-center">
                       <Phone className="mr-2 text-purple-600" size={20} />
-                      <span>+91 98481 58627</span>
+                      <span>+91 9533974711</span>
                     </div>
                     <div className="flex items-center">
                       <Mail className="mr-2 text-purple-600" size={20} />
