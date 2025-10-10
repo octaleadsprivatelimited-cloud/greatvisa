@@ -51,8 +51,9 @@ const UKHealthcareProfessionalsWorkVisa = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Hero Section */}
-      <section className="relative h-[520px] flex items-center overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
-        <div className="absolute inset-0 bg-[url('/services/immigration.jpg')] bg-cover bg-center opacity-30" />
+      <section className="relative h-[520px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/services/immigration.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-indigo-900/80 to-purple-900/80"></div>
 
         <div className="relative z-10 container mx-auto px-4 w-full">
           <div className="max-w-6xl mx-auto">
