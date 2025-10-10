@@ -50,12 +50,8 @@ const UKITProfessionalsVisaConsultancy = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Hero Section */}
       <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-900">
-          <div className="absolute inset-0 bg-black/40"></div>
-          <div className="absolute inset-0 flex items-center justify-center text-white/20 text-6xl font-bold">
-            [UK IT Professionals Visa Image]
-          </div>
-        </div>
+        <div className="absolute inset-0 bg-[url('/services/immigration.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-black/30"></div>
 
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
           <motion.h1 
