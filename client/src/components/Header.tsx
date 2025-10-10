@@ -264,10 +264,9 @@ const Header: React.FC = () => {
                             className="group relative overflow-hidden p-3 rounded-lg bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-md block h-full"
                           >
                             <div className="relative">
-                              <h5 className="text-xs font-bold text-gray-900 mb-0.5 group-hover:text-indigo-600 transition-colors">
+                              <h5 className="text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
                                 {service.name}
                               </h5>
-                              <p className="text-[10px] text-gray-600 leading-snug">{service.desc}</p>
                             </div>
                           </Link>
                         </motion.div>
@@ -297,10 +296,9 @@ const Header: React.FC = () => {
                             className="group relative overflow-hidden p-3 rounded-lg bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:shadow-md block h-full"
                           >
                             <div className="relative">
-                              <h5 className="text-xs font-bold text-gray-900 mb-0.5 group-hover:text-purple-600 transition-colors">
+                              <h5 className="text-sm font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
                                 {service.name}
                               </h5>
-                              <p className="text-[10px] text-gray-600 leading-snug">{service.desc}</p>
                             </div>
                           </Link>
                         </motion.div>
@@ -381,16 +379,15 @@ const Header: React.FC = () => {
                           <Link
                             to={service.path}
                             onClick={() => setActiveDropdown(null)}
-                            className="group relative overflow-hidden p-2.5 rounded-lg bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-md block h-full"
+                            className="group relative overflow-hidden p-3 rounded-lg bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-md block h-full"
                           >
                             <div className="relative">
-                              <div className="flex items-center mb-0.5">
-                                <span className="text-sm mr-1.5">{service.icon}</span>
-                                <h5 className="text-xs font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                              <div className="flex items-center">
+                                <span className="text-base mr-2">{service.icon}</span>
+                                <h5 className="text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
                                   {service.name}
                                 </h5>
                               </div>
-                              <p className="text-[10px] text-gray-600 leading-snug">{service.desc}</p>
                             </div>
                           </Link>
                         </motion.div>
@@ -417,16 +414,15 @@ const Header: React.FC = () => {
                           <Link
                             to={service.path}
                             onClick={() => setActiveDropdown(null)}
-                            className="group relative overflow-hidden p-2.5 rounded-lg bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:shadow-md block h-full"
+                            className="group relative overflow-hidden p-3 rounded-lg bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:shadow-md block h-full"
                           >
                             <div className="relative">
-                              <div className="flex items-center mb-0.5">
-                                <span className="text-sm mr-1.5">{service.icon}</span>
-                                <h5 className="text-xs font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                              <div className="flex items-center">
+                                <span className="text-base mr-2">{service.icon}</span>
+                                <h5 className="text-sm font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
                                   {service.name}
                                 </h5>
                               </div>
-                              <p className="text-[10px] text-gray-600 leading-snug">{service.desc}</p>
                             </div>
                           </Link>
                         </motion.div>
