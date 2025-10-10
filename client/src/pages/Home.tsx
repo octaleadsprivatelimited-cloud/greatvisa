@@ -113,8 +113,19 @@ const Home: React.FC = () => {
       <Hero />
 
       {/* Features Section - Creative Grid */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-purple-50/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image with Fade Effect */}
+        <div className="absolute inset-0">
+          <img
+            src="/services/immigration.jpg"
+            alt="Consulting Background"
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient Overlay for Fade Effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-slate-50/90 to-purple-50/85"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
