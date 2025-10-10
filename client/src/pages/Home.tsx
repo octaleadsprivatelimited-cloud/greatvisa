@@ -407,25 +407,25 @@ const Home: React.FC = () => {
       </section>
 
       {/* Process Section - Creative Timeline */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-slate-50 to-blue-50/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-8 md:py-12 bg-gradient-to-br from-slate-50 to-blue-50/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-8 md:mb-16"
+            className="text-center mb-6 md:mb-10"
           >
-            <div className="inline-flex items-center space-x-2 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 rounded-full font-bold mb-4 md:mb-6 text-sm md:text-base">
-              <Zap size={16} className="md:w-5 md:h-5" />
+            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 rounded-full font-bold mb-3 md:mb-4 text-xs md:text-sm">
+              <Zap size={14} className="md:w-4 md:h-4" />
               <span>Our Process</span>
             </div>
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+            <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-2 md:mb-3">
               Simple, Fast,{' '}
               <span className="text-gradient-neon">Effective</span>
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {[
               { step: '01', title: 'Free Consult', desc: 'Book your free consultation' },
               { step: '02', title: 'Documents', desc: 'We prepare everything' },
@@ -440,12 +440,12 @@ const Home: React.FC = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="glass-card p-4 md:p-8 rounded-2xl md:rounded-3xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full">
-                  <div className="text-4xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-indigo-200 to-purple-300 mb-3 md:mb-6">
+                <div className="glass-card p-3 md:p-5 rounded-xl md:rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
+                  <div className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-indigo-200 to-purple-300 mb-2 md:mb-4">
                     {process.step}
                   </div>
-                  <h3 className="text-base md:text-xl font-bold text-gray-900 mb-1 md:mb-2">{process.title}</h3>
-                  <p className="text-xs md:text-base text-gray-600 font-semibold">{process.desc}</p>
+                  <h3 className="text-sm md:text-base font-bold text-gray-900 mb-1">{process.title}</h3>
+                  <p className="text-xs text-gray-600 font-semibold">{process.desc}</p>
                 </div>
               </motion.div>
             ))}
