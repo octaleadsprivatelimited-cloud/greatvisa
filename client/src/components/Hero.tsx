@@ -175,14 +175,14 @@ const Hero: React.FC = () => {
             >
               <Link
                 to="/contact"
-                className="group inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-xl font-semibold text-sm md:text-base hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-xl"
+                className="group inline-flex items-center justify-center px-5 md:px-6 py-2.5 md:py-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-lg md:rounded-xl font-semibold text-sm hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-xl"
               >
                 <span>Get Started</span>
-                <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform" />
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-gray-900 rounded-xl font-semibold text-sm md:text-base hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-indigo-200"
+                className="inline-flex items-center justify-center px-5 md:px-6 py-2.5 md:py-3 bg-white text-gray-900 rounded-lg md:rounded-xl font-semibold text-sm hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-indigo-200"
               >
                 <span>Explore Services</span>
               </Link>
