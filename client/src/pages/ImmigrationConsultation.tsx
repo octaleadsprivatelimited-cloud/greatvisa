@@ -1,8 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Users, CheckCircle, Clock, Shield, ArrowRight, Award } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const ImmigrationConsultation: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Immigration Consultation Services Hyderabad',
+      'Free immigration consultation services in Hyderabad. Expert advice on visa pathways, immigration options, and case assessment for all countries.',
+      [
+        'immigration consultation Hyderabad',
+        'free immigration consultation',
+        'immigration consultants',
+        'visa consultation services',
+        'immigration advice Hyderabad',
+        'immigration pathway assessment',
+        'immigration case evaluation',
+        'immigration planning services',
+        'immigration expert consultation',
+        'visa advisory services',
+        'immigration guidance Hyderabad',
+        'best immigration consultants',
+        'professional immigration advice',
+        'immigration consultation services',
+        'visa consultation Hyderabad'
+      ]
+    );
+  }, []);
+
   const features = [
     { icon: Users, title: 'Free Consultation', description: 'Initial assessment and case evaluation at no cost' },
     { icon: Award, title: 'Case Assessment', description: 'Comprehensive evaluation of your immigration options' },

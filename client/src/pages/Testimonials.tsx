@@ -1,8 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote, CheckCircle, ArrowRight } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const Testimonials: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Client Testimonials & Success Stories - GREAT Visa Network',
+      'Read success stories and testimonials from our satisfied clients who achieved their visa dreams with GREAT Visa Network Hyderabad. Real reviews from real people.',
+      [
+        'visa consultants reviews',
+        'GREAT Visa Network testimonials',
+        'visa success stories',
+        'client testimonials Hyderabad',
+        'immigration success stories',
+        'visa consultants reviews Hyderabad',
+        'customer testimonials',
+        'visa services reviews',
+        'immigration consultants reviews',
+        'visa success rate',
+        'client feedback',
+        'visa approval stories',
+        'best visa consultants reviews',
+        'visa consultancy testimonials',
+        'successful visa cases'
+      ]
+    );
+  }, []);
+
   const testimonials = [
     {
       name: 'Priya Sharma',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Briefcase, 
@@ -19,8 +19,33 @@ import {
   Globe,
   TrendingUp
 } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const AlbaniaWorkVisa = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Albania Work Visa Consultants Hyderabad',
+      'Albania work visa consultants in Hyderabad. Expert assistance for Albania work permits, employment visa, and job opportunities in Albania for various positions.',
+      [
+        'Albania work visa consultants',
+        'Albania work permit Hyderabad',
+        'Albania job visa',
+        'Albania employment visa',
+        'Albania work visa services',
+        'Albania immigration consultants',
+        'Albania visa Hyderabad',
+        'work visa Albania',
+        'Albania work opportunities',
+        'Albania visa application',
+        'Albania work permit services',
+        'Albania job consultants',
+        'Albania employment opportunities',
+        'Albania visa processing',
+        'best Albania visa consultants'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

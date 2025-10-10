@@ -1,8 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, ArrowRight, HelpCircle } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const FAQ: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Visa FAQs - Frequently Asked Questions',
+      'Find answers to frequently asked questions about visa applications, immigration services, study abroad, work permits, and visa processing at GREAT Visa Network.',
+      [
+        'visa FAQs',
+        'visa questions and answers',
+        'immigration FAQs',
+        'visa application questions',
+        'study visa FAQs',
+        'work visa questions',
+        'visa processing FAQs',
+        'visa consultants FAQs',
+        'immigration questions',
+        'visa help',
+        'visa information',
+        'visa guidance',
+        'common visa questions',
+        'visa requirements FAQs',
+        'visa application help'
+      ]
+    );
+  }, []);
+
   const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({});
 
   const toggleItem = (id: string) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Users, 
@@ -12,8 +12,35 @@ import {
   Award,
   Star
 } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const About: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'About GREAT Visa Network - Leading Immigration Consultants',
+      'Learn about GREAT Visa Network, your trusted visa and immigration consultants in Hyderabad with 98% success rate. We specialize in study visas, work permits, PR applications, and immigration services.',
+      [
+        'about GREAT Visa Network',
+        'visa consultants Hyderabad',
+        'immigration consultants India',
+        'visa success stories',
+        'trusted visa agents',
+        'best immigration services',
+        'visa company Hyderabad',
+        'overseas consultancy',
+        'study abroad consultants',
+        'work visa experts',
+        'PR consultants India',
+        'visa processing company',
+        'immigration success rate',
+        'professional visa services',
+        'certified immigration consultants',
+        'GREAT Visa Network team',
+        'visa consultation experts'
+      ]
+    );
+  }, []);
+
   const values = [
     {
       icon: Heart,

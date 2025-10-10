@@ -1,8 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, CheckCircle, Users, Mail, Phone, ArrowRight, MessageCircle, Stethoscope, Award, TrendingUp, ClipboardCheck, FileText, ShieldCheck, Building } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const IrelandHealthcareWorkVisaConsultancy = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Ireland Healthcare Work Visa Consultancy Hyderabad',
+      'Expert Ireland healthcare work visa consultancy for nurses, doctors, and medical professionals. Complete assistance for Ireland health sector visa applications.',
+      [
+        'Ireland healthcare visa consultants',
+        'Ireland health worker visa',
+        'Ireland nurse visa consultants',
+        'Ireland medical visa',
+        'Ireland healthcare work visa',
+        'Ireland doctor visa',
+        'Ireland health sector visa',
+        'Ireland nursing visa consultants',
+        'Ireland medical professionals visa',
+        'Ireland healthcare immigration',
+        'Ireland health visa Hyderabad',
+        'Ireland healthcare worker permit',
+        'Ireland medical staff visa',
+        'Ireland nursing work visa',
+        'best Ireland healthcare visa'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

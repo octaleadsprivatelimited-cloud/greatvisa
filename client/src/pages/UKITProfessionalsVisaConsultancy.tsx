@@ -1,8 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Code, CheckCircle, Users, Mail, Phone, ArrowRight, MessageCircle, Laptop } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const UKITProfessionalsVisaConsultancy = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'UK IT Professionals Visa Consultancy Hyderabad',
+      'Specialized UK IT Professionals visa consultancy in Hyderabad for software engineers, developers, and tech professionals. Expert assistance for UK tech visa applications.',
+      [
+        'UK IT visa consultants Hyderabad',
+        'UK IT professionals visa',
+        'UK tech visa consultants',
+        'UK software engineer visa',
+        'UK IT worker visa',
+        'UK technology visa consultants',
+        'UK developer visa Hyderabad',
+        'UK IT skilled worker visa',
+        'UK tech professional visa',
+        'UK software developer visa',
+        'UK IT immigration consultants',
+        'UK tech sector visa',
+        'UK IT job visa',
+        'UK tech migration Hyderabad',
+        'UK IT visa services'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

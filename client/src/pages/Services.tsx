@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   GraduationCap, 
@@ -15,8 +15,37 @@ import {
   Globe,
   Users
 } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const Services: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Visa Services - Study, Work, Tourist & Immigration',
+      'Comprehensive visa services in Hyderabad including study visa, work visa, tourist visa, family visa, business visa, and immigration consultation for all countries.',
+      [
+        'visa services Hyderabad',
+        'study visa services',
+        'work visa services',
+        'tourist visa services',
+        'family visa services',
+        'business visa services',
+        'immigration consultation',
+        'visa processing services',
+        'all visa services',
+        'comprehensive visa solutions',
+        'student visa assistance',
+        'work permit services',
+        'PR visa services',
+        'skilled migration services',
+        'visa application services',
+        'overseas visa services',
+        'international visa services',
+        'visa documentation help',
+        'visa consultancy services Hyderabad'
+      ]
+    );
+  }, []);
+
   const services = [
     {
       icon: GraduationCap,

@@ -1,8 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Globe, CheckCircle, Building, Clock, Shield, ArrowRight, Phone, Mail } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const BusinessVisa: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Business Visa Consultants Hyderabad - Entrepreneur & Investor Visa',
+      'Professional business visa consultants in Hyderabad for entrepreneur visa, investor visa, and business immigration. Expert assistance for UK, USA, Canada, Australia business visas.',
+      [
+        'business visa consultants Hyderabad',
+        'entrepreneur visa consultants',
+        'investor visa services',
+        'business immigration consultants',
+        'business visa processing',
+        'UK business visa Hyderabad',
+        'USA investor visa',
+        'Canada business visa',
+        'Australia business visa',
+        'startup visa consultants',
+        'business setup visa',
+        'investor immigration',
+        'business visa documentation',
+        'entrepreneur immigration',
+        'trade visa consultants',
+        'business visitor visa',
+        'business visa application',
+        'commercial visa services',
+        'business expansion visa'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

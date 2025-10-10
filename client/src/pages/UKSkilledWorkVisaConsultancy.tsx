@@ -1,8 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, CheckCircle, Mail, Phone, ArrowRight, MessageCircle, Award, TrendingUp, Globe, ClipboardCheck, FileText, ShieldCheck, Building, Users } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const UKSkilledWorkVisaConsultancy = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'UK Skilled Work Visa Consultancy - Professional Assistance',
+      'Expert UK skilled work visa consultancy services. Complete assistance for UK skilled worker visa, sponsorship, and immigration from Hyderabad.',
+      [
+        'UK skilled work visa consultancy',
+        'UK skilled visa consultants',
+        'UK skilled work permit',
+        'UK skilled worker consultancy',
+        'UK skilled migration consultants',
+        'UK work visa consultancy',
+        'UK skilled visa services',
+        'UK skilled worker sponsorship',
+        'UK skilled visa application',
+        'UK skilled work visa Hyderabad',
+        'UK skilled professional visa',
+        'UK skilled visa processing',
+        'best UK visa consultancy',
+        'UK skilled immigration',
+        'UK work visa experts'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

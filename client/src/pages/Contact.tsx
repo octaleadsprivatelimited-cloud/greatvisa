@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   MapPin, 
@@ -14,8 +14,34 @@ import {
   Users,
   MessageCircle,
 } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const Contact: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Contact Us - GREAT Visa Network Hyderabad',
+      'Get in touch with GREAT Visa Network for visa consultation and immigration services in Hyderabad. Contact our expert visa consultants for UK, Canada, Australia, USA, and Europe visa assistance.',
+      [
+        'contact visa consultants Hyderabad',
+        'visa consultation booking',
+        'immigration consultants contact',
+        'GREAT Visa Network contact',
+        'visa services Hyderabad contact',
+        'free visa consultation',
+        'visa consultation appointment',
+        'immigration office Hyderabad',
+        'visa consultant phone number',
+        'visa enquiry',
+        'immigration services contact',
+        'visa assistance Hyderabad',
+        'overseas consultancy contact',
+        'study visa consultation',
+        'work visa enquiry',
+        'visa application help'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

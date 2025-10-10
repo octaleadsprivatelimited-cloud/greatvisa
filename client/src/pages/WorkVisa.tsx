@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   CheckCircle, 
@@ -16,8 +16,37 @@ import {
   ShieldCheck,
   Mail,
 } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const WorkVisa: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Work Visa Consultants Hyderabad - Work Permit Services',
+      'Expert work visa consultants in Hyderabad for UK, Canada, Australia, USA, Germany, and other countries. Job placement assistance, work permit processing, and skilled migration services.',
+      [
+        'work visa consultants Hyderabad',
+        'work permit consultants',
+        'overseas job consultants',
+        'work visa services',
+        'employment visa consultants',
+        'UK work visa Hyderabad',
+        'Canada work permit',
+        'Australia work visa',
+        'USA work visa consultants',
+        'Germany work permit',
+        'skilled worker visa',
+        'work visa processing',
+        'job placement visa',
+        'overseas employment visa',
+        'international work visa',
+        'work permit services India',
+        'foreign employment visa',
+        'work visa documentation',
+        'overseas jobs Hyderabad'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

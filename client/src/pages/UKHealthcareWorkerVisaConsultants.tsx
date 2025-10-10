@@ -1,8 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Users, Mail, Phone, ArrowRight, MessageCircle, Stethoscope, Activity, Award, TrendingUp, ClipboardCheck, FileText, ShieldCheck, Building, Heart } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const UKHealthcareWorkerVisaConsultants = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'UK Healthcare Worker Visa Consultants Hyderabad',
+      'Expert UK Healthcare Worker Visa consultants in Hyderabad. Assistance for nurses, doctors, healthcare professionals seeking UK health and care worker visa.',
+      [
+        'UK healthcare worker visa consultants',
+        'UK health visa consultants Hyderabad',
+        'UK nurse visa consultants',
+        'UK medical visa consultants',
+        'UK healthcare visa Hyderabad',
+        'UK health and care visa',
+        'UK nurse recruitment consultants',
+        'UK doctor visa consultants',
+        'healthcare visa UK',
+        'UK medical professionals visa',
+        'UK healthcare worker sponsorship',
+        'UK nursing visa Hyderabad',
+        'UK healthcare immigration',
+        'health care visa UK consultants',
+        'UK medical visa services'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

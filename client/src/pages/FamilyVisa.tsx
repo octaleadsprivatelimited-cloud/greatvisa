@@ -1,8 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, CheckCircle, Users, Clock, Shield, ArrowRight, Phone, Mail } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const FamilyVisa: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Family Visa Consultants Hyderabad - Spouse & Dependent Visa',
+      'Expert family visa consultants in Hyderabad for spouse visa, dependent visa, parent visa, and family reunification. Assistance for UK, Canada, Australia, USA family immigration.',
+      [
+        'family visa consultants Hyderabad',
+        'spouse visa consultants',
+        'dependent visa services',
+        'family reunification visa',
+        'partner visa consultants',
+        'UK spouse visa Hyderabad',
+        'Canada family visa',
+        'Australia partner visa',
+        'USA spouse visa',
+        'parent visa consultants',
+        'child dependent visa',
+        'family immigration services',
+        'spouse visa processing',
+        'family visa documentation',
+        'marriage visa consultants',
+        'dependent visa assistance',
+        'family visa application',
+        'reunification visa services',
+        'spouse visa Hyderabad'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

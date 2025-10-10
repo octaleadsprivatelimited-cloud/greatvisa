@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Plane, 
@@ -13,8 +13,37 @@ import {
   Phone,
   Mail
 } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const TouristVisa: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Tourist Visa Consultants Hyderabad - Visitor Visa Services',
+      'Best tourist visa consultants in Hyderabad. Quick processing for tourist and visitor visas to USA, UK, Europe, Canada, Australia, and worldwide destinations. Travel visa assistance and documentation.',
+      [
+        'tourist visa consultants Hyderabad',
+        'visitor visa consultants',
+        'travel visa services',
+        'tourist visa processing',
+        'USA tourist visa Hyderabad',
+        'UK visitor visa',
+        'Europe tourist visa',
+        'Schengen visa consultants',
+        'Canada tourist visa',
+        'Australia visitor visa',
+        'tourist visa documentation',
+        'travel visa assistance',
+        'vacation visa services',
+        'holiday visa consultants',
+        'tourist visa application',
+        'visitor visa processing',
+        'international travel visa',
+        'tourism visa Hyderabad',
+        'quick tourist visa'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

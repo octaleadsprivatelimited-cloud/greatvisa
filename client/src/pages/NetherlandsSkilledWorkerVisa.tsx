@@ -1,9 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, CheckCircle, Users, Mail, Phone, ArrowRight, MessageCircle, Award, TrendingUp, Clock, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 const NetherlandsSkilledWorkerVisa = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Netherlands Skilled Worker Visa Consultants Hyderabad',
+      'Expert Netherlands skilled worker visa consultants in Hyderabad. Professional assistance for Dutch work permits, highly skilled migrant visa, and Netherlands immigration.',
+      [
+        'Netherlands visa consultants Hyderabad',
+        'Netherlands skilled worker visa',
+        'Dutch work visa consultants',
+        'Netherlands work permit',
+        'Netherlands highly skilled migrant visa',
+        'Netherlands immigration consultants',
+        'Dutch skilled visa Hyderabad',
+        'Netherlands work visa services',
+        'Netherlands job visa',
+        'Dutch work permit consultants',
+        'Netherlands skilled migration',
+        'Netherlands visa application',
+        'Dutch immigration services',
+        'Netherlands work visa Hyderabad',
+        'best Netherlands visa consultants'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

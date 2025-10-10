@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import { 
   Users, 
@@ -12,8 +12,38 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Best Visa Consultants in Hyderabad',
+      'GREAT Visa Network - Leading visa consultants in Hyderabad offering study visa, work visa, PR visa, tourist visa, and immigration services for UK, Canada, Australia, USA, Europe, and more.',
+      [
+        'visa consultants in Hyderabad',
+        'best visa consultants Hyderabad',
+        'study visa consultants Hyderabad',
+        'work visa consultants Hyderabad',
+        'immigration consultants Hyderabad',
+        'UK visa consultants Hyderabad',
+        'Canada visa consultants',
+        'Australia PR consultants',
+        'USA visa services',
+        'Europe visa consultants',
+        'skilled migration consultants',
+        'tourist visa Hyderabad',
+        'student visa Hyderabad',
+        'PR visa consultants',
+        'overseas education consultants',
+        'visa processing services',
+        'GREAT Visa Network',
+        'Hyderabad visa services',
+        'best immigration consultants India',
+        'visa application assistance'
+      ]
+    );
+  }, []);
+
   const services = [
     { 
       title: 'Study Visa', 

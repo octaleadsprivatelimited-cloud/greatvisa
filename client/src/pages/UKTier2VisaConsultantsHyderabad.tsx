@@ -1,8 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, CheckCircle, Users, Mail, Phone, MapPin, ArrowRight, MessageCircle, FileText, Globe, Award, TrendingUp, ClipboardCheck, ShieldCheck, Building } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const UKTier2VisaConsultantsHyderabad = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'UK Tier 2 Visa Consultants in Hyderabad',
+      'Leading UK Tier 2 visa consultants in Hyderabad. Expert assistance for UK Tier 2 work visa, skilled worker sponsorship, and UK employment visa applications.',
+      [
+        'UK tier 2 visa consultants Hyderabad',
+        'UK tier 2 work visa Hyderabad',
+        'tier 2 visa consultants',
+        'UK tier 2 sponsorship',
+        'UK tier 2 visa services Hyderabad',
+        'tier 2 general visa consultants',
+        'UK tier 2 visa processing',
+        'UK tier 2 work permit',
+        'tier 2 visa application Hyderabad',
+        'UK tier 2 immigration',
+        'tier 2 skilled worker visa',
+        'UK tier 2 visa requirements',
+        'best tier 2 visa consultants',
+        'UK tier 2 visa Hyderabad',
+        'tier 2 visa assistance'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

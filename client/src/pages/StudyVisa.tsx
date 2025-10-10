@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   GraduationCap, 
@@ -12,8 +12,37 @@ import {
   Phone,
   Mail
 } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const StudyVisa: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Study Visa Consultants in Hyderabad - Student Visa Services',
+      'Best study visa consultants in Hyderabad. Get expert assistance for student visas to UK, USA, Canada, Australia, Germany, and other countries. University admissions, visa processing, and documentation support.',
+      [
+        'study visa consultants Hyderabad',
+        'student visa consultants Hyderabad',
+        'overseas education consultants',
+        'study abroad consultants',
+        'student visa services',
+        'university admissions help',
+        'UK student visa Hyderabad',
+        'USA student visa consultants',
+        'Canada study visa',
+        'Australia student visa',
+        'Germany study visa',
+        'Europe student visa',
+        'study visa processing',
+        'student visa documentation',
+        'overseas education visa',
+        'study abroad visa assistance',
+        'foreign education consultants',
+        'international student visa',
+        'study visa application help'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

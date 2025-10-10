@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Briefcase, 
@@ -12,8 +12,33 @@ import {
   Globe,
   Award
 } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const Careers: React.FC = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Careers at GREAT Visa Network Hyderabad',
+      'Join GREAT Visa Network team in Hyderabad. Exciting career opportunities in immigration consulting, visa services, and international education consultancy.',
+      [
+        'careers GREAT Visa Network',
+        'visa consultant jobs Hyderabad',
+        'immigration consultant careers',
+        'visa consultancy jobs',
+        'immigration jobs Hyderabad',
+        'visa services jobs',
+        'overseas consultancy careers',
+        'immigration consultant vacancies',
+        'visa consultant recruitment',
+        'jobs in immigration sector',
+        'visa consultancy careers Hyderabad',
+        'immigration industry jobs',
+        'international education jobs',
+        'visa processing jobs',
+        'careers in immigration'
+      ]
+    );
+  }, []);
+
   const jobOpenings = [
     {
       title: 'Senior Immigration Consultant',

@@ -1,8 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, CheckCircle, Users, Mail, Phone, ArrowRight, MessageCircle, Stethoscope, Award, TrendingUp, ClipboardCheck, FileText, ShieldCheck, Building } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const UKHealthcareProfessionalsWorkVisa = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'UK Healthcare Professionals Work Visa Services',
+      'Specialized UK healthcare professionals work visa services for doctors, nurses, and medical staff. Expert assistance for UK health and care visa applications.',
+      [
+        'UK healthcare professionals visa',
+        'UK medical professionals visa',
+        'UK doctors work visa',
+        'UK nurses work visa',
+        'UK health professionals visa',
+        'UK healthcare work visa',
+        'UK medical staff visa',
+        'UK healthcare visa services',
+        'UK health and care visa',
+        'UK medical immigration',
+        'UK healthcare worker visa',
+        'UK nursing professionals visa',
+        'UK medical visa consultants',
+        'UK healthcare visa Hyderabad',
+        'UK health sector visa'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

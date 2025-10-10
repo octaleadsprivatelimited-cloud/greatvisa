@@ -1,9 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Code, CheckCircle, Users, Mail, Phone, ArrowRight, MessageCircle, Laptop, Zap, TrendingUp, Clock, Award, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 const IrelandITProfessionalWorkVisaConsultancy = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Ireland IT Professional Work Visa Consultancy Hyderabad',
+      'Best Ireland IT professional work visa consultancy in Hyderabad. Expert assistance for Ireland tech visa, software engineer visa, and IT work permits.',
+      [
+        'Ireland IT visa consultants Hyderabad',
+        'Ireland IT professional visa',
+        'Ireland tech visa consultants',
+        'Ireland software engineer visa',
+        'Ireland IT work visa',
+        'Ireland tech work permit',
+        'Ireland IT job visa',
+        'Ireland technology visa',
+        'Ireland developer visa',
+        'Ireland IT immigration',
+        'Ireland tech professional visa',
+        'Ireland IT visa services',
+        'Ireland work visa IT sector',
+        'Ireland tech migration',
+        'best Ireland IT visa consultants'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

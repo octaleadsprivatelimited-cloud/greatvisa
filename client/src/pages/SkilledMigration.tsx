@@ -1,8 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Globe, CheckCircle, Mail, Phone, ArrowRight, MessageCircle, Award, TrendingUp, Plane, FileText, ClipboardCheck, ShieldCheck, Target } from 'lucide-react';
+import { updatePageSEO } from '../utils/seo';
 
 const SkilledMigration = () => {
+  useEffect(() => {
+    updatePageSEO(
+      'Skilled Migration Consultants Hyderabad - PR Visa Services',
+      'Expert skilled migration consultants in Hyderabad for Australia, Canada, UK PR visas. Professional assistance for skilled worker migration, points-based immigration, and permanent residency.',
+      [
+        'skilled migration consultants Hyderabad',
+        'PR visa consultants',
+        'permanent residency consultants',
+        'skilled worker migration',
+        'Australia PR consultants Hyderabad',
+        'Canada PR consultants',
+        'UK PR visa services',
+        'skilled migration services',
+        'points-based immigration',
+        'permanent residency visa',
+        'skilled immigration consultants',
+        'PR application services',
+        'skilled migration Hyderabad',
+        'immigration PR services',
+        'best PR consultants Hyderabad'
+      ]
+    );
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
