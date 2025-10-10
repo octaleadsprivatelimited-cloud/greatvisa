@@ -89,14 +89,13 @@ const Testimonials: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600">
+        <div className="absolute inset-0 opacity-30">
           <img
             src="/home/slider-1.jpg"
             alt="Success Stories Background"
             className="w-full h-full object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-indigo-900/80 to-purple-900/80"></div>
         </div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
