@@ -31,6 +31,17 @@ const Header: React.FC = () => {
     setActiveDropdown(null);
   }, [location]);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
     setActiveDropdown(null);
@@ -454,13 +465,13 @@ const Header: React.FC = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed top-[116px] left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40 max-h-[calc(100vh-116px)] overflow-y-auto"
+            className="lg:hidden fixed inset-0 top-[116px] bg-white border-t border-gray-200 shadow-lg z-40 overflow-y-auto overscroll-contain"
           >
-            <div className="px-3 py-2">
+            <div className="px-3 py-2 pb-6">
               <nav className="space-y-0.5">
                 {mainNavigation.map((item, index) => (
               <motion.div
