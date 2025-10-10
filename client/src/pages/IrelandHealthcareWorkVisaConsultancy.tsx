@@ -171,9 +171,11 @@ const IrelandHealthcareWorkVisaConsultancy = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl shadow-xl p-8 md:p-12 text-white"
+                className="relative bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl shadow-xl p-8 md:p-12 text-white overflow-hidden"
               >
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Healthcare Roles We Support</h2>
+                <div className="absolute inset-0 bg-[url('/services/immigration.jpg')] bg-cover bg-center opacity-20"></div>
+                <div className="relative z-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-8">Healthcare Roles We Support</h2>
                 <ul className="grid md:grid-cols-2 gap-4">
                   {[
                     "Doctors (All Specializations)",
@@ -195,6 +197,7 @@ const IrelandHealthcareWorkVisaConsultancy = () => {
                     </li>
                   ))}
                 </ul>
+                </div>
               </motion.div>
 
               <motion.div
