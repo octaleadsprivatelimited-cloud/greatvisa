@@ -370,7 +370,7 @@ const UKSkilledWorkVisaConsultancy = () => {
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-                      placeholder="+91 98765 43210"
+                      placeholder="Your phone number"
                     />
                   </div>
 

@@ -211,23 +211,23 @@ const WorkVisa: React.FC = () => {
               <motion.div
                 key={feature.title}
                     initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
                     className="bg-white rounded-xl shadow-lifted p-6 hover:shadow-neon transition"
                   >
                     <feature.icon size={40} className="text-indigo-600 mb-4" />
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.description}</p>
-                  </motion.div>
-                ))}
-              </div>
+                <p className="text-gray-600">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
 
               {/* Requirements */}
-              <motion.div
+            <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+              viewport={{ once: true }}
                 className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
               >
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Required Documents</h2>
@@ -374,77 +374,77 @@ const WorkVisa: React.FC = () => {
       </section>
 
       {/* Assessment Form Section */}
-      <section id="assessment" className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900">
+      <section id="assessment" className="py-12 md:py-16 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-xl mx-auto">
           <motion.div
               initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-2xl p-8 md:p-12"
+              className="bg-white rounded-xl shadow-2xl p-6 md:p-8"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center">Start Your International Work Journey</h2>
-              <p className="text-gray-600 text-center mb-8">Fill out the form below for a free assessment</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1 text-center">Start Your International Work Journey</h2>
+              <p className="text-sm text-gray-600 text-center mb-6">Fill out the form below for a free assessment</p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">Full Name</label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition text-sm"
                     placeholder="Enter your full name"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">Email Address</label>
                   <input
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition text-sm"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">Phone Number</label>
                   <input
                     type="tel"
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-                    placeholder="+91 98765 43210"
+                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition text-sm"
+                    placeholder="Your phone number"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Message / Preferred Country</label>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">Message / Preferred Country</label>
                   <textarea
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                    rows={3}
+                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition text-sm"
                     placeholder="Tell us about your profession, experience, and preferred destination..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-yellow-400 text-gray-900 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center"
+                  className="w-full bg-yellow-400 text-gray-900 py-3 rounded-lg font-bold text-base hover:bg-yellow-300 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center"
                 >
                   <span>Get Free Assessment</span>
-                  <ArrowRight className="ml-2" size={20} />
+                  <ArrowRight className="ml-2" size={18} />
                 </button>
               </form>
 
-              <div className="mt-8 pt-8 border-t border-gray-200">
+              <div className="mt-6 pt-6 border-t border-gray-200">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-600">
                   <div className="flex items-center">
                     <Phone className="mr-2 text-indigo-600" size={20} />

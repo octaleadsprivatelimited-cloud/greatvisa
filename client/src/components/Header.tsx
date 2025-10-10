@@ -275,7 +275,7 @@ const Header: React.FC = () => {
                             className="group relative overflow-hidden p-3 rounded-lg bg-white hover:bg-gradient-to-br hover:from-indigo-50 hover:to-purple-50 border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-md block h-full"
                           >
                             <div className="relative">
-                              <h5 className="text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                              <h5 className="text-base font-bold text-gray-900 group-hover:text-indigo-600 transition-colors" style={{ fontFamily: 'Arial, sans-serif' }}>
                                 {service.name}
                               </h5>
                             </div>
@@ -307,7 +307,7 @@ const Header: React.FC = () => {
                             className="group relative overflow-hidden p-3 rounded-lg bg-white hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 border border-slate-200 hover:border-purple-300 transition-all duration-300 hover:shadow-md block h-full"
                           >
                             <div className="relative">
-                              <h5 className="text-sm font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                              <h5 className="text-base font-bold text-gray-900 group-hover:text-purple-600 transition-colors" style={{ fontFamily: 'Arial, sans-serif' }}>
                                 {service.name}
                               </h5>
                             </div>
@@ -395,7 +395,7 @@ const Header: React.FC = () => {
                             <div className="relative">
                               <div className="flex items-center">
                                 <span className="text-base mr-2">{service.icon}</span>
-                                <h5 className="text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                                <h5 className="text-base font-bold text-gray-900 group-hover:text-indigo-600 transition-colors" style={{ fontFamily: 'Arial, sans-serif' }}>
                                   {service.name}
                                 </h5>
                               </div>
@@ -430,7 +430,7 @@ const Header: React.FC = () => {
                             <div className="relative">
                               <div className="flex items-center">
                                 <span className="text-base mr-2">{service.icon}</span>
-                                <h5 className="text-sm font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                                <h5 className="text-base font-bold text-gray-900 group-hover:text-purple-600 transition-colors" style={{ fontFamily: 'Arial, sans-serif' }}>
                                   {service.name}
                                 </h5>
                               </div>
