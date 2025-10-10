@@ -193,15 +193,15 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="grid grid-cols-3 gap-3 md:gap-4 lg:gap-6"
+              className="grid grid-cols-3 gap-2 md:gap-3"
             >
               {stats.map((stat, index) => (
-                <div key={index} className="glass-effect backdrop-blur-md p-4 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-white/20">
-                  <div className={`w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center mb-3 mx-auto`}>
-                    <stat.icon size={20} className="text-white md:w-6 md:h-6" />
+                <div key={index} className="glass-effect backdrop-blur-md p-2 md:p-3 rounded-lg md:rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-white/20">
+                  <div className={`w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br ${stat.color} rounded-lg flex items-center justify-center mb-2 mx-auto`}>
+                    <stat.icon size={16} className="text-white md:w-5 md:h-5" />
                   </div>
-                  <div className="text-xl md:text-2xl font-bold text-white mb-1 drop-shadow-lg">{stat.value}</div>
-                  <div className="text-xs md:text-sm text-white/90 font-medium drop-shadow-md">{stat.label}</div>
+                  <div className="text-base md:text-xl font-bold text-white mb-0.5 drop-shadow-lg">{stat.value}</div>
+                  <div className="text-[10px] md:text-xs text-white/90 font-medium drop-shadow-md">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
