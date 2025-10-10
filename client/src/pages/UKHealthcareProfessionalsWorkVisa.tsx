@@ -173,7 +173,7 @@ const UKHealthcareProfessionalsWorkVisa = () => {
                 viewport={{ once: true }}
                 className="relative bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 text-white overflow-hidden"
               >
-                <div className="absolute inset-0 bg-[url('/services/immigration.jpg')] bg-cover bg-center opacity-20"></div>
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1200')] bg-cover bg-center opacity-20"></div>
                 <div className="relative z-10">
                   <h2 className="text-3xl md:text-4xl font-bold mb-8">Healthcare Roles We Support</h2>
                 <ul className="grid md:grid-cols-2 gap-4">
