@@ -132,7 +132,7 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 gap-8 lg:gap-12 items-center pt-[50%] md:pt-0">
+        <div className="grid grid-cols-1 gap-8 lg:gap-12 items-center pt-[50%] md:pt-32 lg:pt-40">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
