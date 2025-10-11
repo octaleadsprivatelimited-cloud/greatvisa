@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: ['info@greatvisanetwork.com', 'support@greatvisanetwork.com'],
+      details: ['info@greatvisanetwork.com'],
       color: 'text-blue-500'
     },
     {

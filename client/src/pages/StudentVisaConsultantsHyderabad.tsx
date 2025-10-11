@@ -13,7 +13,7 @@ const StudentVisaConsultantsHyderabad = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const whatsappMessage = `Hi, I'm interested in Student Visa consultancy services in Hyderabad. Name: ${formData.name}, Email: ${formData.email}, Phone: ${formData.phone}, Message: ${formData.message}`;
-    window.open(`https://wa.me/919848158627?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+    window.open(`https://wa.me/919533974711?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
   };
 
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -267,11 +267,11 @@ const StudentVisaConsultantsHyderabad = () => {
                       <ClipboardCheck size={18} className="mr-2" />
                       Free Assessment
                     </button>
-                    <a href="https://wa.me/919848158627" target="_blank" rel="noreferrer noopener" className="bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-400 transition flex items-center justify-center">
+                    <a href="https://wa.me/919533974711" target="_blank" rel="noreferrer noopener" className="bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-400 transition flex items-center justify-center">
                       <MessageCircle size={18} className="mr-2" />
                       Chat on WhatsApp
                     </a>
-                    <a href="tel:+919848158627" className="bg-white border border-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:border-gray-300 transition flex items-center justify-center">
+                    <a href="tel:+919533974711" className="bg-white border border-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:border-gray-300 transition flex items-center justify-center">
                       <Phone size={18} className="mr-2" />
                       +91 9533974711
                     </a>

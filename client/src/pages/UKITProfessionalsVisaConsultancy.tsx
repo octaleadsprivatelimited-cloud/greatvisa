@@ -38,12 +38,12 @@ const UKITProfessionalsVisaConsultancy = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const whatsappMessage = `Hi, I'm interested in UK IT Professionals Visa services. Name: ${formData.name}, Email: ${formData.email}, Phone: ${formData.phone}, Message: ${formData.message}`;
-    window.open(`https://wa.me/919848158627?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+    window.open(`https://wa.me/919533974711?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
   };
 
   const handleWhatsAppClick = () => {
     const message = "Hi, I'm interested in UK IT Professionals Visa consultancy. Could you please provide more information?";
-    window.open(`https://wa.me/919848158627?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/919533974711?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (

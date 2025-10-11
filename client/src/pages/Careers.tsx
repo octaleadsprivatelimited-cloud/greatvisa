@@ -335,7 +335,7 @@ const Careers: React.FC = () => {
               </a>
               
               <a
-                href="mailto:careers@greatvisanetwork.com"
+                href="mailto:info@greatvisanetwork.com"
                 className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-4 py-3 md:px-8 md:py-4 rounded-lg md:rounded-xl font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105"
               >
                 <span>Email Us</span>
